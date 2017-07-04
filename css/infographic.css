@@ -1,0 +1,120 @@
+:root{
+    --primary:#00c0ff; /*blue*/
+	--secondary:#ff4a08; /*orange*/
+	--green:#85ea01;
+	--red:#e30000;
+	--white:#fff;
+	--background:#000;
+	--wr-green: #5ca202;
+}
+
+@font-face {
+    font-family: radiance-bold;
+    src: url(fonts/radiance-bold.tff);
+	
+	font-family: radiance;
+    src: url(fonts/radiance.tff);
+}
+
+
+.body-container
+{
+	width:720px;
+	margin:auto;
+	background-color: var(--background);
+	color: var(--primary);
+	font-family: radiance;
+	z-index:-100;
+}
+
+
+.section
+{
+	padding-top:10px;
+}
+
+.container
+{
+	text-align:center;
+	width:100%;
+}
+
+.row img {
+    display:block;
+    margin:auto;
+}
+
+.primary
+{
+	color: var(--primary);
+}
+
+.secondary
+{
+	color: var(--secondary);
+}
+
+.red{
+	color: var(--red);
+}
+
+.green
+{
+	color:var(--green);
+}
+
+
+
+.width-half
+{
+	display: table-cell;
+	width:360px;
+}
+
+hr.faded{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), var(--primary), rgba(0,0,0,0));
+}
+
+h4
+{
+	color: var(--white);
+	font-size:15px;
+}
+
+h2
+{
+	margin-top:-15px;
+	text-align:center;
+	font-size:30px;
+}
+
+.canvas-circle
+{
+	width: 300px;
+	height: 150px;
+	margin-left:-105px;
+	margin-top:-20px;
+	margin-bottom:-115px;
+	position: relative;
+    z-index:100;
+}
+
+
+@media screen and (max-width: 720px) 
+{ 
+	.body-container
+	{
+		width:100%;
+	}
+} 
+
+
+
+body
+{
+  background-color: white;
+  font-weight:bold;
+}
+

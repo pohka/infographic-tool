@@ -1,0 +1,25 @@
+.twitter
+{
+	height:64px;
+}
+
+.avatar
+{
+	height:64px;
+	
+}
+
+.footer
+{
+	padding: 0px 10px;
+	width:100%;
+	margin:auto;
+	padding-bottom:30px;
+}
+
+.footer-text
+{
+	margin-top:15px;
+	font-size:24px;
+	font-weight: bold;
+}
