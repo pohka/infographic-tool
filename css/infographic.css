@@ -6,6 +6,7 @@
 	--white:#fff;
 	--background:#000;
   --border:rgba(255,255,255,0.4);
+  --primary-faded:rgba(0,192,255,0.3);
 }
 
 @font-face {
@@ -31,6 +32,15 @@ body
   margin-top:30px;
   background: none;
   font-weight:bold;
+}
+
+input
+{
+  background-color: inherit;
+  border: 1px solid var(--primary);
+  padding:2px 8px;
+  width:280px;
+  margin:4px 0px;
 }
 
 
@@ -95,6 +105,13 @@ hr.faded{
     background-image: linear-gradient(to right, rgba(0,0,0,0), var(--primary), rgba(0,0,0,0));
 }
 
+hr.primary{
+    border: 0;
+    height: 1px;
+    margin:5px 0px;
+    background-color: var(--primary);
+}
+
 h4
 {
 	color: var(--white);
@@ -104,6 +121,7 @@ h4
 h2
 {
 	margin-top:-15px;
+  margin-bottom: -5px;
 	text-align:center;
 	font-size:30px;
 }

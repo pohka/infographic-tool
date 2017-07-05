@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="css/template-02.css">
 
 	<script src="js/infographic.js"></script>
+	<script src="js/template-info.js"></script>
 	<script src="js/sidebar.js"></script>
 	<script src="js/template-01.js"></script>
 	<script src="js/template-02.js"></script>
@@ -36,16 +37,16 @@
 				<div class="row">
 					<div class="col-md-4 tournament-info">
 						<span class="tournament-title">The International 2017</span><br>
-						22nd-23rd July<br>
-						Prize Pool $500k
+						<span class="tournament-date">22nd-23rd July<br>
+						Prize Pool <span class="tournament-prize">$500k
 					</div>
 					<div class="col-md-4">
 						<img src="img/tournament/ti7.png" class="tournament-logo">
 					</div>
 					<div class="col-md-4 tournament-overview">
-						187 <span class="header-stat">Heroes picked</span><br>
-						25 <span class="header-stat">Matches</span><br>
-						VP <span class="header-stat">Winner</span>
+						187 <span class="header-stat tournament-heroes-picked">Heroes picked</span><br>
+						25 <span class="header-stat" "tournement-matches">Matches</span><br>
+						VP <span class="header-stat" "tournament-winner">Winner</span>
 					</div>
 				</div>
 			</div>
@@ -111,7 +112,7 @@
 							</div>
 
 							<div class="template-02-text">
-								<span class="green" id="template-02-chart-1-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-2-text-ban">32%</span><br>
+								<span class="green" id="template-02-chart-2-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-2-text-ban">32%</span><br>
 								<p class="template-02-text-lg" id="template-02-chart-2-text-total"> 82%</p>
 							</div>
 						</div>
@@ -211,10 +212,10 @@
 		<div class="sidebar">
 			<!--MENU-->
 			<div class="sidebar-menu">
-						<div class="sidebar-menu-item sidebar-menu-item-selected" id="sidebar-1">
+						<div class="sidebar-btn sidebar-menu-item sidebar-menu-item-selected " id="sidebar-1">
 							Sections
 						</div><!--
-						--><div class="sidebar-menu-item" id="sidebar-2">
+						--><div class="sidebar-btn sidebar-menu-item" id="sidebar-2">
 							Palette
 						</div>
 			</div>
@@ -224,22 +225,28 @@
 			<!--SIDEBAR SECTIONS-->
 			<div class="sidebar-column" id="sidebar-1-column">
 
-				<div class="sidebar-item">
+				<div class="sidebar-item sidebar-section">
 					Section  1
-					<div class="sidebar-item">
+					<div class="sidebar-item sidebar-template">
 						template 1
+						<div class="sidebar-template-field">
+								<input type="text" placeholder="Tournament Name:">
+								<input type="text" placeholder="Tournament date:">
 					</div>
-					<div class="sidebar-item">template 2
+					<div class="sidebar-item sidebar-template">
+						template 2
 					</div>
-					<div class="sidebar-add-item">
+					<div class="sidebar-btn sidebar-add sidebar-add-template">
 						Add template
 					</div>
 				</div>
 
-				<!--ADD SECTION-->
-				<div class="sidebar-add-item">
-					ADD SECTION
-				</div>
+
+			</div>
+
+			<!--ADD SECTION-->
+			<div class="sidebar-btn sidebar-add sidebar-add-section">
+				ADD SECTION
 			</div>
 
 			<!--SIDEBAR PALETTE-->
@@ -247,6 +254,35 @@
 					paleted here
 			</div>
 
+		</div>
+
+
+		<!--MODAL-->
+		<div class="sidebar-browser">
+					Templates
+					<hr class="primary">
+					<div class="sidebar-btn browser-menu-item sidebar-selected" id="template-full">
+						Full
+					</div><!--
+					--><div class="sidebar-btn browser-menu-item" id="template-split">
+						Split
+					</div>
+					<div class="sidebar-btn sidebar-browser-template template-split" id="template-01">
+							Template 1
+							<img src="img/templates/template-01.png">
+					</div>
+					<div class="sidebar-btn sidebar-browser-template template-split" id="template-02">
+							Template 2
+							<img src="img/templates/template-02.png">
+					</div>
+					<div class="sidebar-btn sidebar-browser-template template-full" id="tournament">
+							tournament
+							<img src="img/templates/header.png">
+					</div>
+					<div class="sidebar-btn sidebar-browser-template template-full" id="footer">
+							Footer
+							<img src="img/templates/tournament.png">
+					</div>
 		</div>
 	</body>
 </html>

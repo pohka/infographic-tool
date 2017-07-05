@@ -1,3 +1,0 @@
-export button
-hero portraits exported
-resizing of portrait images

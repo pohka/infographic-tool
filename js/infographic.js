@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 function randomBackground()
 {
-  var index = Math.round(Math.random()*(imgCount-1));
-  console.log("index:" + index);
+  var imgCount=10;
+  var index = Math.round(Math.random()*(imgCount));
   $("html").css("background", "url(img/backgrounds/"+index+".png)");
 }
