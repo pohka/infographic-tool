@@ -20,9 +20,13 @@
 	<link rel="stylesheet" href="css/template-01.css">
 	<link rel="stylesheet" href="css/template-02.css">
 
+	<script src="js/helper.js"></script>
 	<script src="js/infographic.js"></script>
 	<script src="js/template-info.js"></script>
 	<script src="js/sidebar.js"></script>
+
+	<!--templates-->
+	<script src="js/tournament.js"></script>
 	<script src="js/template-01.js"></script>
 	<script src="js/template-02.js"></script>
 	</head>
@@ -31,22 +35,22 @@
 		<div class="body-container">
 
 		<!--HEADER-->
-		<div class="section header">
+		<div class="section tournament">
 
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 tournament-info">
 						<span class="tournament-title">The International 2017</span><br>
-						<span class="tournament-date">22nd-23rd July<br>
-						Prize Pool <span class="tournament-prize">$500k
+						<span class="tournament-date">22nd-23rd July</span><br>
+						Prize Pool <span class="tournament-prize-pool">$500k</span>
 					</div>
 					<div class="col-md-4">
 						<img src="img/tournament/ti7.png" class="tournament-logo">
 					</div>
 					<div class="col-md-4 tournament-overview">
-						187 <span class="header-stat tournament-heroes-picked">Heroes picked</span><br>
-						25 <span class="header-stat" "tournement-matches">Matches</span><br>
-						VP <span class="header-stat" "tournament-winner">Winner</span>
+						<span class="tournament-heroes-picked">187</span> <span class="header-stat">Heroes picked</span><br>
+						<span class="tournament-matches">62</span>  <span class="header-stat">Matches</span><br>
+						<span class="tournament-winner">VP</span>  <span class="header-stat">Winner</span>
 					</div>
 				</div>
 			</div>
@@ -56,7 +60,7 @@
 			<div class="container wr-bar-con">
 				<div class="wr-bar-text row">
 					<div class="radiant col-md-3">
-						Radiant &nbsp50%
+						Radiant &nbsp<span class="tournament-radiant-winrate number-field">50</span>%
 					</div>
 
 					<div class="col-md-6">
@@ -67,7 +71,7 @@
 						</div>
 					</div>
 					<div class="dire col-md-3">
-							50% &nbspDire
+							<span class="tournament-dire-winrate">50</span>% &nbspDire
 					</div>
 				</div>
 
@@ -222,38 +226,17 @@
 
 
 
-			<!--SIDEBAR SECTIONS-->
-			<div class="sidebar-column" id="sidebar-1-column">
-
-				<div class="sidebar-item sidebar-section">
-					Section  1
-					<div class="sidebar-item sidebar-template">
-						template 1
-						<div class="sidebar-template-field">
-								<input type="text" placeholder="Tournament Name:">
-								<input type="text" placeholder="Tournament date:">
-					</div>
-					<div class="sidebar-item sidebar-template">
-						template 2
-					</div>
-					<div class="sidebar-btn sidebar-add sidebar-add-template">
-						Add template
-					</div>
-				</div>
-
-
-			</div>
-
+		<!--SIDEBAR SECTIONS-->
+		<div class="sidebar-column" id="sidebar-1-column">
 			<!--ADD SECTION-->
 			<div class="sidebar-btn sidebar-add sidebar-add-section">
 				ADD SECTION
 			</div>
+		</div>
 
-			<!--SIDEBAR PALETTE-->
-			<div class="sidebar-column" id="sidebar-2-column">
-					paleted here
-			</div>
-
+		<!--SIDEBAR PALETTE-->
+		<div class="sidebar-column" id="sidebar-2-column">
+				paleted hereadasdasd
 		</div>
 
 

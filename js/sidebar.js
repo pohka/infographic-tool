@@ -67,6 +67,23 @@ $(document).ready(function(){
 
 });
 
+$(document).on('input', '.input', function() {
+    var inputText = $(this).val();
+    var id = $(this).attr("id");
+    var section_cls = "."+id.replace("-input","");
+    $(section_cls).html(inputText)
+});
+
+$(document).on('input', '.input-number', function() {
+  var inputText = $(this).val();
+  var val = Number(inputText.toNumber());
+
+  var id = $(this).attr("id");
+  var section_cls = "."+id.replace("-input","");
+
+  $(section_cls).html(val);
+});
+
 
 
 //adds the section and displays the templay browser
@@ -124,19 +141,60 @@ function addSidebarButtons()
 function getInputFieldsHtml(template_name)
 {
   var html="";
-  for(var i = 0; i < template_text.length; i++) {
-    var text = template_text[i];
-    console.log(text[0]+","+template_name);
-    if(text[0]==template_name)
+  for(var i = 0; i < template_fields.length; i++) {
+    var row_of_fields = template_fields[i];
+    if(row_of_fields[0]==template_name)
     {
-      for(var j = 1; j < text.length; j++) {
-          var str = text[j].replace(text[0]+"-","")
-          html+='<input type="text" class="'+template_name+'-input" placeholder="'+str+'">';
+      for(var j = 1; j < row_of_fields.length; j++) {
+
+          var input_type="";
+
+          if(isFieldType(template_name, row_of_fields[j], template_fields_number))
+          {
+            input_type = "-number";
+          }
+          else if(isFieldType(template_name, row_of_fields[j], template_fields_img))
+          {
+            input_type="-img";
+          }
+
+          var str = row_of_fields[j].replace(row_of_fields[0]+"-","")
+          str = str.replace(/-/g, ' ');
+          str = str.toTitleCase();
+
+          html+='<input type="text" class="input'+input_type+'" id="'+row_of_fields[j]+'-input" placeholder="'+str+'">';
       }
+      return html;
     }
   }
   return html;
 }
+
+//returns the value of this input field as a number
+function getNumberInput(cls)
+{
+  var inputText = $(cls).val();
+  return Number(inputText.toNumber());
+}
+
+//returns true if the field is in the specified field type
+function isFieldType(template_name, field_name, field_type)
+{
+  for(var i = 0; i < field_type.length; i++) {
+    var row_of_fields = field_type[i];
+    if(row_of_fields[0]==template_name)
+    {
+      for(var j = 1; j < row_of_fields.length; j++) {
+          if(field_name==row_of_fields[j])
+            return true;
+      }
+      return false;
+    }
+  }
+  return false;
+}
+
+
 
 //todo
 function toggleShow(id)
