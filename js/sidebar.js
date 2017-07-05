@@ -58,15 +58,12 @@ $(document).ready(function(){
     });
   });
 
-
-  $(".btn-minimize").click(function(){
-    console.log("clicked");
-    var id = $(this).attr("id");
-    toggleShow(id);
-  });
-
 });
 
+/*
+DYNAMIC ELEMENTS
+----------------------
+*/
 $(document).on('input', '.input', function() {
     var inputText = $(this).val();
     var id = $(this).attr("id");
@@ -82,6 +79,11 @@ $(document).on('input', '.input-number', function() {
   var section_cls = "."+id.replace("-input","");
 
   $(section_cls).html(val);
+});
+
+$(document).on('click', ".btn-minimize", function(){
+  var id = $(this).attr("id");
+  toggleShow(id);
 });
 
 
@@ -110,6 +112,8 @@ function addSection(id)
 function getTemplateHtml(template_name, id)
 {
   template_name = template_name.replace(/\s/g,'');
+  id+="-template";
+
   var templateHtml=
     '<div class="sidebar-item sidebar-template '+id+'">'+
      getSidebarButtonHtml(template_name)+template_name+
@@ -123,7 +127,7 @@ function getSidebarButtonHtml(id)
 {
   var buttonhtml =
     '<button class="btn-minimize" id="'+id+'">'+
-    '<span class="glyphicon glyphicon-menu-down"></span>'+
+    '<span class="'+id+'-minibtn glyphicon glyphicon-menu-down"></span>'+
     '</button>';
   return buttonhtml;
 }
@@ -140,7 +144,8 @@ function addSidebarButtons()
 
 function getInputFieldsHtml(template_name)
 {
-  var html="";
+  var html="<div class='"+template_name+"-input'>";
+  var endhtml ="</div>";
   for(var i = 0; i < template_fields.length; i++) {
     var row_of_fields = template_fields[i];
     if(row_of_fields[0]==template_name)
@@ -164,10 +169,10 @@ function getInputFieldsHtml(template_name)
 
           html+='<input type="text" class="input'+input_type+'" id="'+row_of_fields[j]+'-input" placeholder="'+str+'">';
       }
-      return html;
+      return html + endhtml;
     }
   }
-  return html;
+  return html + endhtml;
 }
 
 //returns the value of this input field as a number
@@ -196,12 +201,34 @@ function isFieldType(template_name, field_name, field_type)
 
 
 
-//todo
+//toggle visibility of input fields
 function toggleShow(id)
 {
-  console.log(id);
+  console.log("btn-id:"+id);
+  var hideClas="";
   if(id.indexOf("section-") >=0)
   {
-    console.here("here");
+    hideCls = "." + id + "-template";
   }
+  else {
+    hideCls = "." + id + "-input";
+  }
+
+  //toggle visibility and the glyphicon
+  var isVisible = $(hideCls).is(":visible");
+  var minibtn = "."+id+"-minibtn";
+
+  if(isVisible)
+  {
+    $(hideCls).hide();
+    $(minibtn).removeClass("glyphicon-menu-down");
+    $(minibtn).addClass('glyphicon-menu-right');
+  }
+  else
+  {
+    $(hideCls).show();
+    $(minibtn).removeClass("glyphicon-menu-right");
+    $(minibtn).addClass('glyphicon-menu-down');
+  }
+
 }

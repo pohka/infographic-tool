@@ -80,7 +80,7 @@
 
 .sidebar-item
 {
-	border: 1px solid var(--primary-faded);
+	border: 0px solid var(--primary-faded);
 	border-left: 2px solid var(--primary);
 	padding: 4px 6px;
 	margin-top: 5px;
