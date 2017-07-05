@@ -1,13 +1,16 @@
 <html>
 	<head>
+
+		<!--jQuery-->
+		<script src="js/jquery.min.js"></script>
+
 	<!--bootstrap-->
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
-	<script src="bootstrapjs/bootstrap.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 
-	<!--jQuery-->
-	<script src="js/jquery.min.js"></script>
-	
+
+
 	<!--css-->
 	<link rel="stylesheet" href="css/infographic.css">
 	<link rel="stylesheet" href="css/sidebar.css">
@@ -16,17 +19,19 @@
 	<link rel="stylesheet" href="css/footer.css">
 	<link rel="stylesheet" href="css/template-01.css">
 	<link rel="stylesheet" href="css/template-02.css">
-	
+
+	<script src="js/infographic.js"></script>
+	<script src="js/sidebar.js"></script>
 	<script src="js/template-01.js"></script>
 	<script src="js/template-02.js"></script>
 	</head>
 
 	<body>
 		<div class="body-container">
-		
-		<!--header-->
+
+		<!--HEADER-->
 		<div class="section header">
-			
+
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 tournament-info">
@@ -44,15 +49,15 @@
 					</div>
 				</div>
 			</div>
-			
-			
-			<!--wr bar-->
+
+
+			<!--SIDE WIN RATE BAR-->
 			<div class="container wr-bar-con">
 				<div class="wr-bar-text row">
 					<div class="radiant col-md-3">
 						Radiant &nbsp50%
 					</div>
-					
+
 					<div class="col-md-6">
 						<div class="wr-bar ">
 						  <div class="inner-bar inner-red"></div>
@@ -64,21 +69,20 @@
 							50% &nbspDire
 					</div>
 				</div>
-				
+
 			</div>
 			<hr class="faded">
 		</div>
-		
-		
-		<!--new section-->
+
+
+		<!--NEW SECTION-->
 			<div class="section">
 				<h2>Overview</h2>
-				<!--half section-->
+				<!--TEMPLATE 2 HALF SECTION-->
 				<div class="container template-02 width-half">
 					<h3>Most Contested</h3>
 					<h4>Most <span class="green">picked</span> and <span class="red">banned</span></h4>
-					<br>
-					
+
 					<div class="row">
 						<div class="col-md-3 template-02-chart" id="template-02-chart-1">
 							<div class="template-02-inner template-02-inner-green" id="template-02-chart-1-green"></div>
@@ -87,15 +91,15 @@
 							<div class="template-02-inner template-02-inner-total" id="template-02-chart-1-total"></div>
 							<div class="template-02-inner template-02-inner-image" id="template-02-chart-1-image">
 								<img src="img/hero-portraits/rubick.png" >
-								
+
 							</div>
-							
+
 							<div class="template-02-text">
 								<span class="green" id="template-02-chart-1-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-1-text-ban">32%</span><br>
 								<p class="template-02-text-lg" id="template-02-chart-1-text-total"> 82%</p>
 							</div>
 						</div>
-						
+
 						<div class="col-md-3 template-02-chart" id="template-02-chart-2">
 							<div class="template-02-inner template-02-inner-green" id="template-02-chart-2-green"></div>
 							<div class="template-02-inner template-02-inner-red" id="template-02-chart-2-red"></div>
@@ -103,15 +107,15 @@
 							<div class="template-02-inner template-02-inner-total" id="template-02-chart-2-total"></div>
 							<div class="template-02-inner template-02-inner-image" id="template-02-chart-2-image">
 								<img src="img/hero-portraits/puck.png" >
-								
+
 							</div>
-							
+
 							<div class="template-02-text">
 								<span class="green" id="template-02-chart-1-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-2-text-ban">32%</span><br>
 								<p class="template-02-text-lg" id="template-02-chart-2-text-total"> 82%</p>
 							</div>
 						</div>
-						
+
 						<div class="col-md-3 template-02-chart" id="template-02-chart-3">
 							<div class="template-02-inner template-02-inner-green" id="template-02-chart-3-green"></div>
 							<div class="template-02-inner template-02-inner-red" id="template-02-chart-3-red"></div>
@@ -119,9 +123,9 @@
 							<div class="template-02-inner template-02-inner-total" id="template-02-chart-3-total"></div>
 							<div class="template-02-inner template-02-inner-image" id="template-02-chart-3-image">
 								<img src="img/hero-portraits/lina.png" >
-								
+
 							</div>
-							
+
 							<div class="template-02-text">
 								<span class="green" id="template-02-chart-3-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-3-text-ban">32%</span><br>
 								<p class="template-02-text-lg" id="template-02-chart-3-text-total"> 82%</p>
@@ -130,14 +134,14 @@
 					</div>
 					<br><br>
 					<button id="debug" class="btn btn-success" onclick="calculateChart(0.2,0.4,'template-02-chart-1'); calculateChart(0.3,0.5,'template-02-chart-2'); calculateChart(0.2,0.7,'template-02-chart-3');">Cla</button>
-					
+
 				</div>
-				
-				<!--half section-->
+
+				<!--TEMPLATE 1 HALF SECTION-->
 				<div class="container template-01 width-half">
 					<h3>Most Picked and Banned</h3>
 					<h4><span class="green">Pick</span> rate and <span class="red">Ban</span> rate</h4>
-					
+
 					<div class="row">
 						<div class="col-md-4">
 							<div class="template-01-win">84%</div>
@@ -158,7 +162,7 @@
 							<img src="img/hero-icons/puck.png" class="img-template-1 img-hero-portrait-circle">
 						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="col-md-4">
 							<canvas class="canvas-circle" id="icon-border-canvas-4" ></canvas>
@@ -181,12 +185,12 @@
 					</div>
 			</div>
 			<hr class="faded">
-			
-			
+
+
 		</div>
-		
-		
-		<!--footer section-->
+
+
+		<!--FOOTER SECTION-->
 		<div class="section footer container">
 			<div class="row">
 				<div class="col-md-3">
@@ -199,27 +203,50 @@
 					<img src="img/footer/ogre.png" class="avatar">
 				</div>
 			</div>
-			
-			
+
+
 		</div>
-		
+
+		<!--SIDEBAR-->
 		<div class="sidebar">
-			<div class="sidebar-column">
-				<div class="sidebar-menu">
-				</div>
-			
+			<!--MENU-->
+			<div class="sidebar-menu">
+						<div class="sidebar-menu-item sidebar-menu-item-selected" id="sidebar-1">
+							Sections
+						</div><!--
+						--><div class="sidebar-menu-item" id="sidebar-2">
+							Palette
+						</div>
+			</div>
+
+
+
+			<!--SIDEBAR SECTIONS-->
+			<div class="sidebar-column" id="sidebar-1-column">
+
 				<div class="sidebar-item">
-				<button class="btn-minimize"><span class="glyphicon glyphicon-menu-up"></span></button>
-				Section  1
-				<div class="sidebar-item">
-				subitem
+					Section  1
+					<div class="sidebar-item">
+						template 1
+					</div>
+					<div class="sidebar-item">template 2
+					</div>
+					<div class="sidebar-add-item">
+						Add template
+					</div>
 				</div>
-				</div>
-				
-				<div class="sidebar-item sidebar-add-item">
-					+ New Section
+
+				<!--ADD SECTION-->
+				<div class="sidebar-add-item">
+					ADD SECTION
 				</div>
 			</div>
+
+			<!--SIDEBAR PALETTE-->
+			<div class="sidebar-column" id="sidebar-2-column">
+					paleted here
+			</div>
+
 		</div>
 	</body>
 </html>

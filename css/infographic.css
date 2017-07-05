@@ -1,20 +1,38 @@
 :root{
-    --primary:#00c0ff; /*blue*/
-	--secondary:#ff4a08; /*orange*/
-	--green:#85ea01;
-	--red:#e30000;
+  --primary:#00c0ff; /*blue*/
+	--secondary:#ff4200; /*orange*/
+	--green:#78d400;
+	--red:#d70005;
 	--white:#fff;
 	--background:#000;
-	--wr-green: #5ca202;
+  --border:rgba(255,255,255,0.4);
 }
 
 @font-face {
     font-family: radiance-bold;
-    src: url(fonts/radiance-bold.tff);
-	
+    src: url(../fonts/radiance-bold.ttf);
+
 	font-family: radiance;
-    src: url(fonts/radiance.tff);
+    src: url(../fonts/radiance.ttf);
 }
+
+html {
+  background: url("../img/backgrounds/1.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  height: 100%;
+}
+
+body
+{
+  margin-top:30px;
+  background: none;
+  font-weight:bold;
+}
+
 
 
 .body-container
@@ -102,19 +120,10 @@ h2
 }
 
 
-@media screen and (max-width: 720px) 
-{ 
+@media screen and (max-width: 720px)
+{
 	.body-container
 	{
 		width:100%;
 	}
-} 
-
-
-
-body
-{
-  background-color: white;
-  font-weight:bold;
 }
-

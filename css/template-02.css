@@ -17,8 +17,8 @@
 	position: relative;
 	z-index:2;
 	margin:0px;
-	margin-left:92px;
-	width:8px;
+	margin-left:100px;
+	width:7px;
 	padding:0px;
 	height:180px;
 	opacity:1;
@@ -26,7 +26,7 @@
 
 .template-02-inner-green
 {
-	background-color: var(--wr-green);
+	background-color: var(--green);
 	margin-top:0px; /*inner red height *=-1*/
 }
 
@@ -38,9 +38,9 @@
 
 .template-02-inner-empty
 {
-	background-color: var(--white);
+	background-color: var(--border);
 	margin-top:-180px; /*inner green height *=-1*/
-	opacity:0.7;
+	width:10px;
 }
 
 .template-02-inner-image
@@ -49,15 +49,14 @@
 	z-index:1;
 	opacity:1;
 	margin-left:0px;
-	
 }
 
-.template-02-inner-image img 
+.template-02-inner-image img
 {
 	height:100%;
 	object-fit: cover;
-	object-position: -20px 10px;
-	width:92px;
+	object-position: -10px 0px;
+	width:100px;
 	background: rgba(0,0,0,1);
 }
 
@@ -70,14 +69,14 @@
 .template-02-inner-total
 {
 	margin-top:-180px;
-	margin-left:100px;
-	width:2px;
-	background-color:var(--primary);
+	margin-left:107px;
+	width:3px;
+	background-color:var(--secondary);
 }
 
 .template-02-text-lg
 {
 	font-size:24px;
 	margin-top:-5px;
-	color: var(--primary);
+	color: var(--secondary);
 }

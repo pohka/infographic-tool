@@ -34,7 +34,7 @@
     width: 308px;
     height: 0px;
     background: none;
-	border-bottom: solid 18px #fff;
+	border-bottom: solid 18px var(--border);
      border-right: solid 16px transparent;
     border-left: solid 16px transparent;
     border-top: solid 0 transparent;
@@ -43,7 +43,7 @@
 .inner-red
 {
     width: 300px;
-    
+
     top:2px;
     border-bottom: solid 14px var(--red);
 }
@@ -75,6 +75,6 @@
 {
     width: 150px; /*wr=0.5  (300)*wr */
     top:-12px;
-    border-bottom: solid 14px var(--wr-green);
+    border-bottom: solid 14px var(--green);
 	border-right: solid 0px transparent;
 }
