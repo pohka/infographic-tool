@@ -10,6 +10,7 @@
 	bottom: 0;
 	font-size: 18px;
 	font-weight:500;
+
 }
 
 
@@ -71,12 +72,36 @@
 	margin: 10px 6px;
 	margin-left: 12px;
 	display: none;
+	margin-bottom: 0px;
 }
 
 #sidebar-1-column
 {
 	display: block;
 }
+
+.section-list
+{
+	max-height:85%;
+	overflow-y: scroll;
+	margin-right: -6px;
+}
+
+.section-list::-webkit-scrollbar-track
+{
+	background-color: var(--border);
+}
+
+.section-list::-webkit-scrollbar
+{
+	width: 3px;
+}
+
+.section-list::-webkit-scrollbar-thumb
+{
+	background-color: var(--white);
+}
+
 
 .sidebar-item
 {
@@ -164,4 +189,14 @@
 {
 	margin-left: 20px;
 	width:100%;
+}
+
+.add-img-btn
+{
+	font-size: 16px;
+	margin-left: -30px;
+	margin-top: 2px;
+	padding:6px 6px;
+	border: 1px solid var(--primary);
+	border-left:2px solid var(--primary);
 }

@@ -81,12 +81,31 @@ $(document).on('input', '.input-number', function() {
   $(section_cls).html(val);
 });
 
+$(document).on('input', '.input-img', function() {
+    var inputText = $(this).val();
+    var id = $(this).attr("id");
+    var section_cls = "."+id.replace("-input","");
+    var src = "img/tournament/"+inputText+".png";
+    $(section_cls).attr("src", );
+});
+
 $(document).on('click', ".btn-minimize", function(){
   var id = $(this).attr("id");
   toggleShow(id);
 });
 
+$(document).on("click", ".add-img-btn", function(){
+  var this_id = $(this).attr("id").replace("-btn", "");
+  var imgName = $("#"+this_id+"-input").val();
+  var cls = "."+this_id;
+  setImg(cls, imgName);
+});
 
+function setImg(tag, imgName)
+{
+  var src = "img/tournament/"+imgName+".png";
+  $(tag).attr("src", src);
+}
 
 //adds the section and displays the templay browser
 function addSection(id)
@@ -104,7 +123,7 @@ function addSection(id)
 
   current_section_index+=1;
 
-  $(id).before(sectionHtml);
+  $(".section-list").append(sectionHtml);
 }
 
 //triggered one a template was selected
@@ -145,7 +164,7 @@ function addSidebarButtons()
 function getInputFieldsHtml(template_name)
 {
   var html="<div class='"+template_name+"-input'>";
-  var endhtml ="</div>";
+  var endDiv ="</div>";
   for(var i = 0; i < template_fields.length; i++) {
     var row_of_fields = template_fields[i];
     if(row_of_fields[0]==template_name)
@@ -167,12 +186,19 @@ function getInputFieldsHtml(template_name)
           str = str.replace(/-/g, ' ');
           str = str.toTitleCase();
 
-          html+='<input type="text" class="input'+input_type+'" id="'+row_of_fields[j]+'-input" placeholder="'+str+'">';
+          html+='<input type="text" class="input'+input_type+'"'+
+          ' id="'+row_of_fields[j]+'-input" placeholder="'+str+'">';
+
+          if(input_type=="-img")
+          {
+            html+="<span class='sidebar-btn add-img-btn glyphicon glyphicon glyphicon-plus' "+
+            "id='"+row_of_fields[j]+"-btn'> </span>";
+          }
       }
-      return html + endhtml;
+      return html + endDiv;
     }
   }
-  return html + endhtml;
+  return html + endDiv;
 }
 
 //returns the value of this input field as a number
