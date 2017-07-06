@@ -18,7 +18,7 @@ var template_fields_number =[
 ];
 
 var template_fields_img =[
-  ["tournament", "tournament-logo"]
+  ["tournament", "tournament-radiant-winrate"]
 ];
 
 
