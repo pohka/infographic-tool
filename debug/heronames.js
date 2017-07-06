@@ -42,9 +42,12 @@ ray.sort();
 var final ="";
 for (var i = 0; i < ray.length; i++)
   {
-    final+='"'+ray[i]+'"';
-    if(i!=0 && i!=ray.length-1)
-      final+=",\n"
+    if(i>0)
+    {
+      final+='"'+ray[i]+'"';
+      if(i!=ray.length-1)
+        final+=",\n"
+    }
   }
 
 console.log(final);
