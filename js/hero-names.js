@@ -1,4 +1,4 @@
-var heroNames = [
+var hero_names = [
   "abaddon",
   "alchemist",
   "ancient_apparition",

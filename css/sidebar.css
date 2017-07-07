@@ -200,3 +200,9 @@
 	border: 1px solid var(--primary);
 	border-left:2px solid var(--primary);
 }
+
+.ui-menu-item
+{
+	background-color: var(--background);
+	color: var(--white);
+}
