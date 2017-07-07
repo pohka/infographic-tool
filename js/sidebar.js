@@ -107,7 +107,7 @@ $(document).on("click", ".add-img-btn", function(){
 });
 
 //inputing a hero name with autocomplete
-$(document).on('keydown.autocomplete', ".input-hero", function() {
+$(document).on('keydown.autocomplete', ".input-hero-icons", function() {
   var id = $(this).attr("id");
     $(this).autocomplete({
       source: hero_names,
@@ -117,13 +117,58 @@ $(document).on('keydown.autocomplete', ".input-hero", function() {
 
 //triggered when a hero name is selected from the autocomplete
 //sets the image of the hero from the specified folder
-$(document).on('autocompleteselect', ".input-hero", function(event, ui) {
+$(document).on('autocompleteselect', ".input-hero-icons", function(event, ui) {
   var section_class = $(this).attr("id").replace("-input","");
   var hero = ui.item.value;
   var folder = "img/" + $(this).data("folder");
   var src = folder + "/" + hero + ".png";
   $("."+section_class).attr("src", src);
 });
+
+//moving hero icon
+$(document).on("click", ".move-hero-icon ", function(){
+  var direction = $(this).data("direction");
+
+  var moveAmount=2;
+  if(direction=="left")
+  {
+    moveAmount*=-1;
+  }
+
+  var section_class =  $(this).attr("id");
+
+  console.log(section_class+"|move:" + moveAmount);
+  //var pos = $("."+section_class).position();
+  //pos.left+=moveAmount;
+  //console.log("posleft:" + pos.left);
+  //  $("."+section_class).position(pos);
+
+  var positionStr = $("."+section_class).css("object-position");
+  //offset.left+=moveAmount;
+  var elements = positionStr.split(" ");
+
+  var positions = [];
+  for(var i=0; i<elements.length; i++)
+  {
+    if(elements[i].indexOf("px"))
+    {
+      var num = elements[i].replace("px");
+      var num = num.replace("undefined","");
+      positions.push(Number(num));
+    }
+  }
+
+  positions[0]+=moveAmount;
+
+  var posAsStr = positions[0]+"px";
+
+  $("."+section_class).css("object-position", posAsStr);
+
+  // $("."+section_class).css("object-position",
+  // {positions[0], positions[1]});
+
+});
+
 
 //sets the image
 function setImg(tag, imgName)
@@ -184,6 +229,7 @@ function getInputFieldsHtml(template_name)
   var num_input_index=0;
   var data = "";
   var cls = "";
+  var input_type="";
 
   var html="<div class='"+template_name+"-input'>";
   var endDiv ="</div>";
@@ -196,8 +242,7 @@ function getInputFieldsHtml(template_name)
       for(var j = 1; j < row_of_fields.length; j++) {
           data="";
           cls="";
-
-          var input_type="";
+          input_type="";
 
           if(isFieldType(template_name, row_of_fields[j], template_fields_number))
           {
@@ -205,7 +250,6 @@ function getInputFieldsHtml(template_name)
             num_input_index+=1;
             cls=" template-01-input-field ";
             data += 'data-index="'+num_input_index+'" ';
-            console.log("data:" + data);
           }
           else if(isFieldType(template_name, row_of_fields[j], template_fields_img))
           {
@@ -213,7 +257,7 @@ function getInputFieldsHtml(template_name)
           }
           else if(isFieldType(template_name, row_of_fields[j], template_fields_hero_icons))
           {
-            input_type="-hero";
+            input_type="-hero-icons";
             data += 'data-folder="hero-icons" ';
           }
 
@@ -225,10 +269,18 @@ function getInputFieldsHtml(template_name)
           html+='<input type="text" class="input'+input_type+cls+'"'+
           ' id="'+row_of_fields[j]+'-input" ' + data +' placeholder="'+str+'">';
 
+          //extra html
           if(input_type=="-img")
           {
             html+="<span class='sidebar-btn add-img-btn glyphicon glyphicon glyphicon-plus' "+
             "id='"+row_of_fields[j]+"-btn'> </span>";
+          }
+          else if(input_type=="-hero-icons")
+          {
+            html+="<button class='sidebar-btn glyphicon move-hero-icon glyphicon-chevron-left' "+
+            "id='"+row_of_fields[j]+"' data-direction='left'></button>";
+            html+="<button class='sidebar-btn move-hero-icon glyphicon glyphicon-chevron-right' "+
+            "id='"+row_of_fields[j]+"' data-direction='right'></button>";
           }
       }
       return html + endDiv;

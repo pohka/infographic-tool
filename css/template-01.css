@@ -4,7 +4,7 @@
 	border: 2px solid var(--border);
 
 	object-fit: cover;
-	object-position: -40px 0px;
+	object-position:-40px 0px;
 }
 
 

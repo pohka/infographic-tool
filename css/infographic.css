@@ -144,3 +144,8 @@ h2
 		width:100%;
 	}
 }
+
+button
+{
+  background-color: var(--background);
+}

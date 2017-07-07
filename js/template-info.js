@@ -17,12 +17,12 @@ var template_fields = [
   ],
   [
     "template-01", "template-01-title", "template-01-sub-title",
-    "template-01-pick-rate-1", "template-01-pick-1-hero-icon",
-    "template-01-pick-rate-2", "template-01-pick-2-hero-icon",
-    "template-01-pick-rate-3", "template-01-pick-3-hero-icon",
-    "template-01-ban-rate-1", "template-01-ban-1-hero-icon",
-    "template-01-ban-rate-2", "template-01-ban-2-hero-icon",
-    "template-01-ban-rate-3", "template-01-ban-3-hero-icon"
+    "template-01-pick-1-hero-icon", "template-01-pick-rate-1",
+    "template-01-pick-2-hero-icon", "template-01-pick-rate-2",
+    "template-01-pick-3-hero-icon", "template-01-pick-rate-3",
+    "template-01-ban-1-hero-icon", "template-01-ban-rate-1",
+    "template-01-ban-2-hero-icon", "template-01-ban-rate-2",
+    "template-01-ban-3-hero-icon", "template-01-ban-rate-3"
   ]
 
 ];
