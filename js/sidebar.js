@@ -21,10 +21,16 @@ $(document).ready(function(){
     });
   });
 
-  $(".sidebar-add-section").click(function(){
+  //SUB MENU ITEMS
+  $("#sidebar-add-section").click(function(){
     addSection($(this));
   });
 
+  $("#sidebar-hide-sections").click(function(){
+    hideAllSections();
+  });
+
+  //TEMPLATE BROWSER
   $(".browser-menu-item").click(function() {
     var id = $(this).attr("id");
     if(id=="template-full")
@@ -39,7 +45,7 @@ $(document).ready(function(){
     }
   });
 
-  //called when template is selected
+  //called when a template is selected
   //adds the template to the section
   $(".sidebar-browser-template").click(function(){
 
@@ -57,7 +63,6 @@ $(document).ready(function(){
       }
     });
   });
-
 });
 
 /*
@@ -95,7 +100,7 @@ $(document).on('input', '.input-img', function() {
 //when a minimze button is clicked
 $(document).on('click', ".btn-minimize", function(){
   var id = $(this).attr("id");
-  toggleShow(id);
+  toggleShow(id, false);
 });
 
 //when the image add button is clicked
@@ -137,14 +142,9 @@ $(document).on("click", ".move-hero-icon ", function(){
 
   var section_class =  $(this).attr("id");
 
-  console.log(section_class+"|move:" + moveAmount);
-  //var pos = $("."+section_class).position();
-  //pos.left+=moveAmount;
-  //console.log("posleft:" + pos.left);
-  //  $("."+section_class).position(pos);
-
   var positionStr = $("."+section_class).css("object-position");
-  //offset.left+=moveAmount;
+
+  //parse object-position string
   var elements = positionStr.split(" ");
 
   var positions = [];
@@ -159,14 +159,9 @@ $(document).on("click", ".move-hero-icon ", function(){
   }
 
   positions[0]+=moveAmount;
-
   var posAsStr = positions[0]+"px";
 
   $("."+section_class).css("object-position", posAsStr);
-
-  // $("."+section_class).css("object-position",
-  // {positions[0], positions[1]});
-
 });
 
 
@@ -314,9 +309,8 @@ function isFieldType(template_name, field_name, field_type)
 }
 
 //toggle visibility of input fields
-function toggleShow(id)
+function toggleShow(id, forceMinimize)
 {
-  console.log("btn-id:"+id);
   var hideClas="";
   if(id.indexOf("section-") >=0)
   {
@@ -330,7 +324,7 @@ function toggleShow(id)
   var isVisible = $(hideCls).is(":visible");
   var minibtn = "."+id+"-minibtn";
 
-  if(isVisible)
+  if(isVisible || forceMinimize)
   {
     $(hideCls).hide();
     $(minibtn).removeClass("glyphicon-menu-down");
@@ -342,5 +336,17 @@ function toggleShow(id)
     $(minibtn).removeClass("glyphicon-menu-right");
     $(minibtn).addClass('glyphicon-menu-down');
   }
+
+}
+
+function hideAllSections()
+{
+  $(".btn-minimize").each(function(index, el) {
+    var id = $(this).attr("id");
+    var isSectionBtn = id.indexOf("section-")>=0;
+    if(isSectionBtn)
+      toggleShow(id, true);
+  });
+  //if id contains "section-"
 
 }

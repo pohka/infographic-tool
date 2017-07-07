@@ -2,7 +2,7 @@
   --primary:#00c0ff; /*blue*/
 	--secondary:#ff4200; /*orange*/
 	--green:#78d400;
-	--red:#d70005;
+	--red:#ff0006;
 	--white:#fff;
 	--background:#000;
   --border:rgba(255,255,255,0.4);
@@ -115,6 +115,11 @@ h4
 {
 	color: var(--white);
 	font-size:15px;
+}
+
+h1,h2,h3,h4
+{
+  font-weight: bold;
 }
 
 h2

@@ -151,43 +151,49 @@
 
 					<div class="row">
 						<div class="col-md-4">
-							<div class="template-01-pick"><span class="template-01-pick-rate-1 template-01-input-field">84</span>%</div>
+							<div class="template-01-pick">
+								<span class="template-01-pick-rate-1 template-01-input-field">0</span>%
+							</div>
 							<canvas class="canvas-circle" id="template-01-canvas-1" ></canvas>
-							<script>arc(85, "template-01-canvas-1",true);</script>
-							<img src="img/hero-icons/pudge.png" class="img-template-1 img-hero-portrait-circle template-01-pick-1-hero-icon">
+							<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-pick-1-hero-icon">
 						</div>
 						<div class="col-md-4">
-							<div class="template-01-pick"><span class="template-01-pick-rate-2 template-01-input-field">84</span>%</div>
+							<div class="template-01-pick">
+								<span class="template-01-pick-rate-2 template-01-input-field">0</span>%
+							</div>
 							<canvas class="canvas-circle" id="template-01-canvas-2" ></canvas>
-							<script>arc(65, "template-01-canvas-2",true);</script>
-							<img src="img/hero-icons/io.png" class="img-template-1 img-hero-portrait-circle template-01-pick-2-hero-icon">
+							<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-pick-2-hero-icon">
 						</div>
 						<div class="col-md-4">
-							<div class="template-01-pick"><span class="template-01-pick-rate-3 template-01-input-field">84</span>%</div>
+							<div class="template-01-pick">
+								<span class="template-01-pick-rate-3 template-01-input-field">0</span>%
+							</div>
 							<canvas class="canvas-circle" id="template-01-canvas-3" ></canvas>
-							<script>arc(33, "template-01-canvas-3",true);</script>
-							<img src="img/hero-icons/puck.png" class="img-template-1 img-hero-portrait-circle template-01-pick-3-hero-icon">
+							<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-pick-3-hero-icon">
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-md-4">
 							<canvas class="canvas-circle" id="template-01-canvas-4" ></canvas>
-							<script>arc(0.55, "template-01-canvas-4",false);</script>
-							<img src="img/hero-icons/clockwerk.png" class="img-template-1 img-hero-portrait-circle template-01-ban-1-hero-icon">
-							<div class="template-01-ban"><span class="template-01-ban-rate-1 template-01-input-field">84</span>%</div>
+							<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-ban-1-hero-icon">
+							<div class="template-01-ban">
+								<span class="template-01-ban-rate-1 template-01-input-field">0</span>%
+							</div>
 						</div>
 						<div class="col-md-4">
 							<canvas class="canvas-circle" id="template-01-canvas-5" ></canvas>
-							<script>arc(0.43, "template-01-canvas-5",false);</script>
-							<img src="img/hero-icons/nyx_assassin.png" class="img-template-1 img-hero-portrait-circle template-01-ban-2-hero-icon">
-							<div class="template-01-ban"><span class="template-01-ban-rate-2 template-01-input-field">84</span>%</div>
+							<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-ban-2-hero-icon">
+							<div class="template-01-ban">
+								<span class="template-01-ban-rate-2 template-01-input-field">0</span>%
+							</div>
 						</div>
 						<div class="col-md-4">
 							<canvas class="canvas-circle" id="template-01-canvas-6" ></canvas>
-							<script>arc(0.38, "template-01-canvas-6",false);</script>
-							<img src="img/hero-icons/night_stalker.png" class="img-template-1 img-hero-portrait-circle template-01-ban-3-hero-icon">
-							<div class="template-01-ban"><span class="template-01-ban-rate-3 template-01-input-field">84</span>%</div>
+							<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-ban-3-hero-icon">
+							<div class="template-01-ban">
+								<span class="template-01-ban-rate-3 template-01-input-field">0</span>%
+							</div>
 						</div>
 					</div>
 			</div>
@@ -218,22 +224,27 @@
 		<div class="sidebar">
 			<!--MENU-->
 			<div class="sidebar-menu">
-						<div class="sidebar-btn sidebar-menu-item sidebar-menu-item-selected " id="sidebar-1">
+						<button class="sidebar-btn sidebar-menu-item sidebar-menu-item-selected " id="sidebar-1">
 							Sections
-						</div><!--
-						--><div class="sidebar-btn sidebar-menu-item" id="sidebar-2">
+						</button><!--
+						--><button class="sidebar-btn sidebar-menu-item" id="sidebar-2">
 							Palette
-						</div>
+						</button>
 			</div>
 
 
 
 		<!--SIDEBAR SECTIONS-->
 		<div class="sidebar-column" id="sidebar-1-column">
+			<!--HIDE SECTIONS-->
+			<button class="sidebar-btn sidebar-sub-menu" id="sidebar-hide-sections">
+				<span class="glyphicon glyphicon glyphicon glyphicon-eject sidebar-menu-glyph"></span>
+			</button>
 			<!--ADD SECTION-->
-			<div class="sidebar-btn sidebar-add sidebar-add-section">
-				ADD SECTION
-			</div>
+			<button class="sidebar-btn sidebar-sub-menu" id="sidebar-add-section">
+				<span class="glyphicon glyphicon-plus sidebar-menu-glyph"></span>
+			</button>
+
 
 			<div class="section-list"></div>
 		</div>
@@ -244,7 +255,7 @@
 		</div>
 
 
-		<!--MODAL-->
+		<!--TEMPLATE BROWSER-->
 		<div class="sidebar-browser">
 					Templates
 					<hr class="primary">
@@ -272,4 +283,6 @@
 					</div>
 		</div>
 	</body>
+
+	<div id="img-out"></div>
 </html>

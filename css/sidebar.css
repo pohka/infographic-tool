@@ -18,8 +18,10 @@
 .sidebar-menu
 {
 	background-color: var(--background);
-	border-bottom: 1px solid var(--primary);
-	text-transform: uppercase;
+	margin-left: -1px;
+	margin-right: -1px;
+	margin-top: -1px;
+
 	font-weight:bold;
 }
 
@@ -32,6 +34,7 @@
 	width:50%;
 	background-color: rgba(255,255,255,0.1);
 	cursor:pointer;
+
 }
 
 .sidebar-menu-item-selected
@@ -41,7 +44,7 @@
 
 .sidebar-btn
 {
-
+	border: 1px solid var(--primary);
 }
 
 .sidebar-btn:hover
@@ -116,16 +119,17 @@
 }
 
 
-.sidebar-add
+.sidebar-sub-menu
 {
 	text-align:center;
-	padding: 4px 0px;
-	font-size: 16px;
-	margin: 30px 40px;
+	padding: 12px 14px;
+	padding-bottom: 14px;
+	font-size: 14px;
+	margin: auto;
 	margin-bottom: 10px;
 	border: 1px solid var(--primary);
 	font-weight: bold;
-	text-transform: uppercase;
+
 }
 
 .sidebar-browser
@@ -218,7 +222,6 @@
 	font-size: 16px;
 	padding: 6px 2px;
 	height:31px;
-	border: 1px solid var(--primary);
 }
 
 .move-hero-icon:focus
