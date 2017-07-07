@@ -63,6 +63,33 @@ $(document).ready(function(){
       }
     });
   });
+
+  //PALETTE
+  $('#color-blind').click(function() {
+    var checked = $(this).prop('checked');
+
+    if(checked)
+    {
+      $(":root").css("--green", "#a4beff");
+      $(":root").css("--red", "#0048ff");
+      $(":root").css("--secondary", "#f6f9ff");
+    }
+    else
+    {
+      var green = $(":root").css("--green_const");
+      var red = $(":root").css("--red_const");
+      var secondary = $(":root").css("--secondary_const");
+      $(":root").css("--green", green);
+      $(":root").css("--red", red);
+      $(":root").css("--secondary", secondary);
+    }
+
+    //redraws all canvases
+    $(".input-number").each(function(){
+      $(this).trigger('input');
+    });
+  });
+
 });
 
 /*
@@ -347,6 +374,4 @@ function hideAllSections()
     if(isSectionBtn)
       toggleShow(id, true);
   });
-  //if id contains "section-"
-
 }

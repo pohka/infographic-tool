@@ -15,6 +15,8 @@
 
 
 
+
+
 .sidebar-menu
 {
 	background-color: var(--background);
@@ -212,7 +214,7 @@
 	color: var(--white);
 }
 
-.input-hero-icons
+input.input-hero-icons
 {
 	width:250px;
 }

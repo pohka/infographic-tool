@@ -7,6 +7,11 @@
 	--background:#000;
   --border:rgba(255,255,255,0.4);
   --primary-faded:rgba(0,192,255,0.3);
+
+  /*non-color blind colors, should remain constant*//
+  --secondary_const:#ff4200; /*orange*/
+  --green_const:#78d400;
+  --red_const:#ff0006;
 }
 
 @font-face {
@@ -34,7 +39,7 @@ body
   font-weight:bold;
 }
 
-input
+input[type=text]
 {
   background-color: inherit;
   border: 1px solid var(--primary);
@@ -154,3 +159,30 @@ button
 {
   background-color: var(--background);
 }
+
+/*check box*/
+label {
+  display: inline-block;
+	border-radius: 0%;
+  border: 1px solid var(--white);
+  width: 1em;
+  height: 1em;
+	margin-bottom:-2px;
+	margin-right: 8px;
+}
+
+label:hover
+{
+	border-color: var(--primary);
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+
+input[type=checkbox]:checked + label {
+  background-color: var(--primary)
+}
+
+/*end of checkbox*/

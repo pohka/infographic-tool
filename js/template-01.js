@@ -21,7 +21,7 @@ function arc(percent, canvasID, isGreen)
 	var canvas = document.getElementById(canvasID);
 	var context = canvas.getContext('2d');
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	
+
 	var lineW =14;
 
 	var x = (canvas.width / 2);
@@ -40,9 +40,9 @@ function arc(percent, canvasID, isGreen)
 	// line color
 	var lineColor;
 	if(isGreen)
-		lineColor="#5ca202"; //green
+		lineColor= $(":root").css("--green"); //green
 	else
-		lineColor = "#e30000"; //red
+		lineColor = $(":root").css("--red"); //red
 
 
 	context.strokeStyle = lineColor;
