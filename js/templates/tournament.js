@@ -62,7 +62,5 @@ $(document).on('click', '#tournament', function(){
 
     var combinedHtml = html = $.parseHTML(openingHtml + html + closingHtml);
 
-    console.log(combinedHtml);
-
     $(".body-container").append(combinedHtml);
 });
