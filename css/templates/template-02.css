@@ -49,6 +49,7 @@
 	z-index:1;
 	opacity:1;
 	margin-left:0px;
+
 }
 
 .template-02-inner-image img
@@ -63,6 +64,7 @@
 .template-02-text
 {
 	margin-top:6px;
+	margin-left: 20px;
 	font-size:16px;
 }
 
@@ -79,4 +81,12 @@
 	font-size:24px;
 	margin-top:-5px;
 	color: var(--secondary);
+}
+
+.template-02-underline
+{
+	border-bottom: 2px solid var(--secondary);
+	border-left: 100px solid transparent;
+	margin-right: -20px;
+	margin-left: 5px;
 }

@@ -67,22 +67,14 @@ $(document).ready(function(){
   //PALETTE
   $('#color-blind').click(function() {
     var checked = $(this).prop('checked');
+    var postfix;
 
     if(checked)
-    {
-      $(":root").css("--green", "#a4beff");
-      $(":root").css("--red", "#0048ff");
-      $(":root").css("--secondary", "#f6f9ff");
-    }
+      postfix="_blind";
     else
-    {
-      var green = $(":root").css("--green_const");
-      var red = $(":root").css("--red_const");
-      var secondary = $(":root").css("--secondary_const");
-      $(":root").css("--green", green);
-      $(":root").css("--red", red);
-      $(":root").css("--secondary", secondary);
-    }
+      postfix="_const";
+
+    setColors(postfix);
 
     //redraws all canvases
     $(".input-number").each(function(){
@@ -139,7 +131,7 @@ $(document).on("click", ".add-img-btn", function(){
 });
 
 //inputing a hero name with autocomplete
-$(document).on('keydown.autocomplete', ".input-hero-icons", function() {
+$(document).on('keydown.autocomplete', ".input-hero", function() {
   var id = $(this).attr("id");
     $(this).autocomplete({
       source: hero_names,
@@ -149,7 +141,7 @@ $(document).on('keydown.autocomplete', ".input-hero-icons", function() {
 
 //triggered when a hero name is selected from the autocomplete
 //sets the image of the hero from the specified folder
-$(document).on('autocompleteselect', ".input-hero-icons", function(event, ui) {
+$(document).on('autocompleteselect', ".input-hero", function(event, ui) {
   var section_class = $(this).attr("id").replace("-input","");
   var hero = ui.item.value;
   var folder = "img/" + $(this).data("folder");
@@ -158,7 +150,7 @@ $(document).on('autocompleteselect', ".input-hero-icons", function(event, ui) {
 });
 
 //moving hero icon
-$(document).on("click", ".move-hero-icon ", function(){
+$(document).on("click", ".move-hero ", function(){
   var direction = $(this).data("direction");
 
   var moveAmount=2;
@@ -270,7 +262,7 @@ function getInputFieldsHtml(template_name)
           {
             input_type = "-number";
             num_input_index+=1;
-            cls=" template-01-input-field ";
+            cls=" "+row_of_fields[0]+"-input-field ";
             data += 'data-index="'+num_input_index+'" ';
           }
           else if(isFieldType(template_name, row_of_fields[j], template_fields_img))
@@ -279,8 +271,13 @@ function getInputFieldsHtml(template_name)
           }
           else if(isFieldType(template_name, row_of_fields[j], template_fields_hero_icons))
           {
-            input_type="-hero-icons";
+            input_type="-hero";
             data += 'data-folder="hero-icons" ';
+          }
+          else if(isFieldType(template_name, row_of_fields[j], template_fields_hero_portrait))
+          {
+            input_type="-hero";
+            data += 'data-folder="hero-portraits" ';
           }
 
 
@@ -297,11 +294,11 @@ function getInputFieldsHtml(template_name)
             html+="<span class='sidebar-btn add-img-btn glyphicon glyphicon glyphicon-plus' "+
             "id='"+row_of_fields[j]+"-btn'> </span>";
           }
-          else if(input_type=="-hero-icons")
+          else if(input_type=="-hero")
           {
-            html+="<button class='sidebar-btn glyphicon move-hero-icon glyphicon-chevron-left' "+
+            html+="<button class='sidebar-btn glyphicon move-hero glyphicon-chevron-left' "+
             "id='"+row_of_fields[j]+"' data-direction='left'></button>";
-            html+="<button class='sidebar-btn move-hero-icon glyphicon glyphicon-chevron-right' "+
+            html+="<button class='sidebar-btn move-hero glyphicon glyphicon-chevron-right' "+
             "id='"+row_of_fields[j]+"' data-direction='right'></button>";
           }
       }

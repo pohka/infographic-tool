@@ -1,9 +1,51 @@
+$(document).on('input', '.template-02-input-field', function() {
+	var val= getNumberInput(this)
+	var percent = val.clamp(100,0);
+	var id = $(this).attr("id");
 
 
+	//parse id for required values
+	var index;
+
+	if(id.indexOf("1-input")>=0)
+		index = 1;
+	else if(id.indexOf("2-input")>=0)
+		index = 2;
+	else
+		index = 3;
+
+	var chartID =  "template-02-chart-"+index;
+	var pickRate=0;
+	var banRate=0;
+	var isPick = id.indexOf("pick")>=0;
+	var otherID;
+
+	if(isPick)
+	{
+		pickRate = percent;
+		otherID = id.replace("pick","ban");
+		var otherVal = getNumberInput("#"+otherID);
+		banRate = otherVal.clamp(100,0);
+	}
+	else
+	{
+		banRate = percent;
+		otherID = id.replace("ban","pick");
+		var otherVal = getNumberInput("#"+otherID);
+		pickRate = otherVal.clamp(100,0);
+	}
+
+	calculateChart(pickRate/100, banRate/100, chartID);
+});
 
 //pickRate and banRate are 0-1 values
 function calculateChart(pickRate, banRate, id)
 {
+	console.log("pickRate:"+ pickRate + " banRate:" + banRate + " id:" + id);
+
+	if(banRate==0)
+		banRate=0.0000000001; //this fixes a css problem
+
 	var chartH=180;
 	var total = pickRate+banRate;
 	var emptyRate= (1-pickRate-banRate);
@@ -16,6 +58,7 @@ function calculateChart(pickRate, banRate, id)
 	var pickMargin = chartH*(1-pickRate);
 	var banMargin = chartH*(1-banRate)-chartH-pickH;
 	var emptyMargin = chartH*(1-emptyRate)-chartH-banH;
+
 	var totalMargin = 0;
 	var imgMargin = -chartH;
 

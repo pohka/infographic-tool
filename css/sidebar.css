@@ -13,10 +13,6 @@
 
 }
 
-
-
-
-
 .sidebar-menu
 {
 	background-color: var(--background);
@@ -160,6 +156,7 @@
 	border:1px solid var(--primary-faded);
 	border-left:1px solid var(--primary);
 	text-transform: capitalize;
+	border:1px solid transparent;
 }
 
 .sidebar-browser-template img
@@ -214,19 +211,19 @@
 	color: var(--white);
 }
 
-input.input-hero-icons
+input.input-hero
 {
 	width:250px;
 }
 
-.move-hero-icon
+.move-hero
 {
 	font-size: 16px;
 	padding: 6px 2px;
 	height:31px;
 }
 
-.move-hero-icon:focus
+.move-hero:focus
 {
 	background-color: var(--border);
 }
