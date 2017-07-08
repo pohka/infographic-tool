@@ -292,8 +292,8 @@ function getInputFieldsHtml(template_name)
           //extra html
           if(input_type=="-img")
           {
-            html+="<span class='sidebar-btn add-img-btn glyphicon glyphicon glyphicon-plus' "+
-            "id='"+row_of_fields[j]+"-btn'> </span>";
+            html+="<button class='sidebar-btn add-img-btn glyphicon glyphicon glyphicon-plus' "+
+            "id='"+row_of_fields[j]+"-btn'> </button>";
           }
           else if(input_type=="-hero")
           {

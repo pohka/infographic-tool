@@ -197,6 +197,11 @@
 	border-left:2px solid var(--primary);
 }
 
+.add-img-btn:focus
+{
+	background-color: var(--border);
+}
+
 .ui-menu-item
 {
 	background-color: var(--background);
