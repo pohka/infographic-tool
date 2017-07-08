@@ -6,6 +6,7 @@
 	--white:#fff;
 	--background:#000;
   --border:rgba(255,255,255,0.4);
+  --primary_faded: rgba(0,192,255,0.4);
 
   /*non-color blind colors, should remain constant*/
   --primary_const:#00c0ff;

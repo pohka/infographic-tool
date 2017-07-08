@@ -32,12 +32,11 @@
 	width:50%;
 	background-color: rgba(255,255,255,0.1);
 	cursor:pointer;
-
 }
 
 .sidebar-menu-item-selected
 {
-	background-color: var(--primary-faded);
+	background-color: var(--primary_faded);
 }
 
 .sidebar-btn
@@ -106,7 +105,6 @@
 
 .sidebar-item
 {
-	border: 0px solid var(--primary-faded);
 	border-left: 2px solid var(--primary);
 	padding: 4px 6px;
 	margin-top: 5px;
@@ -153,10 +151,9 @@
 	margin:10px 6px;
 	padding-top: 2px;
 	font-size: 16px;
-	border:1px solid var(--primary-faded);
-	border-left:1px solid var(--primary);
 	text-transform: capitalize;
 	border:1px solid transparent;
+	min-height:70px;
 }
 
 .sidebar-browser-template img
@@ -176,11 +173,6 @@
 	width: 50%;
 	cursor:pointer;
 	text-transform: capitalize;
-}
-
-.sidebar-selected
-{
-	background-color: var(--primary-faded);
 }
 
 .template-split

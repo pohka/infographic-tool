@@ -1,6 +1,7 @@
 var current_section_index=0; //indexing for sections
 
 $(document).ready(function(){
+  genTemplateBrowserItems();
 
   //changing menu items
   $(".sidebar-menu-item").click(function(){

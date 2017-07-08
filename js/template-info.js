@@ -2,10 +2,10 @@
 
 //image file is same as name
 var template_info = [
-  ["tournament", "full"],
-  ["footer", "full"],
-  ["template-01", "split"],
-  ["template-02", "split"]
+  ["tournament", "full", "tournament"],
+  ["footer", "full", "footer"],
+  ["template-01", "split", "template 1"],
+  ["template-02", "split", "template 2"]
 ];
 
 var template_fields = [
