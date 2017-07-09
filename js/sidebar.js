@@ -55,6 +55,7 @@ $(document).ready(function(){
     var template_name = $(this).attr("id");
     var templateIndex = $(".sidebar-browser").data("template-index");
     var html = getTemplateHtml(template_name, id);
+    var templateClass = $(this).attr("id");
 
     //check to see if this template index exists
     //if it exists remove the current templete (true when editing)
@@ -62,6 +63,9 @@ $(document).ready(function(){
     $("."+id+"-template").each(function(){
       if($(this).data("template-index")==templateIndex)
       {
+
+        console.log("templateClass:" + templateClass);
+        $("."+templateClass).remove();
         $(this).remove();
       }
     });
@@ -252,7 +256,7 @@ function getTemplateHtml(template_name, id)
     '<div class="sidebar-item sidebar-template '+ cls +'" '+
     ' data-template-index="' + current_template_index +'">'+
      getSidebarButtonHtml(template_name)+ template_name +
-     getSetTemplateBtnHtml(id) +
+     getSetTemplateBtnHtml(id, template_name) +
      getInputFieldsHtml(template_name)+
     '</div>';
   return templateHtml;
@@ -268,13 +272,13 @@ function getSidebarButtonHtml(id)
   return buttonhtml;
 }
 
-function getSetTemplateBtnHtml(id)
+function getSetTemplateBtnHtml(id, template_name)
 {
   var sectionIndex = id.replace("section-", "");
 
   var buttonhtml =
     '<button class="btn-add-template sidebar-btn glyphicon glyphicon-edit"' +
-     'id="'+id+'-set"' +
+     'id="'+template_name+'-set"' +
      ' data-template-index="'+current_template_index+'" ' +
      ' data-section-index="'+sectionIndex+'"></button>';
   return buttonhtml;
