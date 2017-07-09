@@ -19,10 +19,10 @@ function genTemplateBrowserItems()
     var title = templateRow[2];
 
     var html =
-      '<div class="sidebar-btn sidebar-browser-template template-' + type +
+      '<button class="sidebar-btn sidebar-browser-template template-' + type +
       '" id="' + id + '">' +
       title +
-      '<img src="img/templates/' + id + '.png"></div>'; //preview img
+      '<img src="img/templates/' + id + '.png"></button>'; //preview img
 
     $(".sidebar-browser").append(html);
   }
