@@ -199,3 +199,10 @@ input[type=checkbox]:checked + label {
 }
 
 /*end of checkbox*/
+
+/*makes sure the auto complete does go behind text*//
+.ui-autocomplete {
+	position: absolute;
+	cursor: default;
+	z-index:9999 !important;
+}
