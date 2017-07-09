@@ -53,17 +53,30 @@ $(document).ready(function(){
 
     var id = $(".sidebar-browser").attr("id");
     var template_name = $(this).attr("id");
+    var templateIndex = $(".sidebar-browser").data("template-index");
+    var html = getTemplateHtml(template_name, id);
 
-    //find the currnet section
-    $(".sidebar-section").each(function(){
-      if(id==$(this).attr("id"))
+    //check to see if this template index exists
+    //if it exists remove the current templete (true when editing)
+    var templateIndex = $(".sidebar-browser").data("template-index");
+    $("."+id+"-template").each(function(){
+      if($(this).data("template-index")==templateIndex)
       {
-        var html = getTemplateHtml(template_name, id);
-        $(this).append(html);
-
-        $(".sidebar-browser").hide();
+        $(this).remove();
       }
     });
+  //  console.log("sidebar id:" + id);
+  //  console.log("template index:" + templateIndex);
+
+      $(".sidebar-section").each(function(){
+        if(id==$(this).attr("id"))
+        {
+          $(this).append(html);
+        }
+      });
+
+
+    $(".sidebar-browser").hide();
   });
 
   //PALETTE
@@ -134,15 +147,23 @@ $(document).on("click", ".add-img-btn", function(){
 
 //inputing a hero name with autocomplete
 $(document).on('keydown.autocomplete', ".input-hero", function() {
-  console.log("finding auto complete");
-
   var id = $(this).attr("id");
-
-  console.log("id:" + id);
     $(this).autocomplete({
       source: hero_names,
       minLength: 2
     });
+});
+
+//triggered when editing a template
+$(document).on('click', '.btn-add-template', function() {
+  var id = $(this).attr("id");
+  var templateID = id.replace("-set","");
+  var templateIndex = $(this).data("template-index");
+  var sectionID = "section-" + $(this).data("section-index");
+
+  $(".sidebar-browser").show();
+  $(".sidebar-browser").attr("id", sectionID);
+
 });
 
 //triggered when a hero name is selected from the autocomplete
@@ -200,10 +221,13 @@ function setImg(tag, imgName)
 //adds the section and displays the template browser
 function addSection(id)
 {
+  current_template_index=0;
+
   var sectionID = "section-"+current_section_index;
 
   $(".sidebar-browser").show();
   $(".sidebar-browser").attr("id", sectionID);
+  $(".sidebar-browser").data("template-index", current_template_index);
 
   var sectionHtml =
     '<div class="sidebar-item sidebar-section"'+
@@ -213,6 +237,7 @@ function addSection(id)
 
   current_section_index+=1;
 
+
   $(".section-list").append(sectionHtml);
 }
 
@@ -221,11 +246,13 @@ function addSection(id)
 function getTemplateHtml(template_name, id)
 {
   template_name = template_name.replace(/\s/g,'');
-  id+="-template";
+  cls=id+ "-template";
 
   var templateHtml=
-    '<div class="sidebar-item sidebar-template '+id+'">'+
-     getSidebarButtonHtml(template_name)+template_name+
+    '<div class="sidebar-item sidebar-template '+ cls +'" '+
+    ' data-template-index="' + current_template_index +'">'+
+     getSidebarButtonHtml(template_name)+ template_name +
+     getSetTemplateBtnHtml(id) +
      getInputFieldsHtml(template_name)+
     '</div>';
   return templateHtml;
@@ -236,8 +263,20 @@ function getSidebarButtonHtml(id)
 {
   var buttonhtml =
     '<button class="btn-minimize" id="'+id+'">'+
-    '<span class="'+id+'-minibtn glyphicon glyphicon-menu-down"></span>'+
+    '<span class="'+id+'-minibtn glyphicon glyphicon-menu-down"></span>' +
     '</button>';
+  return buttonhtml;
+}
+
+function getSetTemplateBtnHtml(id)
+{
+  var sectionIndex = id.replace("section-", "");
+
+  var buttonhtml =
+    '<button class="btn-add-template sidebar-btn glyphicon glyphicon-edit"' +
+     'id="'+id+'-set"' +
+     ' data-template-index="'+current_template_index+'" ' +
+     ' data-section-index="'+sectionIndex+'"></button>';
   return buttonhtml;
 }
 
