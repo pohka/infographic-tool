@@ -1,6 +1,5 @@
-var current_section_index = 0; //indexing for sections
-var current_template_index = 0;
-
+var current_section_index=0; //indexing for sections
+var current_template_index=0;
 
 $(document).ready(function(){
   genTemplateBrowserItems();
@@ -135,7 +134,11 @@ $(document).on("click", ".add-img-btn", function(){
 
 //inputing a hero name with autocomplete
 $(document).on('keydown.autocomplete', ".input-hero", function() {
+  console.log("finding auto complete");
+
   var id = $(this).attr("id");
+
+  console.log("id:" + id);
     $(this).autocomplete({
       source: hero_names,
       minLength: 2
@@ -209,7 +212,6 @@ function addSection(id)
     'Section Name</div>';
 
   current_section_index+=1;
-  current_template_index=0;
 
   $(".section-list").append(sectionHtml);
 }
@@ -222,8 +224,8 @@ function getTemplateHtml(template_name, id)
   id+="-template";
 
   var templateHtml=
-    '<div class="sidebar-item sidebar-template '+id+'" data-template-index="'+current_template_index+'">'+
-     getSidebarButtonHtml(template_name)+ template_name+
+    '<div class="sidebar-item sidebar-template '+id+'">'+
+     getSidebarButtonHtml(template_name)+template_name+
      getInputFieldsHtml(template_name)+
     '</div>';
   return templateHtml;

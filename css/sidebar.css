@@ -10,7 +10,7 @@
 	bottom: 0;
 	font-size: 18px;
 	font-weight:500;
-	z-index: 10000;
+	z-index: 100000;
 }
 
 .sidebar-menu
@@ -43,8 +43,6 @@
 {
 	border: 1px solid var(--primary);
 }
-
-
 
 .sidebar-btn:hover
 {
@@ -151,7 +149,7 @@
 
 .sidebar-browser-template
 {
-	margin:10px 2px;
+	margin:10px 6px;
 	padding-top: 2px;
 	font-size: 16px;
 	text-transform: capitalize;

@@ -155,6 +155,11 @@ h2
 }
 
 
+canvas
+{
+  width: 150px;
+}
+
 @media screen and (max-width: 720px)
 {
 	.body-container
