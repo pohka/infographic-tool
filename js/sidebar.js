@@ -60,18 +60,16 @@ $(document).ready(function(){
     //check to see if this template index exists
     //if it exists remove the current templete (true when editing)
     var templateIndex = $(".sidebar-browser").data("template-index");
-    $("."+id+"-template").each(function(){
+    $("."+id+"-template").each(function(){ //section-0-templete
       if($(this).data("template-index")==templateIndex)
       {
-
-        console.log("templateClass:" + templateClass);
-        $("."+templateClass).remove();
-        $(this).remove();
+        var templateID = $(".sidebar-browser").data("template-name");
+        $("."+templateID).remove(); //remove current templete in body-container
+        $(this).remove(); //remove input elements in sidebar
       }
     });
-  //  console.log("sidebar id:" + id);
-  //  console.log("template index:" + templateIndex);
 
+    //add new
       $(".sidebar-section").each(function(){
         if(id==$(this).attr("id"))
         {
@@ -99,6 +97,14 @@ $(document).ready(function(){
     $(".input-number").each(function(){
       $(this).trigger('input');
     });
+  });
+
+  $("#simple-background").click(function() {
+    var checked = $(this).prop('checked');
+    if(checked)
+      simpleBackground();
+    else
+      randomBackground();
   });
 
 });
@@ -167,6 +173,7 @@ $(document).on('click', '.btn-add-template', function() {
 
   $(".sidebar-browser").show();
   $(".sidebar-browser").attr("id", sectionID);
+  $(".sidebar-browser").data("template-name", templateID);
 
 });
 

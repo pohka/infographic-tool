@@ -4,6 +4,9 @@ todo:
 -button to edit template should be there by default incase a template is not instanly chosen
 -if a split template is seletected ad a 2nd templete edit button
 
+-hide template browser button
+-minimze sidebar button
+
 
 ==================================================================
 ==================================================================

@@ -23,3 +23,10 @@ function setColors(postfix)
   $(":root").css("--green", green);
   $(":root").css("--red", red);
 }
+
+function simpleBackground()
+{
+  var white = $(":root").css("--white");
+  $("html").css("background", "");
+  $("html").css("background-color", white);
+}
