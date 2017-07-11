@@ -26,6 +26,7 @@ $(document).ready(function(){
   //SUB MENU ITEMS
   $("#sidebar-add-section").click(function(){
     addSection($(this));
+    genLineBreaks();
   });
 
   $("#sidebar-hide-sections").click(function(){
@@ -156,7 +157,7 @@ $(document).on('input', '.input-img', function() {
 
 //when a minimze button is clicked
 $(document).on('click', ".btn-minimize", function(){
-  var id = $(this).attr("id");
+  var id = $(this).attr("id").replace("-minimize","");;
   toggleShow(id, false);
 });
 
@@ -296,7 +297,7 @@ function getTemplateHtml(template_name, id, isEditing)
 function getSidebarButtonHtml(id)
 {
   var buttonhtml =
-    '<button class="btn-minimize" id="'+id+'">'+
+    '<button class="btn-minimize" id="'+id+'-minimize">'+
     '<span class="'+id+'-minibtn glyphicon glyphicon-menu-down"></span>' +
     '</button>';
   return buttonhtml;
@@ -414,7 +415,7 @@ function isFieldType(template_name, field_name, field_type)
 //toggle visibility of input fields
 function toggleShow(id, forceMinimize)
 {
-  var hideClas="";
+  var hideCls="";
   if(id.indexOf("section-") >=0)
   {
     hideCls = "." + id + "-template";
@@ -446,7 +447,7 @@ function toggleShow(id, forceMinimize)
 function hideAllSections()
 {
   $(".btn-minimize").each(function(index, el) {
-    var id = $(this).attr("id");
+    var id = $(this).attr("id").replace("-minimize","");
     var isSectionBtn = id.indexOf("section-")>=0;
     if(isSectionBtn)
       toggleShow(id, true);

@@ -30,3 +30,23 @@ function simpleBackground()
   $("html").css("background", "");
   $("html").css("background-color", white);
 }
+
+function genLineBreaks()
+{
+  var hrHtml = "<hr class='section-hr faded'>";
+
+  //remove all current line breaks
+  $(".section-hr").each(function(){
+    $(this).remove();
+  });
+
+  var sectionCount = $('.section').length;
+  var index=0;
+  $(".section").each(function(){
+    if(index>0)
+    {
+      $(this).before(hrHtml);
+    }
+    index+=1;
+  });
+}

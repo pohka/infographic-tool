@@ -1,13 +1,14 @@
 todo:
 
 -hide template browser button
--minimze sidebar button
+-minimze all of sidebar button
 -change template strings to objects
 -if a templete is in use, dont show it in browser
 -if editing a split template, disable the full templates column
 -hide template browser
 -delete section
 -delete template, replace it with a placeholder
+-set after() rather than prepend for adding templete index 0
 
 
 
