@@ -116,6 +116,10 @@ function loadTemplates()
     "pick-rate-3", "ban-rate-3")
   template2.hero_portrait.push("hero-1", "hero-2", "hero-3");
   templates.push(template2);
+
+  var placeholder = jQuery.extend(true, {}, template);
+    placeholder.set("placeholder", "Placeholder", "split");
+  templates.push(placeholder);
 }
 
 

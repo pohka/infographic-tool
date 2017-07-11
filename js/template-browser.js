@@ -15,6 +15,8 @@ function genTemplateBrowserItems()
   {
     var id = templates[i].id;
 
+    console.log("id:"+ id);
+
     if(id!="placeholder")
     {
       var title = templates[i].name;
@@ -29,28 +31,6 @@ function genTemplateBrowserItems()
 
       $(".sidebar-browser").append(html);
     }
-
-
   }
 
-
-  for(var i=4; i<template_info.length; i++)
-  {
-    var templateRow =  template_info[i];
-    var id = templateRow[0];
-
-    if(id!="placeholder")
-    {
-      var type = templateRow[1];
-      var title = templateRow[2];
-
-      var html =
-        '<div class="sidebar-btn sidebar-browser-template template-' + type +
-        '" id="' + id + '">' +
-        title +
-        '<img src="img/templates/' + id + '.png"></div>'; //preview img
-
-      $(".sidebar-browser").append(html);
-    }
-  }
 }
