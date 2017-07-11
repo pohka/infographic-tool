@@ -2,6 +2,7 @@
 $(document).ready(function(){
   randomBackground();
   setColors("_const");
+  loadTemplates();
 });
 
 function randomBackground()
