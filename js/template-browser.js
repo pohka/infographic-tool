@@ -15,15 +15,19 @@ function genTemplateBrowserItems()
   {
     var templateRow =  template_info[i];
     var id = templateRow[0];
-    var type = templateRow[1];
-    var title = templateRow[2];
 
-    var html =
-      '<div class="sidebar-btn sidebar-browser-template template-' + type +
-      '" id="' + id + '">' +
-      title +
-      '<img src="img/templates/' + id + '.png"></div>'; //preview img
+    if(id!="placeholder")
+    {
+      var type = templateRow[1];
+      var title = templateRow[2];
 
-    $(".sidebar-browser").append(html);
+      var html =
+        '<div class="sidebar-btn sidebar-browser-template template-' + type +
+        '" id="' + id + '">' +
+        title +
+        '<img src="img/templates/' + id + '.png"></div>'; //preview img
+
+      $(".sidebar-browser").append(html);
+    }
   }
 }

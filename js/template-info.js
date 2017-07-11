@@ -5,7 +5,8 @@ var template_info = [
   ["tournament", "full", "tournament"],
   ["footer", "full", "footer"],
   ["template-01", "split", "template 1"],
-  ["template-02", "split", "template 2"]
+  ["template-02", "split", "template 2"],
+  ["placeholder", "split", "placeholder for right side"]
 ];
 
 var template_fields = [
@@ -64,3 +65,25 @@ var template_fields_hero_portrait = [
     "template-02-hero-1", "template-02-hero-2","template-02-hero-3"
   ]
 ]
+
+function isSplit(template_id)
+{
+  for(var i=0; i<template_info.length; i++)
+  {
+    if(template_info[i][0]==template_id)
+    {
+      return template_info[i][1]=="split";
+    }
+  }
+  return false;
+}
+
+function getTemplateTitle(template_id)
+{
+  for(var i=0; i<template_info.length; i++)
+  {
+    if(template_info[i][0]==template_id)
+      return template_info[i][2];
+  }
+  return template_id;
+}

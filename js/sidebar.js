@@ -54,8 +54,9 @@ $(document).ready(function(){
     var id = $(".sidebar-browser").attr("id");
     var template_name = $(this).attr("id");
     var templateIndex = $(".sidebar-browser").data("template-index");
-    var html = getTemplateHtml(template_name, id);
+
     var templateClass = $(this).attr("id");
+    var isEditing = false;
 
     //check to see if this template index exists
     //if it exists remove the current templete (true when editing)
@@ -66,10 +67,13 @@ $(document).ready(function(){
         var templateID = $(".sidebar-browser").data("template-name");
         $("."+templateID).remove(); //remove current templete in body-container
         $(this).remove(); //remove input elements in sidebar
+        isEditing = true;
       }
     });
 
-    //add new
+    var html = getTemplateHtml(template_name, id, isEditing);
+
+    //add
       $(".sidebar-section").each(function(){
         if(id==$(this).attr("id"))
         {
@@ -174,7 +178,7 @@ $(document).on('click', '.btn-add-template', function() {
   $(".sidebar-browser").show();
   $(".sidebar-browser").attr("id", sectionID);
   $(".sidebar-browser").data("template-name", templateID);
-
+  $(".sidebar-browser").data("template-index", templateIndex);
 });
 
 //triggered when a hero name is selected from the autocomplete
@@ -254,7 +258,7 @@ function addSection(id)
 
 //triggered one a template was selected
 //adds the template to the current section
-function getTemplateHtml(template_name, id)
+function getTemplateHtml(template_name, id, isEditing)
 {
   template_name = template_name.replace(/\s/g,'');
   cls=id+ "-template";
@@ -262,10 +266,17 @@ function getTemplateHtml(template_name, id)
   var templateHtml=
     '<div class="sidebar-item sidebar-template '+ cls +'" '+
     ' data-template-index="' + current_template_index +'">'+
-     getSidebarButtonHtml(template_name)+ template_name +
+     getSidebarButtonHtml(template_name)+ getTemplateTitle(template_name) +
      getSetTemplateBtnHtml(id, template_name) +
      getInputFieldsHtml(template_name)+
     '</div>';
+
+  if(isEditing==false && isSplit(template_name))
+  {
+    current_template_index+=1;
+    templateHtml+=getTemplateHtml("placeholder", id, true);
+  }
+
   return templateHtml;
 }
 
