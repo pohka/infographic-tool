@@ -47,8 +47,12 @@ $(document).ready(function(){
     }
   });
 
-  //called when a template is selected
-  //adds the template to the section
+  /*
+  - called when a template is selected
+  - adds the template to the section
+  - sets data variables in sidebar-browser to kow which
+    section and templete were are editing
+  */
   $(".sidebar-browser-template").click(function(){
 
     var id = $(".sidebar-browser").attr("id");
@@ -259,6 +263,9 @@ function addSection(id)
 
 
   $(".section-list").append(sectionHtml);
+
+  var sectionHtml = '<div class="section" id="'+sectionID+'-html"></div>';
+  $(".body-container").append(sectionHtml);
 }
 
 //triggered one a template was selected
@@ -435,6 +442,7 @@ function toggleShow(id, forceMinimize)
 
 }
 
+//hide all sections button in sidebar sub menu
 function hideAllSections()
 {
   $(".btn-minimize").each(function(index, el) {
@@ -443,4 +451,11 @@ function hideAllSections()
     if(isSectionBtn)
       toggleShow(id, true);
   });
+}
+
+//adds the templete html to the current section
+function setBodyHtml(html)
+{
+  var browserID = $(".sidebar-browser").attr("id");
+  $("#"+browserID+"-html").append(html);
 }

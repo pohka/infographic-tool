@@ -1,12 +1,11 @@
 todo:
--when add section button is clicked, add the section div to the body-container
--then ONLY add the template div when the browser item is selected
--button to edit template should be there by default incase a template is not instanly chosen
--if a split template is seletected add a 2nd templete edit button
 
 -hide template browser button
 -minimze sidebar button
 -change template strings to objects
+-if a templete is in use, dont show it in browser
+-if editing a split template, disable the full templates column
+-hide template browser
 
 
 ==================================================================
@@ -22,3 +21,8 @@ fix - set current section to shown when a template is selected
 
 -------------------------------
 moving hero img input, doesnt work if you hold down with mouse button
+
+
+-----------------------------------
+when you add 2 split templetes and then edit the first one
+it removes all templetes from that section

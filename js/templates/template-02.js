@@ -148,15 +148,5 @@ $(document).on('click', '#template-02', function(){
 			'</div>' +
 		'</div>';
 
-		var browserID = $(".sidebar-browser").attr("id");
-
-		var openingHtml =
-		'<div class="section" id="'+current_section_index+'">';
-
-		var closingHtml = '</div>';
-
-		var combinedHtml = html = $.parseHTML(openingHtml + html + closingHtml);
-		//var combinedHtml = html = $.parseHTML(html);
-
-		$(".body-container").append(combinedHtml);
+		setBodyHtml(html);
 });
