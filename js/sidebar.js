@@ -349,7 +349,7 @@ function getInputFieldsHtml(template_name)
   {
     input_type = "-number";
     num_input_index+=1;
-    data += 'data-index="'+num_input_index+'" ';
+    data = 'data-index="'+num_input_index+'" ';
     cls=" "+fieldID+"-input-field ";
     fieldName = template.num_fields[i];
 
@@ -369,7 +369,7 @@ function getInputFieldsHtml(template_name)
   for(var i=0; i<template.hero_icon.length; i++)
   {
     input_type="-hero";
-    data += 'data-folder="hero-icons" ';
+    data = 'data-folder="hero-icons" ';
     cls="";
     fieldName = template.hero_icon[i];
 
@@ -379,7 +379,7 @@ function getInputFieldsHtml(template_name)
   for(var i=0; i<template.hero_portrait.length; i++)
   {
     input_type="-hero";
-    data += 'data-folder="hero-portraits" ';
+    data = 'data-folder="hero-portraits" ';
     cls="";
     fieldName = template.hero_portrait[i];
 
@@ -391,7 +391,6 @@ function getInputFieldsHtml(template_name)
 
 function wrapInputFieldHtml(fieldID, template_name, input_type, data, cls, fieldName)
 {
-  console.log(fieldName + ":" + input_type);
   var html="<div class='"+fieldName+"-input'>";
   var str = fieldName;
   str = str.replace(/-/g, ' ');
@@ -415,8 +414,6 @@ function wrapInputFieldHtml(fieldID, template_name, input_type, data, cls, field
     html+="<button class='sidebar-btn move-hero glyphicon glyphicon-chevron-right' "+
     "id='"+fieldName+"' data-direction='right'></button>";
   }
-
-  console.log(html);
 
   return html+"</div>";
 }

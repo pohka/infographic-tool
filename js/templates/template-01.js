@@ -6,6 +6,7 @@ $(document).on('input', '.template-01-input-field', function() {
 	var cls = $(this).attr("class");
 	var index = $(this).data("index");
 	var canvasID = "template-01-canvas-"+index;
+	console.log("canvas:" + canvasID);
 
 	var id = $(this).attr("id");
 	var isGreen = id.indexOf("pick") >= 0;
