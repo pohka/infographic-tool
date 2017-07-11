@@ -77,7 +77,12 @@ $(document).ready(function(){
       $(".sidebar-section").each(function(){
         if(id==$(this).attr("id"))
         {
-          $(this).append(html);
+          if(isEditing && templateIndex==0)
+          {
+            $(this).prepend(html);
+          }
+          else
+            $(this).append(html);
         }
       });
 
