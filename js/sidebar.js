@@ -60,7 +60,6 @@ $(document).ready(function(){
     var template_name = $(this).attr("id");
     var templateIndex = $(".sidebar-browser").data("template-index");
 
-    var templateClass = $(this).attr("id");
     var isEditing = false;
 
     //check to see if this template index exists
@@ -84,7 +83,7 @@ $(document).ready(function(){
         {
           if(isEditing && templateIndex==0)
           {
-            $(this).prepend(html);
+            $("#sidebar-title-"+ id).after(html);
           }
           else
             $(this).append(html);
@@ -233,7 +232,37 @@ $(document).on("click", ".move-hero ", function(){
   var posAsStr = positions[0]+"px";
 
   $("."+section_class).css("object-position", posAsStr);
+
 });
+
+  $(document).on("click", ".btn-remove-template", function(){
+    var templateID=$(this).attr("id").replace("-remove", "");
+    var templateIndex = $(this).data("template-index");
+    var sectionIndex = $(this).data("section-index");
+
+    console.log("here");
+
+    //find and remove the template
+    var sidebarClass = ".section-"+sectionIndex+"-template";
+    $(sidebarClass).each(function(){
+      if(templateIndex == $(this).data("template-index"))
+      {
+        $(this).remove();
+        $("."+templateID).remove();
+      }
+    });
+
+    var html = getTemplateHtml("placeholder", "section-"+sectionIndex, true);
+
+    if(templateIndex==0)
+    {
+      $("#sidebar-title-section-"+ sectionIndex).after(html);
+    }
+    else
+    {
+      $(this).append(html);
+    }
+  });
 
 
 //sets the image
@@ -258,7 +287,7 @@ function addSection(id)
     '<div class="sidebar-item sidebar-section"'+
     'id="'+sectionID+'">' +
     getSidebarButtonHtml(sectionID) +
-    'Section Name</div>';
+    '<span id="sidebar-title-section-'+ current_section_index +'">Section Name</span></div>';
 
   current_section_index+=1;
 
@@ -307,12 +336,25 @@ function getSetTemplateBtnHtml(id, template_name)
 {
   var sectionIndex = id.replace("section-", "");
 
-  var buttonhtml =
-    '<button class="btn-add-template sidebar-btn glyphicon glyphicon-edit"' +
+
+  var removeBtnHtml = '<button class="btn-remove-template template-btn sidebar-btn glyphicon glyphicon-remove-circle"' +
+   'id="'+template_name+'-remove"' +
+   ' data-template-index="'+current_template_index+'" ' +
+   ' data-section-index="'+sectionIndex+'"></button>';
+
+
+
+  var editBtnHtml =
+    '<button class="btn-add-template template-btn sidebar-btn glyphicon glyphicon-edit"' +
      'id="'+template_name+'-set"' +
      ' data-template-index="'+current_template_index+'" ' +
      ' data-section-index="'+sectionIndex+'"></button>';
-  return buttonhtml;
+
+
+  //button will align in opposite direction because of float right
+  var btnHtml = editBtnHtml+removeBtnHtml
+
+  return btnHtml;
 }
 
 

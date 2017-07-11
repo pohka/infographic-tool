@@ -7,8 +7,6 @@ todo:
 -if editing a split template, disable the full templates column
 -hide template browser
 -delete section
--delete template, replace it with a placeholder
--set after() rather than prepend for adding templete index 0
 -ordering of input fields
 
 

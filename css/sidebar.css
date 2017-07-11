@@ -228,12 +228,17 @@ input.input-hero
 	background-color: var(--border);
 }
 
-.btn-add-template
+.template-btn
 {
 	padding: 2px 2px;
 	color: var(--border);
 	border: 1px solid transparent;
 	float: right;
+	margin-left: 8px;
+}
+
+.btn-add-template
+{
 }
 
 .btn-add-template:hover

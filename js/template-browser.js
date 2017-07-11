@@ -14,19 +14,20 @@ function genTemplateBrowserItems()
   for(var i=0; i<templates.length; i++)
   {
     var id = templates[i].id;
+    var html;
 
     if(id!="placeholder")
     {
       var title = templates[i].name;
       var type = templates[i].type;
 
-      var html =
+      html =
         '<div class="sidebar-btn sidebar-browser-template template-' + type +
         '" id="' + id + '">' +
         title +
         '<img src="img/templates/' + id + '.png"></div>'; //preview img
 
-      $(".sidebar-browser").append(html);
+        $(".sidebar-browser").append(html);
     }
   }
 }
