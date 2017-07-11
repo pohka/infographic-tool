@@ -56,235 +56,52 @@
 	<body>
 		<div class="body-container">
 
-		<!--HEADER-->
-		<!--<div class="section" id="0">
-			<div class="container tournament">
-				<div class="row">
-					<div class="col-md-4 tournament-info">
-						<span class="tournament-title">The International 2017</span><br>
-						<span class="tournament-date">22nd-23rd July</span><br>
-						Prize Pool <span class="tournament-prize-pool">$500k</span>
-					</div>
-					<div class="col-md-4">
-						<img src="img/tournament/placeholder.png" class="tournament-logo">
-					</div>
-					<div class="col-md-4 tournament-overview">
-						<span class="tournament-heroes-picked">187</span> <span class="header-stat">Heroes picked</span><br>
-						<span class="tournament-matches">62</span>  <span class="header-stat">Matches</span><br>
-						<span class="tournament-winner">VP</span>  <span class="header-stat">Winner</span>
-					</div>
+			<!--SIDEBAR-->
+			<div class="sidebar">
+				<div class="sidebar-menu">
+							<button class="sidebar-btn sidebar-menu-item sidebar-menu-item-selected " id="sidebar-1">
+								Sections
+							</button><!--
+							--><button class="sidebar-btn sidebar-menu-item" id="sidebar-2">
+								Palette
+							</button>
 				</div>
 
-			<!--SIDE WIN RATE BAR
-			<div class="wr-bar-con">
-				<div class="wr-bar-text row">
-					<div class="radiant col-md-3">
-						Radiant &nbsp<span class="tournament-radiant-winrate number-field">50</span>%
-					</div>
+			<!--SIDEBAR SECTIONS-->
+			<div class="sidebar-column" id="sidebar-1-column">
+				<!--HIDE SECTIONS-->
+				<button class="sidebar-btn sidebar-sub-menu" id="sidebar-hide-sections">
+					<span class="glyphicon glyphicon glyphicon glyphicon-eject sidebar-menu-glyph"></span>
+				</button>
+				<!--ADD SECTION-->
+				<button class="sidebar-btn sidebar-sub-menu" id="sidebar-add-section">
+					<span class="glyphicon glyphicon-plus sidebar-menu-glyph"></span>
+				</button>
 
-					<div class="col-md-6">
-						<div class="wr-bar ">
-						  <div class="inner-bar inner-red"></div>
-						  <div class="inner-bar inner-green"></div>
-						  <div class="inner-bar center-bar"></div>
-						</div>
-					</div>
-					<div class="dire col-md-3">
-							<span class="tournament-dire-winrate">50</span>% &nbspDire
-					</div>
-				</div>
+				<div class="section-list"></div>
 
 			</div>
-		</div>
 
-			<hr class="faded">
-		</div>-->
-
-
-		<!--NEW SECTION-->
-			<!-- <div class="section">
-				<h2>Overview</h2> -->
-				<!--TEMPLATE 2 HALF SECTION
-				<div class="container template-02 width-half">
-					<h3>Most Contested</h3>
-					<h4>Most <span class="green">picked</span> and <span class="red">banned</span></h4>
-
-					<div class="row">
-						<div class="col-md-3 template-02-chart" id="template-02-chart-1">
-							<div class="template-02-inner template-02-inner-green " id="template-02-chart-1-green"></div>
-							<div class="template-02-inner template-02-inner-red" id="template-02-chart-1-red"></div>
-							<div class="template-02-inner template-02-inner-empty" id="template-02-chart-1-empty"></div>
-							<div class="template-02-inner template-02-inner-total" id="template-02-chart-1-total"></div>
-							<div class="template-02-inner template-02-inner-image" id="template-02-chart-1-image">
-								<img class="template-02-hero-1" src="img/hero-portraits/rubick.png" >
-							</div>
-							<div class="template-02-underline"></div>
-
-							<div class="template-02-text">
-								<span class="green" id="template-02-chart-1-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-1-text-ban">32%</span><br>
-								<p class="template-02-text-lg" id="template-02-chart-1-text-total"> 82%</p>
-							</div>
-						</div>
-
-						<div class="col-md-3 template-02-chart" id="template-02-chart-2">
-							<div class="template-02-inner template-02-inner-green" id="template-02-chart-2-green"></div>
-							<div class="template-02-inner template-02-inner-red" id="template-02-chart-2-red"></div>
-							<div class="template-02-inner template-02-inner-empty" id="template-02-chart-2-empty"></div>
-							<div class="template-02-inner template-02-inner-total" id="template-02-chart-2-total"></div>
-							<div class="template-02-inner template-02-inner-image" id="template-02-chart-2-image">
-								<img class="template-02-hero-2 template-02-hero" src="img/hero-portraits/puck.png" >
-							</div>
-							<div class="template-02-underline"></div>
-
-							<div class="template-02-text">
-								<span class="green" id="template-02-chart-2-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-2-text-ban">32%</span><br>
-								<p class="template-02-text-lg" id="template-02-chart-2-text-total"> 82%</p>
-							</div>
-						</div>
-
-						<div class="col-md-3 template-02-chart" id="template-02-chart-3">
-							<div class="template-02-inner template-02-inner-green" id="template-02-chart-3-green"></div>
-							<div class="template-02-inner template-02-inner-red" id="template-02-chart-3-red"></div>
-							<div class="template-02-inner template-02-inner-empty" id="template-02-chart-3-empty"></div>
-							<div class="template-02-inner template-02-inner-total" id="template-02-chart-3-total"></div>
-							<div class="template-02-inner template-02-inner-image" id="template-02-chart-3-image">
-								<img class="template-02-hero-3" src="img/hero-portraits/lina.png" >
-							</div>
-							<div class="template-02-underline"></div>
-
-							<div class="template-02-text">
-								<span class="green" id="template-02-chart-3-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-3-text-ban">32%</span><br>
-								<p class="template-02-text-lg" id="template-02-chart-3-text-total"> 82%</p>
-							</div>
-						</div>
-					</div>
-
-				</div>-->
-
-				<!--TEMPLATE 1 HALF SECTION-->
-				<!-- <div class="container template-01 width-half">
-					<h3 class="template-01-title">Most Picked and Banned</h3>
-					<h4 class="template-01-sub-title"><span class="green">Pick</span> rate and <span class="red">Ban</span> rate</h4>
-
-					<div class="row">
-						<div class="col-md-4">
-							<div class="template-01-pick">
-								<span class="template-01-pick-rate-1 template-01-input-field">0</span>%
-							</div>
-							<canvas class="canvas canvas-circle" id="template-01-canvas-1" ></canvas>
-							<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-pick-1-hero-icon">
-						</div>
-						<div class="col-md-4">
-							<div class="template-01-pick">
-								<span class="template-01-pick-rate-2 template-01-input-field">0</span>%
-							</div>
-							<canvas class="canvas canvas-circle" id="template-01-canvas-2" ></canvas>
-							<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-pick-2-hero-icon">
-						</div>
-						<div class="col-md-4">
-							<div class="template-01-pick">
-								<span class="template-01-pick-rate-3 template-01-input-field">0</span>%
-							</div>
-							<canvas class="canvas canvas-circle" id="template-01-canvas-3" ></canvas>
-							<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-pick-3-hero-icon">
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-4">
-							<canvas class="canvas canvas-circle" id="template-01-canvas-4" ></canvas>
-							<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-ban-1-hero-icon">
-							<div class="template-01-ban">
-								<span class="template-01-ban-rate-1 template-01-input-field">0</span>%
-							</div>
-						</div>
-						<div class="col-md-4">
-							<canvas class="canvas canvas-circle" id="template-01-canvas-5" ></canvas>
-							<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-ban-2-hero-icon">
-							<div class="template-01-ban">
-								<span class="template-01-ban-rate-2 template-01-input-field">0</span>%
-							</div>
-						</div>
-						<div class="col-md-4">
-							<canvas class="canvas canvas-circle" id="template-01-canvas-6" ></canvas>
-							<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-ban-3-hero-icon">
-							<div class="template-01-ban">
-								<span class="template-01-ban-rate-3 template-01-input-field">0</span>%
-							</div>
-						</div>
-					</div>
-			</div>
-			<hr class="faded">
- -->
-
-		<!-- </div> -->
-
-
-		<!--FOOTER SECTION-->
-		<!-- <div class="section footer container">
-			<div class="row">
-				<div class="col-md-3">
-					<img src="img/footer/twitter_icon.png" class="twitter">
-				</div>
-				<div class="col-md-6 footer-text">
-					twitter.com/PohkaDota
-				</div>
-				<div class="col-md-3">
-					<img src="img/footer/ogre.png" class="avatar">
-				</div>
+			<!--SIDEBAR PALETTE-->
+			<div class="sidebar-column" id="sidebar-2-column">
+					<input type="checkbox" class="regular-checkbox" id="color-blind">
+					<label for="color-blind"></label><span>Color Blind Mode</span><br>
+					<input type="checkbox" class="regular-checkbox" id="simple-background">
+					<label for="simple-background"></label><span>Simple Background</span>
 			</div>
 
-
-		</div> -->
-
-		<!--SIDEBAR-->
-		<div class="sidebar">
-			<!--MENU-->
-			<div class="sidebar-menu">
-						<button class="sidebar-btn sidebar-menu-item sidebar-menu-item-selected " id="sidebar-1">
-							Sections
+			<!--TEMPLATE BROWSER-->
+			<div class="sidebar-browser" data-template-index="0">
+						Templates
+						<hr class="primary">
+						<button class="sidebar-btn browser-menu-item sidebar-menu-item-selected" id="template-full">
+							Full
 						</button><!--
-						--><button class="sidebar-btn sidebar-menu-item" id="sidebar-2">
-							Palette
+						--><button class="sidebar-btn browser-menu-item" id="template-split">
+							Split
 						</button>
 			</div>
 
-
-
-		<!--SIDEBAR SECTIONS-->
-		<div class="sidebar-column" id="sidebar-1-column">
-			<!--HIDE SECTIONS-->
-			<button class="sidebar-btn sidebar-sub-menu" id="sidebar-hide-sections">
-				<span class="glyphicon glyphicon glyphicon glyphicon-eject sidebar-menu-glyph"></span>
-			</button>
-			<!--ADD SECTION-->
-			<button class="sidebar-btn sidebar-sub-menu" id="sidebar-add-section">
-				<span class="glyphicon glyphicon-plus sidebar-menu-glyph"></span>
-			</button>
-
-
-			<div class="section-list"></div>
-		</div>
-
-		<!--SIDEBAR PALETTE-->
-		<div class="sidebar-column" id="sidebar-2-column">
-				<input type="checkbox" class="regular-checkbox" id="color-blind">
-				<label for="color-blind"></label><span>Color Blind Mode</span><br>
-				<input type="checkbox" class="regular-checkbox" id="simple-background">
-				<label for="simple-background"></label><span>Simple Background</span>
-		</div>
-
-
-		<!--TEMPLATE BROWSER-->
-		<div class="sidebar-browser" data-template-index="0">
-					Templates
-					<hr class="primary">
-					<button class="sidebar-btn browser-menu-item sidebar-menu-item-selected" id="template-full">
-						Full
-					</button><!--
-					--><button class="sidebar-btn browser-menu-item" id="template-split">
-						Split
-					</button>
 		</div>
 	</body>
 
