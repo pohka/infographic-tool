@@ -9,11 +9,16 @@ todo:
 -delete section
 -delete template, replace it with a placeholder
 -set after() rather than prepend for adding templete index 0
+-ordering of input fields
 
 
 
 ==================================================================
 ==================================================================
+
+!Template 1 broke
+------------------------
+all pick ban values only change first arc
 
 
 

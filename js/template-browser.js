@@ -15,13 +15,10 @@ function genTemplateBrowserItems()
   {
     var id = templates[i].id;
 
-    console.log("id:"+ id);
-
     if(id!="placeholder")
     {
       var title = templates[i].name;
       var type = templates[i].type;
-
 
       var html =
         '<div class="sidebar-btn sidebar-browser-template template-' + type +
@@ -32,5 +29,4 @@ function genTemplateBrowserItems()
       $(".sidebar-browser").append(html);
     }
   }
-
 }

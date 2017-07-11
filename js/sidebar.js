@@ -320,72 +320,105 @@ function getSetTemplateBtnHtml(id, template_name)
 //returns the html for all the input fields
 function getInputFieldsHtml(template_name)
 {
+  //variables which change depending on the input type
   var num_input_index=0;
   var data = "";
   var cls = "";
   var input_type="";
+  var fieldName="";
 
   var html="<div class='"+template_name+"-input'>";
   var endDiv ="</div>";
 
+  var template = getTemplateByID(template_name);
+  var fieldID = template.id;
 
-  for(var i = 0; i < template_fields.length; i++) {
-    var row_of_fields = template_fields[i];
-    if(row_of_fields[0]==template_name)
-    {
-      for(var j = 1; j < row_of_fields.length; j++) {
-          data="";
-          cls="";
-          input_type="";
+  //loop through all fields for each input type
 
-          if(isFieldType(template_name, row_of_fields[j], template_fields_number))
-          {
-            input_type = "-number";
-            num_input_index+=1;
-            cls=" "+row_of_fields[0]+"-input-field ";
-            data += 'data-index="'+num_input_index+'" ';
-          }
-          else if(isFieldType(template_name, row_of_fields[j], template_fields_img))
-          {
-            input_type="-img";
-          }
-          else if(isFieldType(template_name, row_of_fields[j], template_fields_hero_icons))
-          {
-            input_type="-hero";
-            data += 'data-folder="hero-icons" ';
-          }
-          else if(isFieldType(template_name, row_of_fields[j], template_fields_hero_portrait))
-          {
-            input_type="-hero";
-            data += 'data-folder="hero-portraits" ';
-          }
+  for(var i=0; i<template.str_fields.length; i++)
+  {
+    data="";
+    cls="";
+    input_type="";
+    fieldName = template.str_fields[i];
 
-
-          var str = row_of_fields[j].replace(row_of_fields[0]+"-","")
-          str = str.replace(/-/g, ' ');
-          str = str.toTitleCase();
-
-          html+='<input type="text" class="input'+input_type+cls+'"'+
-          ' id="'+row_of_fields[j]+'-input" ' + data +' placeholder="'+str+'">';
-
-          //extra html
-          if(input_type=="-img")
-          {
-            html+="<button class='sidebar-btn add-img-btn glyphicon glyphicon glyphicon-plus' "+
-            "id='"+row_of_fields[j]+"-btn'> </button>";
-          }
-          else if(input_type=="-hero")
-          {
-            html+="<button class='sidebar-btn glyphicon move-hero glyphicon-chevron-left' "+
-            "id='"+row_of_fields[j]+"' data-direction='left'></button>";
-            html+="<button class='sidebar-btn move-hero glyphicon glyphicon-chevron-right' "+
-            "id='"+row_of_fields[j]+"' data-direction='right'></button>";
-          }
-      }
-      return html + endDiv;
-    }
+    html += wrapInputFieldHtml(fieldID, template_name, input_type, data, cls, fieldName);
   }
+
+  for(var i=0; i<template.num_fields.length; i++)
+  {
+    input_type = "-number";
+    num_input_index+=1;
+    data += 'data-index="'+num_input_index+'" ';
+    cls=" "+fieldID+"-input-field ";
+    fieldName = template.num_fields[i];
+
+    html += wrapInputFieldHtml(fieldID, template_name, input_type, data, cls, fieldName);
+  }
+
+  for(var i=0; i<template.img_fields.length; i++)
+  {
+    input_type="-img";
+    data="";
+    cls="";
+    fieldName = template.img_fields[i];
+
+    html += wrapInputFieldHtml(fieldID, template_name, input_type, data, cls, fieldName);
+  }
+
+  for(var i=0; i<template.hero_icon.length; i++)
+  {
+    input_type="-hero";
+    data += 'data-folder="hero-icons" ';
+    cls="";
+    fieldName = template.hero_icon[i];
+
+    html += wrapInputFieldHtml(fieldID, template_name, input_type, data, cls,  fieldName);
+  }
+
+  for(var i=0; i<template.hero_portrait.length; i++)
+  {
+    input_type="-hero";
+    data += 'data-folder="hero-portraits" ';
+    cls="";
+    fieldName = template.hero_portrait[i];
+
+    html += wrapInputFieldHtml(fieldID, template_name, input_type, data, cls, fieldName);
+  }
+
   return html + endDiv;
+}
+
+function wrapInputFieldHtml(fieldID, template_name, input_type, data, cls, fieldName)
+{
+  console.log(fieldName + ":" + input_type);
+  var html="<div class='"+fieldName+"-input'>";
+  var str = fieldName;
+  str = str.replace(/-/g, ' ');
+  str = str.toTitleCase();
+
+  fieldName = fieldID + "-" + fieldName;
+
+  html+='<input type="text" class="input'+input_type+cls+'"'+
+  ' id="'+fieldName+'-input" ' + data +' placeholder="'+str+'">';
+
+  //extra html
+  if(input_type=="-img")
+  {
+    html+="<button class='sidebar-btn add-img-btn glyphicon glyphicon glyphicon-plus' "+
+    "id='"+fieldName+"-btn'> </button>";
+  }
+  else if(input_type=="-hero")
+  {
+    html+="<button class='sidebar-btn glyphicon move-hero glyphicon-chevron-left' "+
+    "id='"+fieldName+"' data-direction='left'></button>";
+    html+="<button class='sidebar-btn move-hero glyphicon glyphicon-chevron-right' "+
+    "id='"+fieldName+"' data-direction='right'></button>";
+  }
+
+  console.log(html);
+
+  return html+"</div>";
 }
 
 //returns the value of this input field as a number
