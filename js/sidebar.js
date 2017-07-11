@@ -75,7 +75,9 @@ $(document).ready(function(){
       }
     });
 
-    var html = getTemplateHtml(template_name, id, isEditing);
+    console.log("index found in sidebar:"+ + templateIndex);
+    var html = getTemplateHtml(template_name, id, isEditing, templateIndex);
+
 
     //add
       $(".sidebar-section").each(function(){
@@ -235,12 +237,11 @@ $(document).on("click", ".move-hero ", function(){
 
 });
 
+//remove template and raplce it with placeholder
   $(document).on("click", ".btn-remove-template", function(){
     var templateID=$(this).attr("id").replace("-remove", "");
     var templateIndex = $(this).data("template-index");
     var sectionIndex = $(this).data("section-index");
-
-    console.log("here");
 
     //find and remove the template
     var sidebarClass = ".section-"+sectionIndex+"-template";
@@ -252,7 +253,7 @@ $(document).on("click", ".move-hero ", function(){
       }
     });
 
-    var html = getTemplateHtml("placeholder", "section-"+sectionIndex, true);
+    var html = getTemplateHtml("placeholder", "section-"+sectionIndex, true, templateIndex);
 
     if(templateIndex==0)
     {
@@ -298,25 +299,32 @@ function addSection(id)
   $(".body-container").append(sectionHtml);
 }
 
-//triggered one a template was selected
-//adds the template to the current section
-function getTemplateHtml(template_name, id, isEditing)
+//triggered once a template was selected
+//gets the template html for the current section
+function getTemplateHtml(template_name, id, isEditing, tIndex)
 {
   template_name = template_name.replace(/\s/g,'');
   cls=id+ "-template";
+  var templateIndex = current_template_index;
+  if(isEditing)
+  {
+    templateIndex = tIndex;
+  }
+  console.log("initial index:" + templateIndex);
 
   var templateHtml=
     '<div class="sidebar-item sidebar-template '+ cls +'" '+
-    ' data-template-index="' + current_template_index +'">'+
+    ' data-template-index="' + templateIndex +'">'+
      getSidebarButtonHtml(template_name)+ getTemplateTitle(template_name) +
-     getSetTemplateBtnHtml(id, template_name) +
+     getSetTemplateBtnHtml(id, template_name, templateIndex) +
      getInputFieldsHtml(template_name)+
     '</div>';
 
   if(isEditing==false && isSplit(template_name))
   {
     current_template_index+=1;
-    templateHtml+=getTemplateHtml("placeholder", id, true);
+    console.log("increment");
+    templateHtml+=getTemplateHtml("placeholder", id, true, current_template_index);
   }
 
   return templateHtml;
@@ -332,14 +340,14 @@ function getSidebarButtonHtml(id)
   return buttonhtml;
 }
 
-function getSetTemplateBtnHtml(id, template_name)
+function getSetTemplateBtnHtml(id, template_name, templateIndex)
 {
   var sectionIndex = id.replace("section-", "");
 
 
   var removeBtnHtml = '<button class="btn-remove-template template-btn sidebar-btn glyphicon glyphicon-remove-circle"' +
    'id="'+template_name+'-remove"' +
-   ' data-template-index="'+current_template_index+'" ' +
+   ' data-template-index="'+templateIndex+'" ' +
    ' data-section-index="'+sectionIndex+'"></button>';
 
 
@@ -347,7 +355,7 @@ function getSetTemplateBtnHtml(id, template_name)
   var editBtnHtml =
     '<button class="btn-add-template template-btn sidebar-btn glyphicon glyphicon-edit"' +
      'id="'+template_name+'-set"' +
-     ' data-template-index="'+current_template_index+'" ' +
+     ' data-template-index="'+templateIndex+'" ' +
      ' data-section-index="'+sectionIndex+'"></button>';
 
 
