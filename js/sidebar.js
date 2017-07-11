@@ -454,8 +454,23 @@ function hideAllSections()
 }
 
 //adds the templete html to the current section
-function setBodyHtml(html)
+function setBodyHtml(html, selector)
 {
   var browserID = $(".sidebar-browser").attr("id");
-  $("#"+browserID+"-html").append(html);
+  var templateHtml = getTemplateBodyHtml(selector, html);
+  $("#"+browserID+"-html").append(templateHtml);
+}
+
+//wraps the html in the template container div
+function getTemplateBodyHtml(selector, html)
+{
+  var id = $(selector).attr("id");
+  var extraClasses = '';
+  if(isSplit(id))
+    extraClasses += ' width-half';
+
+  var fullHtml =
+    '<div class="container ' + id + extraClasses + '">'+html+'</div>';
+
+  return fullHtml;
 }

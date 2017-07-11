@@ -89,64 +89,59 @@ function calculateChart(pickRate, banRate, id)
 
 
 $(document).on('click', '#template-02', function(){
-	var id = $(this).attr("id");
-
 	var html =
-		'<!--TEMPLATE 2 HALF SECTION-->' +
-		'<div class="container '+id+' width-half">' +
-			'<h3>Most Contested</h3>' +
-			'<h4>Most <span class="green">picked</span> and <span class="red">banned</span></h4>' +
+		'<h3>Most Contested</h3>' +
+		'<h4>Most <span class="green">picked</span> and <span class="red">banned</span></h4>' +
 
-			'<div class="row">' +
-				'<div class="col-md-3 template-02-chart" id="template-02-chart-1">' +
-					'<div class="template-02-inner template-02-inner-green " id="template-02-chart-1-green"></div>' +
-					'<div class="template-02-inner template-02-inner-red" id="template-02-chart-1-red"></div>' +
-					'<div class="template-02-inner template-02-inner-empty" id="template-02-chart-1-empty"></div>' +
-					'<div class="template-02-inner template-02-inner-total" id="template-02-chart-1-total"></div>' +
-					'<div class="template-02-inner template-02-inner-image" id="template-02-chart-1-image">' +
-						'<img class="template-02-hero-1" src="img/hero-portraits/rubick.png" >' +
-					'</div>' +
-					'<div class="template-02-underline"></div>' +
-
-					'<div class="template-02-text">' +
-						'<span class="green" id="template-02-chart-1-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-1-text-ban">32%</span><br>' +
-						'<p class="template-02-text-lg" id="template-02-chart-1-text-total"> 82%</p>' +
-					'</div>' +
+		'<div class="row">' +
+			'<div class="col-md-3 template-02-chart" id="template-02-chart-1">' +
+				'<div class="template-02-inner template-02-inner-green " id="template-02-chart-1-green"></div>' +
+				'<div class="template-02-inner template-02-inner-red" id="template-02-chart-1-red"></div>' +
+				'<div class="template-02-inner template-02-inner-empty" id="template-02-chart-1-empty"></div>' +
+				'<div class="template-02-inner template-02-inner-total" id="template-02-chart-1-total"></div>' +
+				'<div class="template-02-inner template-02-inner-image" id="template-02-chart-1-image">' +
+					'<img class="template-02-hero-1" src="img/hero-portraits/rubick.png" >' +
 				'</div>' +
+				'<div class="template-02-underline"></div>' +
 
-				'<div class="col-md-3 template-02-chart" id="template-02-chart-2">' +
-					'<div class="template-02-inner template-02-inner-green" id="template-02-chart-2-green"></div>' +
-					'<div class="template-02-inner template-02-inner-red" id="template-02-chart-2-red"></div>' +
-					'<div class="template-02-inner template-02-inner-empty" id="template-02-chart-2-empty"></div>' +
-					'<div class="template-02-inner template-02-inner-total" id="template-02-chart-2-total"></div>' +
-					'<div class="template-02-inner template-02-inner-image" id="template-02-chart-2-image">' +
-						'<img class="template-02-hero-2 template-02-hero" src="img/hero-portraits/puck.png" >' +
-					'</div>' +
-					'<div class="template-02-underline"></div>' +
-
-					'<div class="template-02-text">' +
-						'<span class="green" id="template-02-chart-2-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-2-text-ban">32%</span><br>' +
-						'<p class="template-02-text-lg" id="template-02-chart-2-text-total"> 82%</p>' +
-					'</div>' +
+				'<div class="template-02-text">' +
+					'<span class="green" id="template-02-chart-1-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-1-text-ban">32%</span><br>' +
+					'<p class="template-02-text-lg" id="template-02-chart-1-text-total"> 82%</p>' +
 				'</div>' +
+			'</div>' +
 
-				'<div class="col-md-3 template-02-chart" id="template-02-chart-3">' +
-					'<div class="template-02-inner template-02-inner-green" id="template-02-chart-3-green"></div>' +
-					'<div class="template-02-inner template-02-inner-red" id="template-02-chart-3-red"></div>' +
-					'<div class="template-02-inner template-02-inner-empty" id="template-02-chart-3-empty"></div>' +
-					'<div class="template-02-inner template-02-inner-total" id="template-02-chart-3-total"></div>' +
-					'<div class="template-02-inner template-02-inner-image" id="template-02-chart-3-image">' +
-						'<img class="template-02-hero-3" src="img/hero-portraits/lina.png" >' +
-					'</div>' +
-					'<div class="template-02-underline"></div>' +
+			'<div class="col-md-3 template-02-chart" id="template-02-chart-2">' +
+				'<div class="template-02-inner template-02-inner-green" id="template-02-chart-2-green"></div>' +
+				'<div class="template-02-inner template-02-inner-red" id="template-02-chart-2-red"></div>' +
+				'<div class="template-02-inner template-02-inner-empty" id="template-02-chart-2-empty"></div>' +
+				'<div class="template-02-inner template-02-inner-total" id="template-02-chart-2-total"></div>' +
+				'<div class="template-02-inner template-02-inner-image" id="template-02-chart-2-image">' +
+					'<img class="template-02-hero-2 template-02-hero" src="img/hero-portraits/puck.png" >' +
+				'</div>' +
+				'<div class="template-02-underline"></div>' +
 
-					'<div class="template-02-text">' +
-						'<span class="green" id="template-02-chart-3-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-3-text-ban">32%</span><br>' +
-						'<p class="template-02-text-lg" id="template-02-chart-3-text-total"> 82%</p>' +
-					'</div>' +
+				'<div class="template-02-text">' +
+					'<span class="green" id="template-02-chart-2-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-2-text-ban">32%</span><br>' +
+					'<p class="template-02-text-lg" id="template-02-chart-2-text-total"> 82%</p>' +
+				'</div>' +
+			'</div>' +
+
+			'<div class="col-md-3 template-02-chart" id="template-02-chart-3">' +
+				'<div class="template-02-inner template-02-inner-green" id="template-02-chart-3-green"></div>' +
+				'<div class="template-02-inner template-02-inner-red" id="template-02-chart-3-red"></div>' +
+				'<div class="template-02-inner template-02-inner-empty" id="template-02-chart-3-empty"></div>' +
+				'<div class="template-02-inner template-02-inner-total" id="template-02-chart-3-total"></div>' +
+				'<div class="template-02-inner template-02-inner-image" id="template-02-chart-3-image">' +
+					'<img class="template-02-hero-3" src="img/hero-portraits/lina.png" >' +
+				'</div>' +
+				'<div class="template-02-underline"></div>' +
+
+				'<div class="template-02-text">' +
+					'<span class="green" id="template-02-chart-3-text-pick">50%</span>&nbsp&nbsp&nbsp&nbsp<span class="red" id="template-02-chart-3-text-ban">32%</span><br>' +
+					'<p class="template-02-text-lg" id="template-02-chart-3-text-total"> 82%</p>' +
 				'</div>' +
 			'</div>' +
 		'</div>';
 
-		setBodyHtml(html);
+    setBodyHtml(html, this);
 });

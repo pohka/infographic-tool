@@ -6,6 +6,9 @@ todo:
 -if a templete is in use, dont show it in browser
 -if editing a split template, disable the full templates column
 -hide template browser
+-delete section
+-delete template, replace it with a placeholder
+
 
 
 ==================================================================
@@ -26,3 +29,7 @@ moving hero img input, doesnt work if you hold down with mouse button
 -----------------------------------
 when you add 2 split templetes and then edit the first one
 it removes all templetes from that section
+
+-----------------------------------
+split templates minimize button minimize both of them
+they need seperate identifiers

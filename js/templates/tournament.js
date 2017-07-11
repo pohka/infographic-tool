@@ -53,14 +53,5 @@ $(document).on('click', '#tournament', function(){
         '</div>' +
       '</div>';
 
-    var id = $(this).attr("id");
-    var openingHtml =
-    '<div class="section" id="0">' +
-			'<div class="container ' + id + '">';
-
-    var closingHtml = '</div><hr class="faded"></div>';
-
-    var combinedHtml = html = $.parseHTML(openingHtml + html + closingHtml);
-
-    $(".body-container").append(combinedHtml);
+    setBodyHtml(html, this);
 });

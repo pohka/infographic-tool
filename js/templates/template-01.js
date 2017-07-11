@@ -49,3 +49,59 @@ function arc(percent, canvasID, isGreen)
 	context.stroke();
 
 }
+
+$(document).on('click', '#template-01', function(){
+	var html =
+		'<h3 class="template-01-title">Most Picked and Banned</h3>' +
+		'<h4 class="template-01-sub-title"><span class="green">Pick</span> rate and <span class="red">Ban</span> rate</h4>' +
+
+		'<div class="row">' +
+			'<div class="col-md-4">' +
+				'<div class="template-01-pick">' +
+					'<span class="template-01-pick-rate-1 template-01-input-field">0</span>%' +
+				'</div>' +
+				'<canvas class="canvas canvas-circle" id="template-01-canvas-1" ></canvas>' +
+				'<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-pick-1-hero-icon">' +
+			'</div>' +
+			'<div class="col-md-4">' +
+				'<div class="template-01-pick">' +
+					'<span class="template-01-pick-rate-2 template-01-input-field">0</span>%' +
+				'</div>' +
+				'<canvas class="canvas canvas-circle" id="template-01-canvas-2" ></canvas>' +
+				'<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-pick-2-hero-icon">' +
+			'</div>' +
+			'<div class="col-md-4">' +
+				'<div class="template-01-pick">' +
+					'<span class="template-01-pick-rate-3 template-01-input-field">0</span>%' +
+				'</div>' +
+				'<canvas class="canvas canvas-circle" id="template-01-canvas-3" ></canvas>' +
+				'<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-pick-3-hero-icon">' +
+			'</div>' +
+		'</div>' +
+
+		'<div class="row">' +
+			'<div class="col-md-4">' +
+				'<canvas class="canvas canvas-circle" id="template-01-canvas-4" ></canvas>' +
+				'<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-ban-1-hero-icon">' +
+				'<div class="template-01-ban">' +
+					'<span class="template-01-ban-rate-1 template-01-input-field">0</span>%' +
+				'</div>' +
+			'</div>' +
+			'<div class="col-md-4">' +
+				'<canvas class="canvas canvas-circle" id="template-01-canvas-5" ></canvas>' +
+				'<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-ban-2-hero-icon">' +
+				'<div class="template-01-ban">' +
+					'<span class="template-01-ban-rate-2 template-01-input-field">0</span>%' +
+				'</div>' +
+			'</div>' +
+			'<div class="col-md-4">' +
+				'<canvas class="canvas canvas-circle" id="template-01-canvas-6" ></canvas>' +
+				'<img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-ban-3-hero-icon">' +
+				'<div class="template-01-ban">' +
+					'<span class="template-01-ban-rate-3 template-01-input-field">0</span>%' +
+				'</div>' +
+			'</div>' +
+		'</div>';
+
+		setBodyHtml(html, this);
+});

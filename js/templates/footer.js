@@ -1,0 +1,17 @@
+
+$(document).on('click', '#footer', function(){
+	var html =
+    '<div class="row">' +
+      '<div class="col-md-3">' +
+        '<img src="img/footer/twitter_icon.png" class="twitter">' +
+      '</div>' +
+      '<div class="col-md-6 footer-text">' +
+        'twitter.com/PohkaDota' +
+      '</div>' +
+      '<div class="col-md-3">' +
+        '<img src="img/footer/ogre.png" class="avatar">' +
+      '</div>' +
+    '</div>';
+
+    setBodyHtml(html, this);
+});
