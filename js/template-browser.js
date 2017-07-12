@@ -13,7 +13,6 @@ $(document).on("click", ".hide-sidebar-browser", function(){
 function setActiveBrowserMenuItem(id)
 {
   var selector = "#"+id;
-  console.log("id:" + id);
   var type = id.replace("template-", "");
 
   $(selector).addClass('sidebar-menu-item-selected');

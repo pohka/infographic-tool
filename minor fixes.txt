@@ -1,13 +1,10 @@
 todo:
 
 -minimze all of sidebar button
--change template strings to objects
--if a templete is in use, dont show it in browser
--if editing a split template, disable the full templates column
--hide template browser
 -delete section
 -ordering of input fields
-
+-warning msg for deleting templates and sections
+-clearing a placeholder theme deletes it
 
 
 

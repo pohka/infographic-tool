@@ -46,6 +46,7 @@ $(document).ready(function(){
       $(".template-full").hide();
       $(".template-split").show();
     }
+    hideBrowserTemplatesInUse();
   });
 
 
@@ -92,7 +93,6 @@ $(document).ready(function(){
             $(this).append(html);
         }
       });
-
 
     $(".sidebar-browser").hide();
   });
@@ -187,7 +187,7 @@ $(document).on('click', '.btn-add-template', function() {
   var templateIndex = $(this).data("template-index");
   var sectionID = "section-" + $(this).data("section-index");
 
-  $(".sidebar-browser").show();
+  showSidebarBrowser();
   setBrowserType(getTemplateByID(templateID).type);
   $(".sidebar-browser").attr("id", sectionID);
   $(".sidebar-browser").data("template-name", templateID);
@@ -282,7 +282,7 @@ function addSection(id)
 
   var sectionID = "section-"+current_section_index;
 
-  $(".sidebar-browser").show();
+  showSidebarBrowser();
   $(".browser-menu-item").each(function(){
     $(this).prop("disabled", false);
   });
@@ -565,12 +565,11 @@ function getTemplateBodyHtml(selector, html)
   return fullHtml;
 }
 
+//if editing only enable the current template type
 function setBrowserType(type)
 {
-  console.log("here");
   var id = "template-" + type
   $(".browser-menu-item").each(function(){
-    console.log("item");
     if($(this).attr("id")==id)
     {
       $(this).prop('disabled', false);
@@ -579,6 +578,26 @@ function setBrowserType(type)
     }
     else {
       $(this).prop('disabled', true);
+    }
+  });
+}
+
+//shows the sidebar browser with the currently available templates
+function showSidebarBrowser()
+{
+  $(".sidebar-browser").show();
+  hideBrowserTemplatesInUse();
+}
+
+//hides all template options that are already in use in the body
+function hideBrowserTemplatesInUse()
+{
+  templates.forEach(function(element)
+  {
+    var id = element.id;
+    if ($("."+id).length > 0)
+    {
+      $("#"+id).hide();
     }
   });
 }
