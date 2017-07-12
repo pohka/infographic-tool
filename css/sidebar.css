@@ -255,3 +255,17 @@ input.input-hero
 {
 	color: var(--background);
 }
+
+.hide-sidebar-browser
+{
+	position: fixed;
+	margin-top: 33px;
+	margin-left: 176px;
+	padding: 6px 6px;
+	font-size: 10px;
+}
+
+.sidebar-browser-title
+{
+	padding-bottom: 10px;
+}

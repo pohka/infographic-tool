@@ -1,6 +1,5 @@
 todo:
 
--hide template browser button
 -minimze all of sidebar button
 -change template strings to objects
 -if a templete is in use, dont show it in browser
@@ -8,6 +7,7 @@ todo:
 -hide template browser
 -delete section
 -ordering of input fields
+
 
 
 
@@ -23,3 +23,6 @@ fix - set current section to shown when a template is selected
 
 -------------------------------
 moving hero img input, doesnt work if you hold down with mouse button
+
+--------------------------------
+add section, close template browser, leaves empty section

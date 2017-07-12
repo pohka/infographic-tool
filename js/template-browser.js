@@ -5,6 +5,10 @@ $(document).on('click', '.browser-menu-item', function() {
   setActiveBrowserMenuItem(id);
 });
 
+$(document).on("click", ".hide-sidebar-browser", function(){
+  $(".sidebar-browser").hide();
+});
+
 //set the active menu item in the template browser
 function setActiveBrowserMenuItem(id)
 {
