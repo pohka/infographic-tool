@@ -1,6 +1,5 @@
 todo:
 
--minimze all of sidebar button
 -ordering of input fields
 -warning msg for deleting templates and sections
 
@@ -18,3 +17,7 @@ fix - set current section to shown when a template is selected
 
 -------------------------------
 moving hero img input, doesnt work if you hold down with mouse button
+
+-------------------------------
+Add full templete and then clear it, the wrong templet ebrowser is available
+-placeholder template for full

@@ -115,6 +115,14 @@ $(document).ready(function(){
     });
   });
 
+  //show and hide sidebar
+  $(".hide-sidebar").click(function(){
+    $(".sidebar").hide();
+  });
+  $(".show-sidebar").click(function(){
+    $(".sidebar").show();
+  });
+
   $("#simple-background").click(function() {
     var checked = $(this).prop('checked');
     if(checked)

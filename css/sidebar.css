@@ -278,3 +278,25 @@ input.input-hero
 	padding: 4px 4px;
 	font-size: 12px;
 }
+
+.hide-sidebar
+{
+	position:fixed;
+	left:370px;
+	top:0px;
+	padding: 2px 2px;
+	color: var(--border);
+	border-color: transparent;
+	font-size: 14px;
+}
+
+.show-sidebar
+{
+	position:fixed;
+	left:0px;
+	top:0px;
+	padding: 2px 2px;
+	font-size: 14px;
+	color: var(--white);
+	border-color: transparent;
+}
