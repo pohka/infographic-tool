@@ -38,10 +38,14 @@
 		<!-- ============================ -->
 		<script src="js/helper.js"></script>
 		<script src="js/infographic.js"></script>
+
+		<!--sidebar-js-->
 		<script src="js/hero-names.js"></script>
 		<script src="js/template-info.js"></script>
 		<script src="js/template-browser.js"></script>
 		<script src="js/sidebar.js"></script>
+		<script src="js/export.js"></script>
+		<!--end of sidebar-js->
 
 		<!--templates-->
 		<script src="js/templates/tournament.js"></script>
@@ -55,7 +59,7 @@
 
 	<body>
 		<div class="body-container">
-
+			<div id="section-container"></div>
 			<!--SIDEBAR-->
 			<div class="sidebar">
 				<div class="sidebar-menu">
@@ -77,7 +81,10 @@
 				<button class="sidebar-btn sidebar-sub-menu" id="sidebar-add-section">
 					<span class="glyphicon glyphicon-plus sidebar-menu-glyph"></span>
 				</button>
-
+				<!--EXPORT-->
+				<button class="sidebar-btn sidebar-sub-menu" id="sidebar-export">
+					<span class="glyphicon glyphicon-download-alt sidebar-menu-glyph"></span>
+				</button>
 				<div class="section-list"></div>
 
 			</div>
@@ -108,8 +115,8 @@
 
 		<!--show sidebar btn is behind on the z-index-->
 		<button class="sidebar-btn glyphicon glyphicon-chevron-right show-sidebar"></button>
-
+		<!--END OF SIDEBAR-->
 	</body>
 
-	<div id="img-out"></div>
+
 </html>

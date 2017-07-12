@@ -321,7 +321,7 @@ function addSection(id)
   $(".section-list").append(sectionHtml);
 
   var sectionHtml = '<div class="section" id="'+sectionID+'-html"></div>';
-  $(".body-container").append(sectionHtml);
+  $("#section-container").append(sectionHtml);
 }
 
 //triggered once a template was selected

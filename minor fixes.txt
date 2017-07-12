@@ -2,7 +2,7 @@ todo:
 
 -ordering of input fields
 -warning msg for deleting templates and sections
-
+-automatically add templete for use in creation
 
 
 ==================================================================

@@ -16,6 +16,14 @@ function tournamentSideWinrate(radiant_wr)
   $(".tournament-dire-winrate").html(100-radiant_wr);
 }
 
+//rename export file
+$(document).on('input', '#tournament-title-input', function()
+{
+  var tournamentName = $('#tournament-title-input').val();
+  tournamentName.replace(" ", "-");
+  fileName = tournamentName + ".html";
+});
+
 //adding html for tournament template
 $(document).on('click', '#tournament', function(){
     var html =
