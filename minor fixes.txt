@@ -4,7 +4,6 @@ todo:
 -delete section
 -ordering of input fields
 -warning msg for deleting templates and sections
--clearing a placeholder theme deletes it
 
 
 
@@ -20,6 +19,3 @@ fix - set current section to shown when a template is selected
 
 -------------------------------
 moving hero img input, doesnt work if you hold down with mouse button
-
---------------------------------
-add section, close template browser, leaves empty section

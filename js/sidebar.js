@@ -263,7 +263,7 @@ $(document).on("click", ".move-hero ", function(){
     }
     else
     {
-      $(this).append(html);
+      $("#section-"+sectionIndex).append(html);
     }
   });
 
