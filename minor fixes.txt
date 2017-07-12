@@ -1,7 +1,6 @@
 todo:
 
 -minimze all of sidebar button
--delete section
 -ordering of input fields
 -warning msg for deleting templates and sections
 

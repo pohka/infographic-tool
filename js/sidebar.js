@@ -267,6 +267,14 @@ $(document).on("click", ".move-hero ", function(){
     }
   });
 
+//removes the section
+$(document).on("click", ".remove-section-btn", function(){
+  var sectionIndex = $(this).data("section-index");
+  $("#section-"+sectionIndex+"-html").remove();
+  $("#section-"+sectionIndex).remove();
+  genLineBreaks();
+});
+
 
 //sets the image
 function setImg(tag, imgName)
@@ -293,7 +301,11 @@ function addSection(id)
     '<div class="sidebar-item sidebar-section"'+
     'id="'+sectionID+'">' +
     getSidebarButtonHtml(sectionID) +
-    '<span id="sidebar-title-section-'+ current_section_index +'">Section Name</span></div>';
+    '<button class="sidebar-btn glyphicon glyphicon-remove remove-section-btn"'+
+    ' data-section-index="'+current_section_index+'"></button>'+
+    '<span id="sidebar-title-section-'+ current_section_index +'">Section Name</span>'+
+
+    '</div>';
 
   current_section_index+=1;
 

@@ -269,3 +269,12 @@ input.input-hero
 {
 	padding-bottom: 10px;
 }
+
+.remove-section-btn
+{
+	color: var(--border);
+	border:none;
+	float: right;
+	padding: 4px 4px;
+	font-size: 12px;
+}
