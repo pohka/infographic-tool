@@ -1,12 +1,31 @@
 
 //template browser toggle active menu item
 $(document).on('click', '.browser-menu-item', function() {
-  $(".browser-menu-item").each(function(){
-    $(this).removeClass('sidebar-menu-item-selected');
-  });
-
-  $(this).addClass('sidebar-menu-item-selected');
+  var id = $(this).attr("id");
+  setActiveBrowserMenuItem(id);
 });
+
+//set the active menu item in the template browser
+function setActiveBrowserMenuItem(id)
+{
+  var selector = "#"+id;
+  console.log("id:" + id);
+  var type = id.replace("template-", "");
+
+  $(selector).addClass('sidebar-menu-item-selected');
+
+  var otherSelector = "#template-";
+  if(type=="full")
+  {
+    otherSelector+="split";
+  }
+  else if(type=="split")
+  {
+    otherSelector+="full";
+  }
+  $(otherSelector).removeClass('sidebar-menu-item-selected');
+
+}
 
 
 function genTemplateBrowserItems()

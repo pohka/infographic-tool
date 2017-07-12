@@ -45,10 +45,20 @@
 	border: 1px solid var(--primary);
 }
 
+button[disabled]:hover
+{
+	background-color: var(--background);
+}
+
 .sidebar-btn:hover
 {
 	background-color: var(--primary);
 	color: var(--background);
+}
+
+.sidebar-btn:disabled
+{
+	color: var(--border);
 }
 
 .btn-minimize

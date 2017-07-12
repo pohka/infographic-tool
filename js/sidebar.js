@@ -48,6 +48,8 @@ $(document).ready(function(){
     }
   });
 
+
+
   /*
   - called when a template is selected
   - adds the template to the section
@@ -75,7 +77,6 @@ $(document).ready(function(){
       }
     });
 
-    console.log("index found in sidebar:"+ + templateIndex);
     var html = getTemplateHtml(template_name, id, isEditing, templateIndex);
 
 
@@ -187,6 +188,7 @@ $(document).on('click', '.btn-add-template', function() {
   var sectionID = "section-" + $(this).data("section-index");
 
   $(".sidebar-browser").show();
+  setBrowserType(getTemplateByID(templateID).type);
   $(".sidebar-browser").attr("id", sectionID);
   $(".sidebar-browser").data("template-name", templateID);
   $(".sidebar-browser").data("template-index", templateIndex);
@@ -281,6 +283,9 @@ function addSection(id)
   var sectionID = "section-"+current_section_index;
 
   $(".sidebar-browser").show();
+  $(".browser-menu-item").each(function(){
+    $(this).prop("disabled", false);
+  });
   $(".sidebar-browser").attr("id", sectionID);
   $(".sidebar-browser").data("template-index", current_template_index);
 
@@ -310,7 +315,6 @@ function getTemplateHtml(template_name, id, isEditing, tIndex)
   {
     templateIndex = tIndex;
   }
-  console.log("initial index:" + templateIndex);
 
   var templateHtml=
     '<div class="sidebar-item sidebar-template '+ cls +'" '+
@@ -323,7 +327,6 @@ function getTemplateHtml(template_name, id, isEditing, tIndex)
   if(isEditing==false && isSplit(template_name))
   {
     current_template_index+=1;
-    console.log("increment");
     templateHtml+=getTemplateHtml("placeholder", id, true, current_template_index);
   }
 
@@ -554,4 +557,22 @@ function getTemplateBodyHtml(selector, html)
     '<div class="container ' + id + extraClasses + '">'+html+'</div>';
 
   return fullHtml;
+}
+
+function setBrowserType(type)
+{
+  console.log("here");
+  var id = "template-" + type
+  $(".browser-menu-item").each(function(){
+    console.log("item");
+    if($(this).attr("id")==id)
+    {
+      $(this).prop('disabled', false);
+      setActiveBrowserMenuItem(id);
+      $(this).trigger("click");
+    }
+    else {
+      $(this).prop('disabled', true);
+    }
+  });
 }

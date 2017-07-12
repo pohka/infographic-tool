@@ -8,6 +8,7 @@ todo:
 -hide template browser
 -delete section
 -ordering of input fields
+-fix ordering of split template, if you edit template 1
 
 
 
