@@ -260,9 +260,9 @@ input.input-hero
 {
 	position: fixed;
 	margin-top: 33px;
-	margin-left: 176px;
+	margin-left: 174px;
 	padding: 6px 6px;
-	font-size: 10px;
+	font-size: 12px;
 }
 
 .sidebar-browser-title
