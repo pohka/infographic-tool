@@ -541,8 +541,14 @@ function hideAllSections()
 function setBodyHtml(html, selector)
 {
   var browserID = $(".sidebar-browser").attr("id");
+  var templateIndex = $(".sidebar-browser").data("template-index");
   var templateHtml = getTemplateBodyHtml(selector, html);
-  $("#"+browserID+"-html").append(templateHtml);
+
+  var selector = "#"+browserID+"-html";
+  if(templateIndex==0)
+    $(selector).prepend(templateHtml);
+  else
+    $(selector).append(templateHtml);
 }
 
 //wraps the html in the template container div
