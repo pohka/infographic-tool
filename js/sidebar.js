@@ -249,39 +249,73 @@ $(document).on("click", ".move-hero ", function(){
 
 //remove template and raplce it with placeholder
   $(document).on("click", ".btn-remove-template", function(){
-    var templateID=$(this).attr("id").replace("-remove", "");
+    var templateID = $(this).attr("id").replace("-remove", "");
     var templateIndex = $(this).data("template-index");
     var sectionIndex = $(this).data("section-index");
 
-    //find and remove the template
-    var sidebarClass = ".section-"+sectionIndex+"-template";
-    $(sidebarClass).each(function(){
-      if(templateIndex == $(this).data("template-index"))
-      {
-        $(this).remove();
-        $("."+templateID).remove();
-      }
-    });
+    $(".delete-menu").data("isSection", "false");
+    $(".delete-menu").data("section-index", sectionIndex);
+    $(".delete-menu").data("template-index", templateIndex);
+    $(".delete-menu").data("template-id", templateID);
 
-    var html = getTemplateHtml("placeholder", "section-"+sectionIndex, true, templateIndex);
-
-    if(templateIndex==0)
-    {
-      $("#sidebar-title-section-"+ sectionIndex).after(html);
-    }
-    else
-    {
-      $("#section-"+sectionIndex).append(html);
-    }
+    showDeleteMenu();
   });
 
 //removes the section
 $(document).on("click", ".remove-section-btn", function(){
+
+
   var sectionIndex = $(this).data("section-index");
+  $(".delete-menu").data("isSection", "true");
+  $(".delete-menu").data("section-index", sectionIndex);
+
+  showDeleteMenu();
+});
+
+function showDeleteMenu()
+{
+  $(".delete-menu").finish().toggle(100).
+    css({
+        top: event.pageY + "px",
+        left: event.pageX + "px"
+    });
+}
+
+function removeSection()
+{
+  var sectionIndex = $(".delete-menu").data("section-index");
   $("#section-"+sectionIndex+"-html").remove();
   $("#section-"+sectionIndex).remove();
   genLineBreaks();
-});
+}
+
+function removeTemplate()
+{
+  var sectionIndex = $(".delete-menu").data("section-index");
+  var templateIndex = $(".delete-menu").data("template-index");
+  var templateID = $(".delete-menu").data("template-id");
+
+  //find and remove the template
+  var sidebarClass = ".section-"+sectionIndex+"-template";
+  $(sidebarClass).each(function(){
+    if(templateIndex == $(this).data("template-index"))
+    {
+      $(this).remove();
+      $("."+templateID).remove();
+    }
+  });
+
+  var html = getTemplateHtml("placeholder", "section-"+sectionIndex, true, templateIndex);
+
+  if(templateIndex==0)
+  {
+    $("#sidebar-title-section-"+ sectionIndex).after(html);
+  }
+  else
+  {
+    $("#section-"+sectionIndex).append(html);
+  }
+}
 
 
 //sets the image
@@ -621,3 +655,28 @@ function hideBrowserTemplatesInUse()
     }
   });
 }
+
+// If the document is clicked somewhere, hide the delete menu
+$(document).bind("mousedown", function (e) {
+    if (!$(e.target).parents(".delete-menu").length > 0) {
+        $(".delete-menu").hide(100);
+    }
+});
+
+
+// If the menu element is clicked
+$(document).on("click", ".delete-menu li", function(){
+  switch($(this).attr("data-action")) {
+    case "delete":
+      var isSection = $(".delete-menu").data("isSection");
+      if(isSection=="true")
+        removeSection();
+      else
+        removeTemplate();
+
+    break;
+  }
+
+  // Hide it AFTER the action was triggered
+  $(".delete-menu").hide(100);
+});
