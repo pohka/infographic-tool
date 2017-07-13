@@ -14,6 +14,25 @@ $(document).on('input', '.template-01-input-field', function() {
 });
 
 
+$(document).ready(function(){
+	var pickRates = [];
+	var banRates= [];
+
+	for(var i=1; i<=3; i++)
+	{
+		pickRates.push($(".template-01-pick-rate-"+i).text());
+		banRates.push($(".template-01-ban-rate-"+i).text());
+	}
+
+	var canvas="template-01-canvas-";
+	for(var i=0; i<3; i++)
+	{
+		arc(pickRates[i], canvas+(1+i), true); //pick rates
+		arc(banRates[i], 	canvas+(4+i), false); //ban rates
+	}
+});
+
+
 
 //percent should be 0-1 value
 function arc(percent, canvasID, isGreen)
