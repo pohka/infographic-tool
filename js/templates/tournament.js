@@ -20,8 +20,8 @@ function tournamentSideWinrate(radiant_wr)
 $(document).on('input', '#tournament-title-input', function()
 {
   var tournamentName = $('#tournament-title-input').val();
-  tournamentName.replace(" ", "-");
-  fileName = tournamentName + ".html";
+  var name = tournamentName.replace(/ /g, '-');
+  fileName = name + ".html";
 });
 
 //adding html for tournament template
