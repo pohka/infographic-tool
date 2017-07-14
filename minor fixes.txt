@@ -2,8 +2,10 @@ todo:
 
 -ordering of input fields
 -automatically add templete for use in creation
--update canvas on load
-
+-section title (optional for user)
+-player face input
+-team logo input
+-remove sidebar.css from export
 
 ==================================================================
 ==================================================================
