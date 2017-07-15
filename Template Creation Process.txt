@@ -1,0 +1,12 @@
+Process to creating a template
+==============================
+1 - create a new css file and add html to index.html
+2 - design layout and style
+3 - screenshot a preview image with a width of 250px
+4 - save file with the same name as the id
+5 - add unique field classes with the prefix being the template id (e.g.temp-00-name-1)
+6 - check if all input fields work properly
+7 - create and add the template object in template-info.js 
+8 - create javascript file for temlplate. (remember to referance in index.html)
+9 - add number input func: $(document).on('input', '.class-input', function() {});
+10- if a canvas is used make sure it loads for exported pages

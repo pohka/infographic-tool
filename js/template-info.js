@@ -50,6 +50,18 @@ function loadTemplates()
   template2.hero_portrait.push("hero-1", "hero-2", "hero-3");
   templates.push(template2);
 
+  var template3 = jQuery.extend(true, {}, template);
+  template3.set("temp-03", "Player Profiles", "full");
+  template3.str_fields.push(
+    "text-0", "player-name-0",
+    "text-1", "player-name-1",
+    "text-2", "player-name-2",
+    "text-3", "player-name-3",
+    "text-4", "player-name-4"
+  );
+  templates.push(template3);
+
+
   var placeholder = jQuery.extend(true, {}, template);
     placeholder.set("placeholder", "Placeholder", "split");
   templates.push(placeholder);
