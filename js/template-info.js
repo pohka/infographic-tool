@@ -8,6 +8,7 @@ var template = {
     img_fields: [],
     hero_icon: [],
     hero_portrait: [],
+    str_dynamic: [],
     set: function(id, name, split){
       this.id = id;
       this.name = name;
@@ -51,14 +52,16 @@ function loadTemplates()
   templates.push(template2);
 
   var template3 = jQuery.extend(true, {}, template);
-  template3.set("temp-03", "Player Profiles", "full");
+  template3.set("temp-03", "Player Performances", "full");
   template3.str_fields.push(
-    "text-0", "player-name-0",
-    "text-1", "player-name-1",
-    "text-2", "player-name-2",
-    "text-3", "player-name-3",
-    "text-4", "player-name-4"
+    "text-0", "text-1", "text-2",
+    "text-3","text-4", "text-5"
   );
+  template3.str_dynamic.push(
+    "player-name-0", "player-name-1", "player-name-2",
+    "player-name-3", "player-name-4", "player-name-5"
+  );
+  template3.num_fields.push("row-count");
   templates.push(template3);
 
 

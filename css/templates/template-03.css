@@ -41,7 +41,7 @@
   padding-top: 2px;
   margin-bottom: 2px;
   display:grid;
-  grid-template-columns: 200px 200px 150px;
+  grid-template-columns: 200px 100px 240px;
   grid-gap: 10px;
 }
 
@@ -86,7 +86,7 @@
 
 .temp-03-team-img-right
 {
-  margin-left: -55px;
+  margin-left: -80px;
 }
 
 .temp-03-country-img
@@ -108,4 +108,11 @@
 .temp-03-con-left
 {
     margin-left:  30px;
+}
+
+.temp-03-title
+{
+  color: var(--primary);
+  margin-bottom: 25px;
+  margin-top: 5px;
 }

@@ -30,6 +30,12 @@ String.prototype.toNumber = function()
 
 Number.prototype.clamp = function(max,min)
 {
+  if(min>max)
+  {
+    var temp = min;
+    min=max;
+    max=temp;
+  }
   var val=this;
   if(val<min)
     val=min;
@@ -37,4 +43,20 @@ Number.prototype.clamp = function(max,min)
     val=max;
 
   return val;
+}
+
+function getElementWithData(cls, dataType, dataVal)
+{
+  var selector;
+
+  $("."+cls).each(function() {
+    var val = $(this).data(dataType);
+    if(val==dataVal)
+      selector = this;
+  });
+
+    if(selector==null || selector===null)
+      console.error("ElementWithData: No element found! DataType:"+ dataType + " Val:"+ dataVal);
+
+    return selector;
 }

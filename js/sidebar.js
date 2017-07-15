@@ -429,6 +429,7 @@ function getInputFieldsHtml(template_name)
 {
   //variables which change depending on the input type
   var num_input_index=0;
+  var str_dynamic_index=0;
   var data = "";
   var cls = "";
   var input_type="";
@@ -490,6 +491,16 @@ function getInputFieldsHtml(template_name)
     cls="";
     fieldName = template.hero_portrait[i];
 
+    html += wrapInputFieldHtml(fieldID, template_name, input_type, data, cls, fieldName);
+  }
+
+  for(var i=0; i<template.str_dynamic.length; i++)
+  {
+    data = 'data-index="'+str_dynamic_index+'" ';
+    cls="-dynamic-str";
+    input_type="";
+    fieldName = template.str_dynamic[i];
+    str_dynamic_index+=1;
     html += wrapInputFieldHtml(fieldID, template_name, input_type, data, cls, fieldName);
   }
 
