@@ -115,6 +115,28 @@ $(document).ready(function(){
     });
   });
 
+  //color input
+  $(".submit-color").click(function(){
+    var name = $(this).data("name");
+    var input = $("#palette-"+name).val();
+    console.log("here:" + input);
+
+    //careful no validation #LazyProgrammer
+
+    var variableName;
+
+    switch(name)
+    {
+      case "primary": variableName = "--primary";   break;
+      case "secondary": variableName = "--secondary"; break;
+      case "text":    variableName = "--white";     break;
+      case "bg":    variableName = "--background";     break;
+    }
+
+      $(":root").css(variableName+"_const", input);
+      setColors("_const");
+  });
+
   //show and hide sidebar
   $(".hide-sidebar").click(function(){
     $(".sidebar").hide();

@@ -3,8 +3,8 @@
 	--secondary:; /*orange*/
 	--green:;
 	--red:;
-	--white:#fff;
-	--background:#000;
+	--white:;
+	--background:;
   --border:rgba(255,255,255,0.4);
   --primary_faded: rgba(0,192,255,0.4);
 
@@ -13,12 +13,16 @@
   --secondary_const:#ff5100; /*orange*/
   --green_const:#78d400;
   --red_const:#ff0006;
+  --background_const:#000;
+  --white_const:#fff;
 
   /*color blind colors*/
   --primary_blind:#00c0ff;
   --secondary_blind:#f6f9ff;
   --green_blind:#a4beff;
   --red_blind:#2563ff;
+  --background_blind:#000;
+  --white_blind:#fff;
 
 }
 

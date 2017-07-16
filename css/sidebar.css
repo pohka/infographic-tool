@@ -324,3 +324,31 @@ input.input-hero
 .delete-menu li:hover {
     background-color: #DEF;
 }
+
+.palette-input {
+	width: 100% !important;
+	margin-left: 25px;
+}
+
+#palette-input-con
+{
+	margin-top: 10px;
+	margin-left: -10px;
+}
+
+.submit-color
+{
+	padding: 5px 5px;
+	margin-top: 3px;
+	margin-left: -45px;
+}
+
+.submit-color:focus
+{
+	background-color: var(--border);
+}
+
+.palette-input-title
+{
+	margin-top: 5px;
+}

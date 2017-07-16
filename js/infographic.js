@@ -14,15 +14,16 @@ function randomBackground()
 
 function setColors(postfix)
 {
-  var primary = $(":root").css("--primary" + postfix);
-  var secondary = $(":root").css("--secondary" + postfix);
-  var green = $(":root").css("--green" + postfix);
-  var red = $(":root").css("--red" + postfix);
+  var colors = [
+    "--primary", "--secondary",
+    "--red", "--green", "--white",
+    "--background"];
 
-  $(":root").css("--primary", primary);
-  $(":root").css("--secondary", secondary);
-  $(":root").css("--green", green);
-  $(":root").css("--red", red);
+  for(var i=0; i<colors.length; i++)
+  {
+    var col = $(":root").css(colors[i] + postfix);
+    $(":root").css(colors[i], col);
+  }
 }
 
 function simpleBackground()
