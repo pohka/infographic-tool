@@ -294,6 +294,40 @@ $(document).on("click", ".remove-section-btn", function(){
   showDeleteMenu();
 });
 
+$(document).on("input", ".input-team", function(){
+  var input = $(this).val();
+  setTeamLogo(input, this);
+});
+
+$(document).on('autocompleteselect', ".input-team", function(event, ui) {
+  var team = ui.item.value;
+  setTeamLogo(team, this);
+});
+
+$(document).on('keydown.autocomplete', ".input-team", function() {
+    $(this).autocomplete({
+      source: teams
+    });
+});
+
+function setTeamLogo(input, selector)
+{
+  input = input.toLowerCase();
+  var index = teams.indexOf(input);
+  var htmlCls = $(selector).attr("id").replace("-input", "");
+  var src = "img/teams/";
+
+  if(index >= 0)
+    src+=input;
+  else
+    src += "placeholder";
+
+  src+=".png";
+
+  $("."+htmlCls).attr("src", src);
+}
+
+
 function showDeleteMenu()
 {
   $(".delete-menu").finish().toggle(100).
@@ -523,6 +557,16 @@ function getInputFieldsHtml(template_name)
     input_type="";
     fieldName = template.str_dynamic[i];
     str_dynamic_index+=1;
+    html += wrapInputFieldHtml(fieldID, template_name, input_type, data, cls, fieldName);
+  }
+
+  for(var i=0; i<template.team.length; i++)
+  {
+    data="";
+    cls="";
+    fieldName = template.team[i];
+    input_type="-team";
+
     html += wrapInputFieldHtml(fieldID, template_name, input_type, data, cls, fieldName);
   }
 

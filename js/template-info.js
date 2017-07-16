@@ -9,6 +9,7 @@ var template = {
     hero_icon: [],
     hero_portrait: [],
     str_dynamic: [],
+    team: [],
     set: function(id, name, split){
       this.id = id;
       this.name = name;
@@ -64,6 +65,11 @@ function loadTemplates()
   template3.num_fields.push("row-count");
   templates.push(template3);
 
+  var teaminfo0 = jQuery.extend(true, {}, template);
+  teaminfo0.set("team-00", "Team Title", "full");
+  teaminfo0.str_fields.push("name");
+  teaminfo0.team.push("logo");
+  templates.push(teaminfo0);
 
   var placeholder = jQuery.extend(true, {}, template);
     placeholder.set("placeholder", "Placeholder", "split");

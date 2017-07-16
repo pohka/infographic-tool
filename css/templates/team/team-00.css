@@ -1,0 +1,24 @@
+
+.team-00-wrapper
+{
+  display: grid;
+  grid-template-columns: 220px 280px 220px;
+  grid-gap: 0px;
+  margin-top: 10px;
+}
+
+.team-00-logo
+{
+  height: 64px;
+  margin-bottom: -14px;
+}
+
+.team-00-left
+{
+  text-align: right;
+}
+
+.team-00-name
+{
+  margin-top: 10px;
+}
