@@ -6,12 +6,6 @@ function gen()
   text = quotes(text);
 
   document.getElementById("copy-area").value=text;
-
-  var els = text.split("\n");
-  for(var i=0; i<els[0].length; i++)
-  {
-    console.log(els[0].charAt(i)+ ":" + els[0].charCodeAt(i));
-  }
 }
 
 //adds quotes to string for javascript variable
