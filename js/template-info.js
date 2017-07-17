@@ -71,8 +71,25 @@ function loadTemplates()
   teaminfo0.team.push("logo");
   templates.push(teaminfo0);
 
+  var teaminfo1 = jQuery.extend(true, {}, template);
+  teaminfo1.set("team-01", "Team Brief", "split");
+  teaminfo1.str_fields.push(
+    "achieve-name-0", "achieve-date-0", "achieve-prize-0",
+    "achieve-name-1", "achieve-date-1", "achieve-prize-1",
+    "achieve-name-2", "achieve-date-2", "achieve-prize-2",
+    "achieve-name-3", "achieve-date-3", "achieve-prize-3",
+    "achieve-name-4", "achieve-date-4", "achieve-prize-4",
+    "achieve-name-5", "achieve-date-5", "achieve-prize-5",
+  );
+  teaminfo1.num_fields.push(
+    "achieve-place-0","achieve-place-1", "achieve-place-2",
+    "achieve-place-3","achieve-place-4", "achieve-place-5",
+    "row-count", "radiant-wr"
+  );
+  templates.push(teaminfo1);
+
   var placeholder = jQuery.extend(true, {}, template);
-    placeholder.set("placeholder", "Placeholder", "split");
+  placeholder.set("placeholder", "Placeholder", "split");
   templates.push(placeholder);
 }
 
