@@ -1,16 +1,8 @@
 
 $(document).ready(function(){
-  randomBackground();
   setColors("_const");
   loadTemplates();
 });
-
-function randomBackground()
-{
-  var imgCount=10;
-  var index = Math.round(Math.random()*(imgCount));
-  $("html").css("background", "url(img/backgrounds/"+index+".png)");
-}
 
 function setColors(postfix)
 {

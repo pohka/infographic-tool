@@ -7,7 +7,11 @@ $(document).on("input", ".team-01-input-field", function(){
   }
   else if(id.indexOf("radiant-wr")>=0)
   {
-    setWrBar(this);
+    setWrBar(this, true);
+  }
+  else if(id.indexOf("dire-wr")>=0)
+  {
+    setWrBar(this, false);
   }
   else if(id.indexOf("row-count")>=0)
   {
@@ -16,14 +20,21 @@ $(document).on("input", ".team-01-input-field", function(){
 });
 
 //sets the win rate bar
-function setWrBar(selector)
+function setWrBar(selector, isRadiant)
 {
   var val = getNumberInput(selector);
   val = val.clamp(0,100);
 
-  $("#team-01-radiant-wr").text(val);
-  $("#team-01-dire-wr").text(100-val);
-  $(".team-01-bar-green").css("width", val+"%");
+  if(isRadiant)
+  {
+    $("#team-01-radiant-wr").text(val);
+    $(".team-01-bar-green").css("width", val+"%");
+  }
+  else {
+    console.log("dire");
+    $("#team-01-dire-wr").text(val);
+    $(".team-01-bar-red").css("width", val+"%");
+  }
 }
 
 //show only the amount of elements as specified, range(1-6)
@@ -75,17 +86,25 @@ function setPlacement(selector)
 $(document).on("click", "#team-01", function(){
   var html =
   '<!--winrate bar-->' +
-  '<div class="team-01-leftbar-text">' +
-    'Radiant <span id="team-01-radiant-wr">50</span>%' +
-  '</div>' +
-  '<div class="team-01-righttbar-text">' +
-    '<span id="team-01-dire-wr">50</span>%  Dire' +
-  '</div>' +
-  '<div class="team-01-bar">' +
-    '<div class="team-01-bar-red"></div>' +
-    '<div class="team-01-bar-green"></div>' +
-    '<div class="team-01-bar-mid"></div>' +
-  '</div>' +
+  '<table>' +
+    '<tr>' +
+      '<td class="team-01-table-left green">' +
+        'Radiant <span id="team-01-radiant-wr">100</span>%' +
+      '</td>' +
+      '<td class="team-01-table-right" >' +
+        '<div class="team-01-bar-green"></div>' +
+      '</td>' +
+    '</tr>' +
+    '<tr>' +
+      '<td class="team-01-table-left red">' +
+        'Dire <span id="team-01-dire-wr">100</span>%' +
+      '</td>' +
+      '<td class="team-01-table-right">' +
+        '<div class="team-01-bar-red"></div>' +
+      '</td>' +
+    '</tr>' +
+  '</table>' +
+
   '<div class="team-01-achieve-con">' +
     '<div class="team-01-achieve"  data-index="0">' +
       '<div class="team-01-achieve-place team-01-achieve-place-0" data-index="0">1st</div>' +

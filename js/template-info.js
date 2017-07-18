@@ -84,7 +84,7 @@ function loadTemplates()
   teaminfo1.num_fields.push(
     "achieve-place-0","achieve-place-1", "achieve-place-2",
     "achieve-place-3","achieve-place-4", "achieve-place-5",
-    "row-count", "radiant-wr"
+    "row-count", "radiant-wr", "dire-wr"
   );
   templates.push(teaminfo1);
 
