@@ -13,7 +13,7 @@
   --secondary_const:#ff5100; /*orange*/
   --green_const:#78d400;
   --red_const:#ff0006;
-  --background_const:#000;
+  --background_const:#131313;
   --white_const:#fff;
 
   /*color blind colors*/
@@ -21,7 +21,7 @@
   --secondary_blind:#f6f9ff;
   --green_blind:#a4beff;
   --red_blind:#2563ff;
-  --background_blind:#000;
+  --background_blind:#131313;
   --white_blind:#fff;
 
 }
