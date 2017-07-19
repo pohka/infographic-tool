@@ -94,12 +94,12 @@
 
 .team-02-hero-right
 {
-  margin-left: 8px;
+  margin-left: 14px;
 }
 
 .team-02-horz-line
 {
-  width: 50px;
+  width: 40px;
   height: 220px;
   margin-top: -238px;
   border-right: 2px solid var(--primary);
