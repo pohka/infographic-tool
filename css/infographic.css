@@ -5,15 +5,15 @@
 	--red:;
 	--white:;
 	--background:;
-  --border:rgba(255,255,255,0.4);
-  --primary_faded: rgba(0,192,255,0.4);
+  --border:rgba(200,200,200,0.2);
+  --primary_faded: rgba(0, 143, 234, 0.4);
 
   /*non-color blind colors, should remain constant*/
-  --primary_const:#00c0ff;
-  --secondary_const:#ff5100; /*orange*/
+  --primary_const:#008fea;
+  --secondary_const:#ea5200; /*orange*/
   --green_const:#78d400;
-  --red_const:#ff0006;
-  --background_const:#131313;
+  --red_const:#ff0000;
+  --background_const:#101010;
   --white_const:#fff;
 
   /*color blind colors*/
@@ -24,6 +24,7 @@
   --background_blind:#131313;
   --white_blind:#fff;
 
+  --html-bg: linear-gradient(to right, #070000 0%, #333 50%, #070000 100%);
 }
 
 @font-face {
@@ -39,8 +40,13 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
+  background-color: #000;
   height: 100%;
+  background: #070000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #070000, #282828, #070000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: var(--html-bg);
+
+
 }
 
 body

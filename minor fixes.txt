@@ -1,11 +1,8 @@
 todo:
 
 -ordering of input fields
--automatically add templete for use in creation
 -section title (optional for user)
--player face input
--team logo input
--remove sidebar.css from export
+-fix css for temp-03 css for firefox
 
 ==================================================================
 ==================================================================

@@ -147,10 +147,11 @@ $(document).ready(function(){
 
   $("#simple-background").click(function() {
     var checked = $(this).prop('checked');
-    if(checked)
+    if(checked==true)
       simpleBackground();
-    else
-      randomBackground();
+    else {
+      gradiantBg();
+    }
   });
 
 });

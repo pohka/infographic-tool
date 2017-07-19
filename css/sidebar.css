@@ -54,6 +54,7 @@ button[disabled]:hover
 {
 	background-color: var(--primary);
 	color: var(--background);
+	font-weight: bold;
 }
 
 .sidebar-btn:disabled

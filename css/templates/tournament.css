@@ -35,3 +35,8 @@
 	color: var(--primary);
 	font-size:20px;
 }
+
+.dire, .radiant
+{
+	font-weight:500;
+}

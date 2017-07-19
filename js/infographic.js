@@ -21,8 +21,15 @@ function setColors(postfix)
 function simpleBackground()
 {
   var white = $(":root").css("--white");
-  $("html").css("background", "");
-  $("html").css("background-color", white);
+  $("html").css("background", white);
+
+}
+
+function gradiantBg()
+{
+  var bg = $(":root").css("--html-bg");
+  $("html").css("background", bg);
+
 }
 
 function genLineBreaks()

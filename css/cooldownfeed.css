@@ -1,0 +1,159 @@
+:root{
+  --primary:#008fea; /*blue*/
+	--secondary:#ea5200; /*orange*/
+	--background:#101010;
+  --border:rgba(200,200,200,0.2);
+  --primary_faded: rgba(0, 143, 234, 0.4);
+  --text: #fff;
+  --html-bg: linear-gradient(to right, #070000, #353535, #070000);
+  --hover: #353535;
+}
+
+html
+{
+  background: var(--html-bg);
+}
+
+body
+{
+  color:white;
+
+  margin:auto;
+
+}
+
+h1
+{
+  text-align: center;
+}
+
+h2
+{
+  color: var(--primary);
+  margin-top: 0px;
+  padding-top: 6px;
+  font-weight: normal;
+  font-size: 26px;
+}
+
+.cdf-con
+{
+  background-color: var(--background);
+  width:1000px;
+  margin: auto;
+  min-height: 1000px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  margin-top: 75px;
+  margin-bottom: 200px;
+}
+
+.cdf-navlogo
+{
+    height: 63px;
+    padding: 4px 15px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.cdf-navlogo:hover
+{
+  background-color: var(--hover);
+}
+
+.cdf-navbar
+{
+  position: fixed;
+  z-index: 15;
+  width:1000px;
+  left:50%;
+  top:0;
+  margin-left: -500px;
+  border-bottom: 2px solid var(--primary);
+  background: var(--background);
+  margin-bottom: 10px;
+}
+
+.cdf-navitems
+{
+  margin-left: 108px;
+  margin-top: -50px;
+  padding: 0px 2px;
+  border-color: var(--text);
+  font-size: 16px;
+}
+
+#nav-item-1, #nav-item-2,
+#nav-item-3, #nav-item-4,
+#nav-item-5, #nav-item-6
+{
+  border-top: 1px solid transparent;
+}
+
+#nav-item-1:hover, #nav-item-2:hover,
+#nav-item-3:hover, #nav-item-4:hover,
+#nav-item-5:hover, #nav-item-6:hover
+{
+  border-top: 1px solid var(--primary);
+}
+
+.cdf-navbar ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--background);
+}
+
+.cdf-navbar li {
+    float: left;
+    min-width: 100px;
+    height: 45px;
+}
+
+.cdf-navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    height: 45px;
+}
+
+.cdf-navbar li a:hover:not(.active) {
+    background-color: var(--hover);
+}
+
+.cdf-navbar .active {
+    background-color: var(--hover);
+}
+
+.cdf-nav-left
+{
+  height: 40px;
+  float: right;
+  padding-top: 2px;
+  margin-top: -40px;
+  margin-bottom: -10px;
+  margin-right: 20px;
+}
+
+.cdf-nav-left li
+{
+  font-size: 20px;
+  min-width: 35px;
+  max-height: 35px;
+  text-align: center;
+
+  padding: 2px;
+}
+
+.cdf-nav-left li:hover
+{
+  background-color: var(--hover);
+  color: var(--primary);
+}
