@@ -13,20 +13,12 @@ html
 {
 }
 
-@font-face {
-    font-family: radiance-bold;
-    src: url(../fonts/radiance-bold.ttf);
-
-	font-family: radiance;
-    src: url(../fonts/radiance.ttf);
-}
-
 body
 {
   color:white;
   font-weight: 600;
   margin:auto;
-  font-family: radiance;
+  font-family: font-family: 'Titillium Web', sans-serif;
   background: var(--html-bg);
   background: -webkit-linear-gradient(to right, #070000, #282828, #070000);  /* Chrome 10-25, Safari 5.1-6 */
   background: var(--html-bg);
@@ -35,6 +27,8 @@ body
 h1
 {
   text-align: center;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 h2
@@ -58,6 +52,8 @@ h2
   margin-top: 75px;
   margin-bottom: 200px;
 }
+
+/*------------Navbar--------------*/
 
 .cdf-navlogo
 {
@@ -113,16 +109,12 @@ h2
     pointer-events: auto;
 }
 
-#nav-item-1, #nav-item-2,
-#nav-item-3, #nav-item-4,
-#nav-item-5, #nav-item-6
+.nav-item
 {
   border-top: 1px solid transparent;
 }
 
-#nav-item-1:hover, #nav-item-2:hover,
-#nav-item-3:hover, #nav-item-4:hover,
-#nav-item-5:hover, #nav-item-6:hover
+.nav-item:hover
 {
   border-top: 1px solid var(--primary);
 }
@@ -162,8 +154,9 @@ h2
 
 .cdf-nav-left
 {
-  height: 40px;
-  padding-top: 4px;
+  height: 44px;
+  padding-top: 8px;
+  margin-top: -7px;
   margin-bottom: -96px;
   border-top: 1px solid transparent;
   float:right;
@@ -173,9 +166,10 @@ h2
 .cdf-nav-left li
 {
   font-size: 20px;
-  min-width: 35px;
-  max-height: 35px;
+  min-width: 40px;
+  max-height: 38px;
   text-align: center;
+  font-size: 22px;
   padding: 2px;
   margin-top: 5px;
 }
@@ -231,3 +225,20 @@ h2
 #logo-letter-c{ margin-left: -37px;}
 #logo-letter-d{ margin-left: -31px;}
 #logo-letter-f{ margin-left: -34px; display:}
+
+/*------------end of navbar----------------*/
+
+.section
+{
+  display: none;
+}
+
+#home
+{
+  display: block;
+}
+
+#about
+{
+  padding: 30px 100px;
+}

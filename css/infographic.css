@@ -27,13 +27,6 @@
   --html-bg: linear-gradient(to right, #070000 0%, #333 50%, #070000 100%);
 }
 
-@font-face {
-    font-family: radiance-bold;
-    src: url(../fonts/radiance-bold.ttf);
-
-	font-family: radiance;
-    src: url(../fonts/radiance.ttf);
-}
 
 html {
   -webkit-background-size: cover;
@@ -54,7 +47,7 @@ body
   margin-top:30px;
   background: none;
   font-weight:bold;
-  font-family: radiance;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 input[type=text]
@@ -73,7 +66,6 @@ input[type=text]
 	margin:auto;
 	background-color: var(--background);
 	color: var(--primary);
-	font-family: radiance;
 	z-index:-100;
 }
 
