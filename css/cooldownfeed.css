@@ -11,15 +11,25 @@
 
 html
 {
-  background: var(--html-bg);
+}
+
+@font-face {
+    font-family: radiance-bold;
+    src: url(../fonts/radiance-bold.ttf);
+
+	font-family: radiance;
+    src: url(../fonts/radiance.ttf);
 }
 
 body
 {
   color:white;
-
+  font-weight: 600;
   margin:auto;
-
+  font-family: radiance;
+  background: var(--html-bg);
+  background: -webkit-linear-gradient(to right, #070000, #282828, #070000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: var(--html-bg);
 }
 
 h1
@@ -136,10 +146,11 @@ h2
 {
   height: 40px;
   float: right;
-  padding-top: 2px;
+  padding-top: 4px;
   margin-top: -40px;
   margin-bottom: -10px;
   margin-right: 20px;
+  border-top: 1px solid transparent;
 }
 
 .cdf-nav-left li
@@ -156,4 +167,48 @@ h2
 {
   background-color: var(--hover);
   color: var(--primary);
+  border-top: 1px solid var(--primary);
 }
+
+.logo-letter
+{
+  height:56px;
+  margin-bottom: 4px;
+}
+
+.logo-letter-span
+{
+  display: inline-block;
+  padding: 5px 6px;
+  height: 62px;
+  margin-bottom: 5px;
+  margin-right: 0px;
+  white-space: nowrap ;
+}
+
+.logo-letter-span a
+{
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.logo-letter-span:hover
+{
+  background-color: var(--hover);
+}
+
+
+.logo-text
+{
+  display: inline-block;
+  margin-right: 2px;
+  font-size: 20px;
+  width: 40px;
+  margin-left: -40px;
+  display: none;
+  white-space: nowrap ;
+}
+
+#logo-letter-c{ margin-left: -37px;}
+#logo-letter-d{ margin-left: -31px;}
+#logo-letter-f{ margin-left: -33px; display:}

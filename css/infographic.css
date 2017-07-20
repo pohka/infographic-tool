@@ -54,6 +54,7 @@ body
   margin-top:30px;
   background: none;
   font-weight:bold;
+  font-family: radiance;
 }
 
 input[type=text]
