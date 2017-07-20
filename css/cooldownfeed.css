@@ -89,7 +89,6 @@ h2
 
 .cdf-navitems
 {
-  margin-left: 0px;
   margin-top: -50px;
   padding: 0px 2px;
   border-color: var(--text);
@@ -103,12 +102,15 @@ h2
   position:relative;
   left:-50%;
   text-align:left;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .cdf-navitem-wrapper ul{
     list-style:none;
     position:relative;
     left:50%;
+    pointer-events: auto;
 }
 
 #nav-item-1, #nav-item-2,
@@ -137,7 +139,7 @@ h2
 
 .cdf-navbar li {
     float: left;
-    min-width: 100px;
+    min-width: 130px;
     height: 45px;
 }
 
@@ -161,12 +163,11 @@ h2
 .cdf-nav-left
 {
   height: 40px;
-  float: right;
   padding-top: 4px;
-  margin-top: 5px;
-  margin-bottom: -10px;
-  margin-right: -170px;
+  margin-bottom: -96px;
   border-top: 1px solid transparent;
+  float:right;
+  margin-right: 30px;
 }
 
 .cdf-nav-left li
@@ -175,8 +176,8 @@ h2
   min-width: 35px;
   max-height: 35px;
   text-align: center;
-
   padding: 2px;
+  margin-top: 5px;
 }
 
 .cdf-nav-left li:hover
@@ -199,7 +200,9 @@ h2
   height: 62px;
   margin-bottom: 5px;
   margin-right: 0px;
-  white-space: nowrap ;
+  min-width: 110px;
+  white-space: nowrap;
+  z-index: 100;
 }
 
 .logo-letter-span a
@@ -227,4 +230,4 @@ h2
 
 #logo-letter-c{ margin-left: -37px;}
 #logo-letter-d{ margin-left: -31px;}
-#logo-letter-f{ margin-left: -33px; display:}
+#logo-letter-f{ margin-left: -34px; display:}
