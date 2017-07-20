@@ -29,6 +29,7 @@ h1
   text-align: center;
   font-weight: bold;
   font-size: 30px;
+  padding-top: 10px;
 }
 
 h2
@@ -38,6 +39,18 @@ h2
   padding-top: 6px;
   font-weight: normal;
   font-size: 26px;
+}
+
+p{
+  text-align: left;
+  font-weight: normal;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 12px 150px;
+}
+
+img{
+  text-align: center;
 }
 
 .cdf-con
@@ -220,11 +233,12 @@ h2
   margin-left: -40px;
   display: none;
   white-space: nowrap ;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 #logo-letter-c{ margin-left: -37px;}
-#logo-letter-d{ margin-left: -31px;}
-#logo-letter-f{ margin-left: -34px; display:}
+#logo-letter-d{ margin-left: -30px;}
+#logo-letter-f{ margin-left: -35px; display:}
 
 /*------------end of navbar----------------*/
 
@@ -240,5 +254,11 @@ h2
 
 #about
 {
-  padding: 30px 100px;
+  padding-bottom: 80px;
+}
+
+.full-width
+{
+  width: 1000px;
+
 }
