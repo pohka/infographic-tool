@@ -167,24 +167,28 @@ img{
 
 .cdf-nav-left
 {
-  height: 44px;
   padding-top: 8px;
   margin-top: -7px;
   margin-bottom: -96px;
   border-top: 1px solid transparent;
   float:right;
-  margin-right: 30px;
+  margin-right: 5px;
 }
 
 .cdf-nav-left li
 {
   font-size: 20px;
   min-width: 40px;
-  max-height: 38px;
   text-align: center;
   font-size: 22px;
-  padding: 2px;
-  margin-top: 5px;
+  padding: 0px;
+  margin-top: 0px;
+  max-height: 43px;
+}
+
+.cdf-nav-left a:hover
+{
+  color: var(--primary);
 }
 
 .cdf-nav-left li:hover
@@ -239,6 +243,33 @@ img{
 #logo-letter-c{ margin-left: -37px;}
 #logo-letter-d{ margin-left: -30px;}
 #logo-letter-f{ margin-left: -35px; display:}
+
+.nav-dropdown-menu
+{
+  padding: 1px 1px;
+  display: none;
+  right:0;
+  top: 63;
+  position: absolute;
+  background-color: var(--primary);
+}
+
+.nav-dropdown-menu a
+{
+  color: var(--text);
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  padding: 10px 10px;
+  width: 100px;
+  background-color: var(--background);
+}
+
+.nav-dropdown-menu a:hover
+{
+  background-color: var(--primary);
+}
+
 
 /*------------end of navbar----------------*/
 
