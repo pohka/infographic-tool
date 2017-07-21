@@ -7,7 +7,7 @@
   --text: #fff;
   --html-bg: linear-gradient(to right, #070000, #353535, #070000);
   --hover: #353535;
-  --card_hover: rgba(0, 143, 234, 0.6);
+  --card_bg: rgba(0, 143, 234, 0.6);
 }
 
 html
@@ -41,7 +41,6 @@ h2
   font-weight: normal;
   font-size: 26px;
 }
-
 p{
   text-align: left;
   font-weight: normal;
@@ -296,11 +295,11 @@ img{
 
 .home-heading
 {
-
   margin: auto;
   font-size: 25px;
   vertical-align: middle;
-  padding: 2px 2px;
+  padding-top: 45px;
+  padding-bottom: 25px;
 }
 
 hr.faded{
@@ -312,20 +311,23 @@ hr.faded{
 .home-img-con
 {
     width: 1000px;
-    height: 350px;
+    height: 400px;
     overflow: hidden;
     position: relative;
+    border: 1px solid var(--primary_faded);
 }
 
 .home-img-text
 {
-  margin-top: -40px;
   font-size: 25px;
   width: 100%;
   line-height: 40px;
-  background-color: var(--card_bg);
+  z-index: 10;
+  color: var(--text);
+  margin-top: -50px;
   position: absolute;
   z-index: 10;
+  background-color: var(--card_bg);
 }
 
 
@@ -361,4 +363,36 @@ bottom: -100%;
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.cards-con
+{
+  width: 1000px;
+}
+
+.card-img-con
+{
+  width: 100%;
+  height: 170px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--primary_faded);
+}
+
+
+.card-text
+{
+  border: 1px solid var(--primary_faded);
+  font-size: 18px;
+  width: 100%;
+  line-height: 40px;
+  background-color: var(--background);
+  right: ;
+  z-index: 10;
+}
+
+.full-width-video
+{
+  width:100%;
+  height: 562.5px;
 }
