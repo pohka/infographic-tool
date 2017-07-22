@@ -213,7 +213,7 @@ img{
 .logo-letter-span
 {
   display: inline-block;
-  padding: 5px 6px;
+  padding: 5px 8px;
   height: 62px;
   margin-bottom: 5px;
   margin-right: 0px;
@@ -222,33 +222,10 @@ img{
   z-index: 100;
 }
 
-.logo-letter-span a
-{
-  color: var(--primary);
-  text-decoration: none;
-}
-
 .logo-letter-span:hover
 {
   background-color: var(--hover);
 }
-
-
-.logo-text
-{
-  display: inline-block;
-  margin-right: 2px;
-  font-size: 20px;
-  width: 40px;
-  margin-left: -40px;
-  display: none;
-  white-space: nowrap ;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-}
-
-#logo-letter-c{ margin-left: -37px;}
-#logo-letter-d{ margin-left: -30px;}
-#logo-letter-f{ margin-left: -35px; display:}
 
 .nav-dropdown-menu
 {
