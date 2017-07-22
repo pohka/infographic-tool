@@ -28,6 +28,7 @@ $(document).ready(function() {
 //navbar scrolling
 $(window).scroll(function() {
   var y = $(document).scrollTop();
+  var distFromBottom=300;
 
   if (y <= lastOffset) //scrolling up
   {
@@ -36,7 +37,7 @@ $(window).scroll(function() {
   else//scolling down
   {
     //show navbar if reached the bottom of page
-    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight-300)
+    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight-distFromBottom)
     {
       $(".cdf-navbar").slideDown("fast");
     }
