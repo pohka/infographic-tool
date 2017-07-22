@@ -343,7 +343,7 @@ bottom: -100%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.card:hover img {
+.card img:hover {
   -moz-transform: scale(1.07);
   -webkit-transform: scale(1.07);
   transform: scale(1.07);

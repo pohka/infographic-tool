@@ -1,7 +1,8 @@
 var hovering={a:false,b:false};
+var lastOffset=0;
 
 $(document).ready(function() {
-
+  lastOffset=$(document).scrollTop();
   $(".nav-dropdown-btn").hover(function(){
     $(".nav-dropdown-menu").show();
   });
@@ -19,8 +20,31 @@ $(document).ready(function() {
       },100);
   });
 
-
+  //optional class to start navbar hidden
+  $(".cdf-navbar-start-hidden").slideUp();
 });
+
+
+//navbar scrolling
+$(window).scroll(function() {
+  var y = $(document).scrollTop();
+
+  if (y <= lastOffset) //scrolling up
+  {
+    $(".cdf-navbar").slideDown("fast");
+  }
+  else//scolling down
+  {
+    //show navbar if reached the bottom of page
+    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight-300)
+    {
+      $(".cdf-navbar").slideDown("fast");
+    }
+    else
+      $(".cdf-navbar").slideUp("fast");
+  }
+  lastOffset=y;
+ });
 
 function hideDropDown()
 {
