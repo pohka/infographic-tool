@@ -63,7 +63,7 @@ img{
   background-color: var(--background);
   width:1000px;
   margin: auto;
-  min-height: 950px;
+  min-height: 700px;
   text-align: center;
   position: relative;
   z-index: 10;
@@ -448,17 +448,25 @@ bottom: -100%;
   color: var(--primary);
 }
 
+.footer-icons
+{
+  position:relative;
+  float: right;
+  margin-top: -30px;
+  margin-right: 80px;
+}
+
 .footer-icons a
 {
   font-size: 25px;
-  height: 39px;
   border: 1px solid transparent;
+  border-bottom: 1px solid var(--primary_faded);
 }
 
 .footer-icons a:hover
 {
   color: var(--primary);
-  border: 1px solid var(--primary_faded);
+  border-bottom: 1px solid var(--primary);
 }
 
 .footer-item
@@ -499,7 +507,6 @@ bottom: -100%;
 
 .footer-logo
 {
-
   height: 58px;
   width: 250px;
   margin:auto;
