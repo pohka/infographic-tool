@@ -30,6 +30,8 @@ $(document).ready(function() {
                 $('.nav-dropdown-menu').fadeOut(200)
       },100);
   });
+
+  
 });
 
 function hideDropDown()

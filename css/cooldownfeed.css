@@ -18,13 +18,15 @@ html
 body
 {
   color:white;
-  font-weight: 600;
+  font-weight: normal;
   margin:auto;
   font-family: font-family: 'Titillium Web', sans-serif;
   background: var(--html-bg);
   background: -webkit-linear-gradient(to right, #070000, #282828, #070000);  /* Chrome 10-25, Safari 5.1-6 */
   background: var(--html-bg);
 }
+
+
 
 h1
 {
@@ -66,7 +68,7 @@ img{
   position: relative;
   z-index: 10;
   margin-top: 75px;
-  margin-bottom: 200px;
+  margin-bottom: 10px;
 }
 
 /*------------Navbar--------------*/
@@ -116,6 +118,7 @@ img{
   text-align:left;
   z-index: 2;
   pointer-events: none;
+  font-weight: bold;
 }
 
 .cdf-navitem-wrapper ul{
@@ -432,3 +435,108 @@ bottom: -100%;
   transform: skew(45deg);
   z-index: -1;
 }
+
+.footer
+{
+  width: 1000px;
+  color: var(--text);
+  font-weight: 600;
+  margin:auto;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  padding-bottom: 20px;
+  padding-top: 40px;
+  background-color: var(--background);
+  border-top: 1px solid var(--primary);
+  margin-bottom: 0px;
+  font-weight: 400;
+}
+
+/*Footer*/
+.footer a
+{
+  display: inline-block;
+  padding: 0px 20px;
+  height: 39px;
+  margin: auto;
+  margin: 0px 0px;
+  text-decoration: none;
+  line-height: 37px;
+  color: var(--text);
+}
+
+.footer a:hover
+{
+  color: var(--primary);
+}
+
+.footer-icons a
+{
+  font-size: 25px;
+  height: 39px;
+  border: 1px solid transparent;
+}
+
+.footer-icons a:hover
+{
+  color: var(--primary);
+  border: 1px solid var(--primary_faded);
+}
+
+.footer-item
+{
+  font-size: 20px;
+  margin-bottom: 20px;
+
+}
+
+.footer-item a
+{
+  width: 200px;
+  margin: 0px 8px;
+  height: 181px;
+  border-bottom: 1px solid var(--primary_faded);
+}
+
+.footer-item a:hover
+{
+  border-bottom: 1px solid var(--primary);
+}
+
+.footer-item img
+{
+  width: 200px;
+  margin-left: -20px;
+  height: 180px;
+  padding: 2px;
+  margin-top: 2px;
+}
+
+.footer-item img:hover
+{
+    padding: 0px;
+    margin-top: 0px;
+}
+
+
+.footer-logo
+{
+
+  height: 58px;
+  width: 250px;
+  margin:auto;
+  margin-top: 20px;
+  padding: 4px 4px;
+}
+
+.footer-logo img:hover
+{
+  border-top: 0px solid transparent;
+}
+
+.footer-logo img{
+  height: 55px;
+  border-bottom: 3px solid transparent
+}
+/*End of footer*/
