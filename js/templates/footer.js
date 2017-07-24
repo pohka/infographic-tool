@@ -13,7 +13,7 @@ $(document).on('click', '#footer', function(){
         '<img src="img/footer/ogre.png" class="avatar">' +
       '</div>' +
     '</div>' +
-		'<div><img src="img/logo/logo_sm.png" height="20"></div>';
+		'<div><img src="../img/logo/logo_sm.png" height="20"></div>';
 
     setBodyHtml(html, this);
 });
