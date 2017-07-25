@@ -363,6 +363,12 @@ bottom: -100%;
   border: 1px solid var(--primary_faded);
 }
 
+@media screen and (max-width: 992px) {
+    .card-img-con{
+         height: 380px;
+    }
+}
+
 
 .card-text
 {
