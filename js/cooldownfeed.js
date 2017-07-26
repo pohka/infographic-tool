@@ -3,6 +3,8 @@ var lastOffset=0;
 
 $(document).ready(function() {
   lastOffset=$(document).scrollTop();
+  changeToMobile(window.screen.availWidth<=992);
+
   $(".nav-dropdown-btn").hover(function(){
     $(".nav-dropdown-menu").show();
   });
@@ -25,10 +27,12 @@ $(document).ready(function() {
 });
 
 
+
+
 //navbar scrolling
 $(window).scroll(function() {
   var y = $(document).scrollTop();
-  var distFromBottom=300;
+  var distFromBottom=120;
 
   if (y <= lastOffset) //scrolling up
   {
@@ -46,6 +50,25 @@ $(window).scroll(function() {
   }
   lastOffset=y;
  });
+
+ $(window).resize(function() {
+   changeToMobile(window.screen.availWidth<=992);
+ });
+
+ function changeToMobile(isMobile)
+ {
+   var currentDevice = $("#navbar-logo-btn").data("device");
+
+   if(isMobile && currentDevice!="mobile")
+   {
+     $("#navbar-logo-btn").attr("href","javascript:;");
+     $("#navbar-logo-btn").data("device", "mobile");
+   }
+   else if(!isMobile && currentDevice!="pc") {
+     $("#navbar-logo-btn").attr("href","home.html");
+     $("#navbar-logo-btn").data("device", "pc");
+   }
+ }
 
 function hideDropDown()
 {
