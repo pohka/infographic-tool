@@ -389,9 +389,10 @@ bottom: -100%;
 
 .home-heading hr
 {
-  border-color: var(--primary);
-  border-width: 1px;
+  border-color: var(--primary_faded);
+  border-width: 2px;
   margin: 0 0;
+  margin-bottom:-10px;
 }
 
 @media screen and (max-width: 992px) {
@@ -499,6 +500,12 @@ bottom: -100%;
     {
       height: 55px;
       margin-bottom: -55px;
+    }
+
+    .home-heading hr
+    {
+      border-width: 5px;
+      margin-bottom: -18px;
     }
 }
 
