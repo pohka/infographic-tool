@@ -432,12 +432,12 @@ bottom: -100%;
 
     .logo-letter-span
     {
-      height: 110px !important;
+      height: 80px !important;
     }
 
     .logo-letter-span img
     {
-      height: 100px !important;
+      height: 75px !important;
     }
 }
 
