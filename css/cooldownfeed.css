@@ -220,6 +220,7 @@ img{
   min-width: 110px;
   white-space: nowrap;
   z-index: 100;
+
 }
 
 .logo-letter-span:hover
@@ -343,14 +344,17 @@ bottom: -100%;
 
 .card img {
   max-width: 100%;
-  -moz-transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    transform: translateZ(0);
+  -moz-transition: all 0.15s;
+  -webkit-transition: all 0.15s;
+  transition: all 0.25s;
 }
 .card img:hover {
-  -moz-transform: scale(1.07);
-  -webkit-transform: scale(1.07);
-  transform: scale(1.07);
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .cards-con
@@ -392,6 +396,48 @@ bottom: -100%;
       font-size: 45px !important;
       line-height: 50px !important;
       margin-top: -116px !important;
+      padding-left: 40px !important;
+      padding-right: 12px !important;
+      font-weight: 500;
+    }
+
+    .home-img-con
+    {
+      height: 500px !important;
+    }
+
+    .footer
+    {
+      padding-bottom: 40px !important;
+    }
+    .footer-item
+    {
+      font-size: 35px !important;
+    }
+
+    .footer-item a
+    {
+      width:280px !important;
+    }
+
+    .footer-logo img
+    {
+      height: 80px !important;
+    }
+
+    .footer-icons a
+    {
+      font-size: 40px !important;
+    }
+
+    .logo-letter-span
+    {
+      height: 110px !important;
+    }
+
+    .logo-letter-span img
+    {
+      height: 100px !important;
     }
 }
 
