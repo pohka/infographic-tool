@@ -3,6 +3,7 @@ var template = {
     id: "",
     name: "",
     type: "",
+    duplicate_versions: false,
     str_fields: [],
     num_fields: [],
     img_fields: [],
@@ -88,10 +89,11 @@ function loadTemplates()
   );
   templates.push(teaminfo1);
 
+  var pIndex = getPlayerIndexById("team-02");
   var teaminfo2 = jQuery.extend(true, {}, template);
   teaminfo2.set("team-02", "Player Profile", "split");
   teaminfo2.str_fields.push(
-    "player-age", "player-role",
+    "player-age-"+pIndex, "player-role",
     "country-name", "avg-fantasy",
     "hero-played-win-rate-0", "hero-played-pick-rate-0",
     "hero-played-win-rate-1", "hero-played-pick-rate-1",
@@ -105,7 +107,29 @@ function loadTemplates()
     "hero-right-0", "hero-right-1", "hero-right-2"
   );
   teaminfo2.str_dynamic.push("flag");
+  teaminfo2.duplicate_versions = true;
   templates.push(teaminfo2);
+
+  pIndex = getPlayerIndexById("team-03");
+  var teaminfo3 = jQuery.extend(true, {}, template);
+  teaminfo3.set("team-03", "Player Profile 2", "split");
+  teaminfo3.str_fields.push(
+    "player-age-"+pIndex, "player-role",
+    "country-name", "avg-fantasy",
+    "hero-played-win-rate-0", "hero-played-pick-rate-0",
+    "hero-played-win-rate-1", "hero-played-pick-rate-1",
+    "hero-played-win-rate-2", "hero-played-pick-rate-2",
+    "hero-success-win-rate-0", "hero-success-pick-rate-0",
+    "hero-success-win-rate-1", "hero-success-pick-rate-1",
+    "hero-success-win-rate-2", "hero-success-pick-rate-2"
+  );
+  teaminfo3.hero_icon.push(
+    "hero-left-0", "hero-left-1", "hero-left-2",
+    "hero-right-0", "hero-right-1", "hero-right-2"
+  );
+  teaminfo3.str_dynamic.push("flag");
+  teaminfo3.duplicate_versions = true;
+  templates.push(teaminfo3);
 
   var placeholder = jQuery.extend(true, {}, template);
   placeholder.set("placeholder", "Placeholder", "split");

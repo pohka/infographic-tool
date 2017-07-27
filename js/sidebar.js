@@ -740,14 +740,19 @@ function showSidebarBrowser()
 }
 
 //hides all template options that are already in use in the body
+//also take into account if duplicate versions are allowed
 function hideBrowserTemplatesInUse()
 {
   templates.forEach(function(element)
   {
-    var id = element.id;
-    if ($("."+id).length > 0)
+    var allowDuplicateVersions = false;//element.duplicate_versions;
+    if(allowDuplicateVersions==false)
     {
-      $("#"+id).hide();
+      var id = element.id;
+      if ($("."+id).length > 0)
+      {
+        $("#"+id).hide();
+      }
     }
   });
 }
