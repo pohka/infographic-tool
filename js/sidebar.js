@@ -311,6 +311,21 @@ $(document).on('keydown.autocomplete', ".input-team", function() {
     });
 });
 
+$(document).on("click", ".toggle-linebreak", function(){
+  if($(this).hasClass('toggle-linebreak-off'))
+  {
+    $(this).removeClass('toggle-linebreak-off fa-toggle-off');
+    $(this).addClass('fa-toggle-on');
+  }
+  else
+  {
+    $(this).removeClass('fa-toggle-on');
+    $(this).addClass('toggle-linebreak-off fa-toggle-off');
+  }
+
+  genLineBreaks();
+});
+
 function setTeamLogo(input, selector)
 {
   input = input.toLowerCase();
@@ -396,14 +411,17 @@ function addSection(id)
   $(".sidebar-browser").attr("id", sectionID);
   $(".sidebar-browser").data("template-index", current_template_index);
 
+  //html for sidebar section input
   var sectionHtml =
     '<div class="sidebar-item sidebar-section"'+
     'id="'+sectionID+'">' +
     getSidebarButtonHtml(sectionID) +
-    '<button class="sidebar-btn glyphicon glyphicon-remove remove-section-btn"'+
+
+    '<button class="sidebar-btn glyphicon glyphicon-remove remove-section-btn"'+ //remove section btn
     ' data-section-index="'+current_section_index+'"></button>'+
     '<span id="sidebar-title-section-'+ current_section_index +'">Section Name</span>'+
-
+    '<button class="sidebar-btn fa fa-toggle-on toggle-linebreak"'+ //toggle line break btn
+    ' data-section-index="'+current_section_index+'"></button>'+
     '</div>';
 
   current_section_index+=1;

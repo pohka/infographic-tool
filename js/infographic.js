@@ -32,6 +32,7 @@ function gradiantBg()
 
 }
 
+
 function genLineBreaks()
 {
   var hrHtml = "<hr class='section-hr faded'>";
@@ -42,12 +43,21 @@ function genLineBreaks()
   });
 
   var sectionCount = $('.section').length;
-  var index=0;
   $(".section").each(function(){
-    if(index>0)
-    {
-      $(this).before(hrHtml);
-    }
-    index+=1;
+      var sectionSelector = this;
+      //find the matching line break button
+      var id = $(this).attr("id").replace("-html", "");
+      var sectionIndex = id.replace("section-", "");
+      $(".toggle-linebreak").each(function(){
+        var thisIndex = $(this).data("section-index");
+        if(thisIndex==sectionIndex)
+        {
+          //check is linebreak is disabled
+          if($(this).hasClass('toggle-linebreak-off')==false)
+          {
+            $(sectionSelector).after(hrHtml);
+          }
+        }
+      });
   });
 }
