@@ -1,0 +1,60 @@
+.team-07-win
+{
+  color: var(--green);
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.team-07-win-icon
+{
+  border-radius: 50%;
+	border: 2px solid var(--border);
+	object-fit: cover;
+	object-position:-40px 0px;
+  width:76px;
+	height:76px;
+}
+
+.team-07-win-icon-lg
+{
+  width:100px;
+  height:100px;
+}
+
+.team-07-win-icon-md
+{
+  width:85px;
+  height:85px;
+}
+
+.team-07-win-md
+{
+  padding-top: 20px;
+  font-size: 23px;
+  margin-left: 4px;
+}
+
+.team-07-win-lg
+{
+  font-size: 26px;
+  margin-left: 8px;
+}
+
+#team-07-canvas-1
+{
+  margin-left: -90px;
+  margin-bottom: -180px;
+  margin-top: -23px !important;
+}
+
+#team-07-canvas-2
+{
+  margin-left: -90px;
+  margin-bottom: -180px;
+  margin-top: -30px !important;
+}
+
+.team-07-top-row
+{
+  padding-bottom: 25px;
+}

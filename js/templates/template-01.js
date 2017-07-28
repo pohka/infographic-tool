@@ -39,7 +39,7 @@ $(document).ready(function(){
 
 
 //percent should be 0-1 value
-function arc(percent, canvasID, isGreen)
+function arc(percent, canvasID, isGreen, size)
 {
 	var canvas = document.getElementById(canvasID);
 	var context = canvas.getContext('2d');
@@ -50,6 +50,9 @@ function arc(percent, canvasID, isGreen)
 	var x = (canvas.width / 2);
 	var y = (canvas.height / 2)-2;
 	var radius = 37;
+	if(size!=null)
+		radius=size
+
 
 	var startAngle = 1.5 * Math.PI;
 	var endAngle = (1.5+ 2*(percent/100))* Math.PI;
@@ -70,7 +73,6 @@ function arc(percent, canvasID, isGreen)
 
 	context.strokeStyle = lineColor;
 	context.stroke();
-
 }
 
 $(document).on('click', '#template-01', function(){

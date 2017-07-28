@@ -184,7 +184,18 @@ function loadTemplates()
   teaminfo6.str_dynamic.push("flag", "player-name");
   templates.push(teaminfo6);
 
-
+  var teaminfo7 = jQuery.extend(true, {}, template);
+  teaminfo7.set("team-07", "Counter Picks", "split");
+  teaminfo7.str_fields.push("title", "sub-title");
+  teaminfo7.num_fields.push(
+    "win-rate-1", "win-rate-2", "win-rate-3",
+    "win-rate-4", "win-rate-5"
+  );
+  teaminfo7.hero_icon.push(
+    "hero-1", "hero-2", "hero-3",
+    "hero-4", "hero-5"
+  );
+  templates.push(teaminfo7);
 
 
 
