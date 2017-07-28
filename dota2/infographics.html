@@ -26,11 +26,16 @@
   <link rel="stylesheet" href="../css/cooldownfeed.css">
   <script src="../js/cooldownfeed.js"></script>
 
+  <meta name="google-site-verification" content="rhJ_605e_gCdnbs1LU2EcNLjmSUR6P640rZ9ckqnB4I" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width">
+
 </head>
 
   <body>
     <div class="cdf-navbar">
-      <div class="logo-letter-span"><a href="home.html">
+      <div class="logo-letter-span"><a href="home.html" id="navbar-logo-btn" data-device="pc">
+        <span class="glyphicon glyphicon-menu-hamburger mobile-menu"></span>
         <img src="../img/logo/logo_sm.png" class="logo-letter"></img>
       </a></div>
 
@@ -54,20 +59,25 @@
         </div>
       </div>
 
+      <!--mobile navbar-->
+      <div class="cdf-navitems-mobile">
+        <ul>
+          <li><a href="home.html" class="nav-item-mobile" data-name="home"> Home</a></li>
+          <li id="navbreak"></li>
+          <li><a href="infographics.html" class="nav-item-mobile" data-name="infographic">Infographics</a></li>
+          <li><a href="guides.html" class="nav-item-mobile" data-name="guides">Guides</a></li>
+          <li><a href="about.html" class="nav-item-mobile" data-name="about">About</a></li>
+          <li id="navbreak"></li>
+          <li><a href="http://twitter.com/pohkadota" target="_blank" class="nav-item-mobile" data-name="twitter">Twitter</a></li>
+          <li><a href="https://www.youtube.com/channel/UCMhdQaKoY6ux9zvVnziKWWQ" target="_blank" class="nav-item-mobile" data-name="youtube">YouTube</a></li>
+        </ul>
+      </div>
+
       <!--drop down-->
       <div class="nav-dropdown-menu" id="b">
         <a href="#">Dota 2</a>
         <a href="#">Overwatch</a>
       </div>
-
-    </div>
-
-      <!--drop down-->
-      <div class="nav-dropdown-menu" id="b">
-        <a href="#">Dota 2</a>
-        <a href="#">Overwatch</a>
-      </div>
-
     </div>
 
     <!--container for content-->
