@@ -1,5 +1,6 @@
 var hovering={a:false,b:false};
 var lastOffset=0;
+var showMobileMenu=false;
 
 $(document).ready(function() {
   lastOffset=$(document).scrollTop();
@@ -22,11 +23,18 @@ $(document).ready(function() {
       },100);
   });
 
+  $(".mobile-menu").click(function(event) {
+    if(showMobileMenu==false)
+      $(".cdf-navitems-mobile").show();
+    else
+      $(".cdf-navitems-mobile").hide();
+
+    showMobileMenu=!showMobileMenu;
+  });
+
   //optional class to start navbar hidden
   $(".cdf-navbar-start-hidden").slideUp();
 });
-
-
 
 
 //navbar scrolling
@@ -45,7 +53,7 @@ $(window).scroll(function() {
     {
       $(".cdf-navbar").slideDown("fast");
     }
-    else
+    else if(showMobileMenu==false)
       $(".cdf-navbar").slideUp("fast");
   }
   lastOffset=y;
