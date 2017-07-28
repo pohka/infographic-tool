@@ -3,7 +3,6 @@ var template = {
     id: "",
     name: "",
     type: "",
-    duplicate_versions: false,
     str_fields: [],
     num_fields: [],
     img_fields: [],
@@ -11,6 +10,7 @@ var template = {
     hero_portrait: [],
     str_dynamic: [],
     team: [],
+    player: [],
     set: function(id, name, split){
       this.id = id;
       this.name = name;
@@ -89,11 +89,10 @@ function loadTemplates()
   );
   templates.push(teaminfo1);
 
-  var pIndex = getPlayerIndexById("team-02");
   var teaminfo2 = jQuery.extend(true, {}, template);
-  teaminfo2.set("team-02", "Player Profile", "split");
+  teaminfo2.set("team-02", "Player Profile 1", "split");
   teaminfo2.str_fields.push(
-    "player-age-"+pIndex, "player-role",
+    "player-age", "player-role",
     "country-name", "avg-fantasy",
     "hero-played-win-rate-0", "hero-played-pick-rate-0",
     "hero-played-win-rate-1", "hero-played-pick-rate-1",
@@ -106,15 +105,13 @@ function loadTemplates()
     "hero-left-0", "hero-left-1", "hero-left-2",
     "hero-right-0", "hero-right-1", "hero-right-2"
   );
-  teaminfo2.str_dynamic.push("flag");
-  teaminfo2.duplicate_versions = true;
+  teaminfo2.str_dynamic.push("flag", "player-name");
   templates.push(teaminfo2);
 
-  pIndex = getPlayerIndexById("team-03");
   var teaminfo3 = jQuery.extend(true, {}, template);
   teaminfo3.set("team-03", "Player Profile 2", "split");
   teaminfo3.str_fields.push(
-    "player-age-"+pIndex, "player-role",
+    "player-age", "player-role",
     "country-name", "avg-fantasy",
     "hero-played-win-rate-0", "hero-played-pick-rate-0",
     "hero-played-win-rate-1", "hero-played-pick-rate-1",
@@ -127,9 +124,69 @@ function loadTemplates()
     "hero-left-0", "hero-left-1", "hero-left-2",
     "hero-right-0", "hero-right-1", "hero-right-2"
   );
-  teaminfo3.str_dynamic.push("flag");
-  teaminfo3.duplicate_versions = true;
+  teaminfo3.str_dynamic.push("flag", "player-name");
   templates.push(teaminfo3);
+
+  var teaminfo4 = jQuery.extend(true, {}, template);
+  teaminfo4.set("team-04", "Player Profile 3", "split");
+  teaminfo4.str_fields.push(
+    "player-age", "player-role",
+    "country-name", "avg-fantasy",
+    "hero-played-win-rate-0", "hero-played-pick-rate-0",
+    "hero-played-win-rate-1", "hero-played-pick-rate-1",
+    "hero-played-win-rate-2", "hero-played-pick-rate-2",
+    "hero-success-win-rate-0", "hero-success-pick-rate-0",
+    "hero-success-win-rate-1", "hero-success-pick-rate-1",
+    "hero-success-win-rate-2", "hero-success-pick-rate-2"
+  );
+  teaminfo4.hero_icon.push(
+    "hero-left-0", "hero-left-1", "hero-left-2",
+    "hero-right-0", "hero-right-1", "hero-right-2"
+  );
+  teaminfo4.str_dynamic.push("flag", "player-name");
+  templates.push(teaminfo4);
+
+  var teaminfo5 = jQuery.extend(true, {}, template);
+  teaminfo5.set("team-05", "Player Profile 4", "split");
+  teaminfo5.str_fields.push(
+    "player-age", "player-role",
+    "country-name", "avg-fantasy",
+    "hero-played-win-rate-0", "hero-played-pick-rate-0",
+    "hero-played-win-rate-1", "hero-played-pick-rate-1",
+    "hero-played-win-rate-2", "hero-played-pick-rate-2",
+    "hero-success-win-rate-0", "hero-success-pick-rate-0",
+    "hero-success-win-rate-1", "hero-success-pick-rate-1",
+    "hero-success-win-rate-2", "hero-success-pick-rate-2"
+  );
+  teaminfo5.hero_icon.push(
+    "hero-left-0", "hero-left-1", "hero-left-2",
+    "hero-right-0", "hero-right-1", "hero-right-2"
+  );
+  teaminfo5.str_dynamic.push("flag", "player-name");
+  templates.push(teaminfo5);
+
+  var teaminfo6 = jQuery.extend(true, {}, template);
+  teaminfo6.set("team-06", "Player Profile 5", "split");
+  teaminfo6.str_fields.push(
+    "player-age", "player-role",
+    "country-name", "avg-fantasy",
+    "hero-played-win-rate-0", "hero-played-pick-rate-0",
+    "hero-played-win-rate-1", "hero-played-pick-rate-1",
+    "hero-played-win-rate-2", "hero-played-pick-rate-2",
+    "hero-success-win-rate-0", "hero-success-pick-rate-0",
+    "hero-success-win-rate-1", "hero-success-pick-rate-1",
+    "hero-success-win-rate-2", "hero-success-pick-rate-2"
+  );
+  teaminfo6.hero_icon.push(
+    "hero-left-0", "hero-left-1", "hero-left-2",
+    "hero-right-0", "hero-right-1", "hero-right-2"
+  );
+  teaminfo6.str_dynamic.push("flag", "player-name");
+  templates.push(teaminfo6);
+
+
+
+
 
   var placeholder = jQuery.extend(true, {}, template);
   placeholder.set("placeholder", "Placeholder", "split");

@@ -1,21 +1,21 @@
 
-.team-02-player-img-con
+.pp-img-con
 {
   width: 110px;
 }
 
-.team-02-player-img-con img{
+.pp-img-con img{
   margin-bottom: -4px;
 }
 
-.team-02-player-info
+.pp-player-info
 {
   width:150px;
   color: var(--white);
 
 }
 
-.team-02-player-info h3
+.pp-player-info h3
 {
   margin-bottom: 10px;
   padding-bottom: 2px;
@@ -23,48 +23,48 @@
 
 }
 
-.team-02-country-con
+.pp-country-con
 {
   width:75px;
   text-align:center;
   color: var(--white);
 }
 
-.team-02-country-con h2
+.pp-country-con h2
 {
   font-size: 30px;
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
-.team-02-player-table td
+.pp-player-table td
 {
   vertical-align: bottom;
   padding-bottom: 4px;
 }
 
-.team-02-player-table
+.pp-player-table
 {
   border-bottom: 2px solid var(--primary);
 }
 
-.team-02-player-img
+.pp-player-img
 {
   height: 100px;
 }
-.team-02-country-name
+.pp-country-name
 {
   margin-bottom: 6px;
   margin-top: 2px;
 }
 
-.team-02-heroes-table
+.pp-heroes-table
 {
   color:white;
   margin-top: 10px;
 }
 
-.team-02-heroes-table td
+.pp-heroes-table td
 {
   width:165px;
   text-align: left;
@@ -72,42 +72,42 @@
   padding-bottom: 16px;
 }
 
-.team-02-hero
+.pp-hero
 {
   width: 80px;
   margin-right: 6px;
   float: left;
 }
 
-.team-02-hero-win
+.pp-hero-win
 {
   color: var(--green);
   font-size: 20px;
   font-weight: bold;
+  line-height: 18px;
 }
-.team-02-hero-pick
+.pp-hero-pick
 {
   color: var(--secondary);
   font-size: 20px;
   font-weight: bold;
 }
 
-.team-02-hero-right
+.pp-hero-right
 {
   margin-left: 14px;
 }
 
-.team-02-horz-line
+.pp-horz-line
 {
   width: 40px;
   height: 220px;
-  margin-top: -238px;
+  margin-top: -246px;
   border-right: 2px solid var(--primary);
-
 }
 
 
-.team-02-hero-text
+.pp-hero-text
 {
   background-color: var(--background);
   padding: 4px 2px;
