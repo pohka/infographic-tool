@@ -16,6 +16,11 @@
 	border: 6px solid var(--red);
 }
 
+.template-01
+{
+	width: 330px !important;
+}
+
 .template-01-pick
 {
 	font-size:20px;
