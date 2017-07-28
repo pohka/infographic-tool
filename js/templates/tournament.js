@@ -29,15 +29,15 @@ $(document).on('click', '#tournament', function(){
     var html =
     '<!--HEADER-->' +
     '<div class="row">' +
-      '<div class="col-md-4 tournament-info">' +
+      '<div class="col-xs-4 tournament-info">' +
         '<span class="tournament-title">title here</span><br>' +
         '<span class="tournament-date">xx-xxth July</span><br>' +
         'Prize Pool <span class="tournament-prize-pool">$xxxk</span>' +
       '</div>' +
-      '<div class="col-md-4">' +
+      '<div class="col-xs-4">' +
         '<img src="img/tournament/placeholder.png" class="tournament-logo">' +
       '</div>' +
-      '<div class="col-md-4 tournament-overview">' +
+      '<div class="col-xs-4 tournament-overview">' +
         '<span class="tournament-heroes-picked">xx</span> <span class="header-stat">Heroes picked</span><br>' +
         '<span class="tournament-matches">xx</span>  <span class="header-stat">Matches</span><br>' +
         '<span class="tournament-winner">xx</span>  <span class="header-stat">Winner</span>' +
@@ -46,17 +46,17 @@ $(document).on('click', '#tournament', function(){
     '<!--SIDE WIN RATE BAR-->' +
     '<div class="wr-bar-con">' +
       '<div class="wr-bar-text row">' +
-        '<div class="radiant col-md-3">' +
+        '<div class="radiant col-xs-3">' +
           'Radiant &nbsp<span class="tournament-radiant-winrate number-field">50</span>%' +
         '</div>' +
-        '<div class="col-md-6">' +
+        '<div class="col-xs-6">' +
           '<div class="wr-bar ">' +
             '<div class="inner-bar inner-red"></div>' +
             '<div class="inner-bar inner-green"></div>' +
             '<div class="inner-bar center-bar"></div>' +
           '</div>' +
         '</div>' +
-        '<div class="dire col-md-3">' +
+        '<div class="dire col-xs-3">' +
             '<span class="tournament-dire-winrate">50</span>% &nbspDire' +
         '</div>' +
       '</div>';
