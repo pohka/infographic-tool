@@ -85,7 +85,7 @@ function loadTemplates()
   teaminfo1.num_fields.push(
     "achieve-place-0","achieve-place-1", "achieve-place-2",
     "achieve-place-3","achieve-place-4", "achieve-place-5",
-    "row-count", "radiant-wr", "dire-wr"
+    "row-count"
   );
   templates.push(teaminfo1);
 
@@ -197,6 +197,14 @@ function loadTemplates()
   );
   templates.push(teaminfo7);
 
+  var teaminfo8 = jQuery.extend(true, {}, template);
+  teaminfo8.set("team-08", "Strategy", "split");
+  teaminfo8.str_fields.push(
+    "title-1", "sub-title-1","title-2", "sub-title-2"
+  );
+  teaminfo8.num_fields.push("radiant-wr", "dire-wr");
+  teaminfo8.img_fields.push("minimap");
+  templates.push(teaminfo8);
 
 
   var placeholder = jQuery.extend(true, {}, template);

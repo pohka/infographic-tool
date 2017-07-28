@@ -1,0 +1,102 @@
+.team-08-bar-green
+{
+  height: 10px;
+  width:200px;
+  display: inline-block;
+  border-top-right-radius: 2em;
+
+  background: var(--green); /* Old browsers */
+  background: -moz-linear-gradient(top, var(--green) 0%, var(--green) 40%, #4b8401 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, var(--green) 0%,var(--green) 40%,#4b8401 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, var(--green) 0%,var(--green) 40%,#4b8401 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+
+.team-08-bar-red
+{
+  width:200px;
+  display: inline-block;
+  height: 10px;
+  background-color:red;
+  border-top-right-radius: 2em;
+
+  background: var(--red); /* Old browsers */
+  background: -moz-linear-gradient(top, var(--red) 0%, var(--red) 40%, #cc0005 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, var(--red) 0%,var(--red) 40%,#cc0005 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, var(--red) 0%,var(--red) 40%, #cc0005 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.team-08-table-left
+{
+  width: 110px;
+  font-weight: 500;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.team-08-table-right
+{
+  width:220px;
+}
+
+.team-08-bar
+{
+  height: 12px;
+
+  border-top-right-radius: 2em;
+}
+
+.team-08-leftbar-text
+{
+  color: var(--green);
+  text-align: left;
+  font-size: 18px;
+  width: 100%;
+}
+
+.team-08-righttbar-text
+{
+  text-align: left;
+  color: var(--red);
+  margin-top: -5px;
+  font-size: 18px;
+  width: 100%;
+}
+
+
+.team-08-bar-mid
+{
+  background-color: var(--white);
+  width:2px;
+  height:14px;
+  margin: auto;
+  margin-top: -14px;
+}
+
+.team-08-center
+{
+    text-align: center;
+}
+
+.team-08-minimap-con
+{
+  padding: 0 30px;
+}
+
+.team-08-minimap
+{
+  width: 100%;
+  margin: auto;
+  border: 1px solid var(--primary);
+  margin-bottom: 15px;
+}
+
+.team-08-title-2
+{
+  margin-top: 35px;
+}
+
+.team-08-sub-title-1
+{
+  margin-bottom: 20px;
+}
