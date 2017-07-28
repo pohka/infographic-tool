@@ -100,16 +100,19 @@ button[disabled]:hover
 	padding-bottom: 150px;
 }
 
+.sidebar-browser::-webkit-scrollbar-track,
 .section-list::-webkit-scrollbar-track
 {
 	background-color: var(--border);
 }
 
+.sidebar-browser::-webkit-scrollbar,
 .section-list::-webkit-scrollbar
 {
 	width: 3px;
 }
 
+.sidebar-browser::-webkit-scrollbar-thumb,
 .section-list::-webkit-scrollbar-thumb
 {
 	background-color: var(--white);
@@ -148,6 +151,7 @@ button[disabled]:hover
 	top:34;
 	bottom:0;
 	width:200px;
+	overflow-y: scroll;
 	color: var(--white);
 	border-right:1px solid var(--primary);
 	border-top:1px solid var(--primary);
