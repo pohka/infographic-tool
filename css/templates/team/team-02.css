@@ -110,5 +110,7 @@
 .pp-hero-text
 {
   background-color: var(--background);
-  padding: 4px 2px;
+  padding: 0px 6px;
+  border-bottom: 1px solid var(--primary);
+  border-top: 1px solid var(--primary);
 }

@@ -31,7 +31,6 @@ function setWrBar(selector, isRadiant)
 $(document).on("click", "#team-08", function(){
   var html=
   '<h3 class="team-08-title-1 team-08-center">Win Rate Per Side</h3>' +
-  '<h4 class="team-08-sub-title-1 team-08-center">since patch 7.05 (April 9th)</h4>' +
   '<table>' +
     '<tr>' +
       '<td class="team-08-table-left green">' +
