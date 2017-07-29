@@ -206,6 +206,20 @@ function loadTemplates()
   teaminfo8.img_fields.push("minimap");
   templates.push(teaminfo8);
 
+  var teaminfo9 = jQuery.extend(true, {}, template);
+  teaminfo9.set("team-09", "Best Combos", "split");
+  teaminfo9.num_fields.push(
+    "winrate-1","winrate-2",
+    "winrate-3","winrate-4"
+  );
+  teaminfo9.hero_portrait.push(
+    "hero-left-1", "hero-right-1",
+    "hero-left-2", "hero-right-2",
+    "hero-left-3", "hero-right-3",
+    "hero-left-4", "hero-right-4"
+  );
+  templates.push(teaminfo9);
+
 
   var placeholder = jQuery.extend(true, {}, template);
   placeholder.set("placeholder", "Placeholder", "split");

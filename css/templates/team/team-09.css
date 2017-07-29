@@ -1,0 +1,53 @@
+.team-09-hero img
+{
+  height:110px;
+  margin-bottom: 10px;
+}
+
+.team-09-hero
+{
+  overflow: hidden;
+  padding: 0 0;
+}
+
+.team-09-content
+{
+  margin: 0 4px;
+}
+
+.team-09-mid
+{
+  height: 80px;
+}
+
+.team-09-mid-text-con
+{
+  width: 60%;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: -70px;
+  font-size: 22px;
+  color: var(--green);
+  text-align: center;
+  border-bottom: 2px solid var(--primary_faded);
+}
+
+.team-09-mid-text-lg
+{
+  font-size: 28px;
+}
+
+.team-09-mid-text-md
+{
+  font-size: 25px;
+}
+
+.team-09-title, .team-09-sub-title
+{
+  text-align: center;
+}
+
+.team-09-sub-title
+{
+  padding-bottom: 20px !important;
+}
