@@ -25,6 +25,9 @@
   --white_blind:#fff;
 
   --html-bg: linear-gradient(to right, #070000 0%, #333 50%, #070000 100%);
+
+  --hover: #353535;
+  --text: #fff;
 }
 
 
@@ -44,6 +47,8 @@ html {
 
 body
 {
+  margin: auto;
+  width: 1000px;
   margin-top:30px;
   background: none;
   font-weight:bold;
@@ -64,11 +69,22 @@ input[type=text]
 {
 	width:720px;
 	margin:auto;
+  margin-top: 80px;
 	background-color: var(--background);
 	color: var(--primary);
 	z-index:-100;
 }
 
+.footer-divider
+{
+  margin: auto;
+  margin-top: 25px;
+  width: 1000px;
+}
+
+.footer{
+  padding-top: 30px !important;
+}
 
 .section
 {
@@ -149,7 +165,7 @@ h2
 {
 	width: 300px;
 	height: 150px;
-	margin-left:-110px;
+	margin-left:-105px;
 	margin-top:-20px;
 	margin-bottom:-115px;
 	position: relative;
@@ -162,12 +178,18 @@ canvas
   width: 150px;
 }
 
-@media screen and (max-width: 720px)
+@media screen and (max-width: 992px)
 {
 	.body-container
 	{
 		width:100%;
 	}
+
+  .width-half
+  {
+    width: 500px;
+    padding: 0px 70px;
+  }
 }
 
 button

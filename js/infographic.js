@@ -1,7 +1,9 @@
 
 $(document).ready(function(){
   setColors("_const");
-  loadTemplates();
+  if (typeof loadTemplates !== "undefined") {
+    loadTemplates();
+  }
 });
 
 function setColors(postfix)

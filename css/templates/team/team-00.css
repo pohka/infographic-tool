@@ -27,3 +27,11 @@
 {
   margin-top: 10px;
 }
+
+@media screen and (max-width: 992px)
+{
+  .team-00
+  {
+    width: 70%;
+  }
+}
