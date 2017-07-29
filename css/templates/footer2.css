@@ -13,6 +13,11 @@
   color: var(--white);
 }
 
+.footer2-creator-name:hover
+{
+  text-decoration: underline;
+}
+
 .cdf-logo
 {
   float: right;
