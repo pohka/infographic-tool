@@ -1,0 +1,150 @@
+/*Footer*/
+.footer
+{
+  width: 1000px;
+  color: var(--text);
+  font-weight: 600;
+  margin:auto;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  padding-bottom: 20px;
+  padding-top: 40px;
+  background-color: var(--background);
+  border-top: 1px solid var(--primary);
+  margin-bottom: 0px;
+  font-weight: 400;
+}
+
+.footer a
+{
+  display: inline-block;
+  padding: 0px 20px;
+  height: 39px;
+  margin: auto;
+  margin: 0px 0px;
+  text-decoration: none;
+  line-height: 37px;
+  color: var(--text);
+}
+
+.footer a:hover
+{
+  color: var(--primary);
+}
+
+.footer-icons
+{
+  position:relative;
+  float: right;
+  margin-top: -30px;
+  margin-right: 80px;
+}
+
+.footer-icons a
+{
+  font-size: 25px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid var(--primary_faded);
+}
+
+.footer-icons a:hover
+{
+  color: var(--primary);
+  border-bottom: 1px solid var(--primary);
+}
+
+.footer-item
+{
+  font-size: 20px;
+  margin-bottom: 20px;
+
+}
+
+.footer-item a
+{
+  width: 200px;
+  margin: 0px 8px;
+  height: 151px;
+  border-bottom: 1px solid var(--primary_faded);
+}
+
+.footer-item a:hover
+{
+  border-bottom: 1px solid var(--primary);
+}
+
+.footer-item img
+{
+  width: 166px;
+  margin-left: -20px;
+  height: 150px;
+  padding: 2px;
+  margin-top: 2px;
+}
+
+.footer-item img:hover
+{
+  padding: 0px;
+  margin-top: 0px;
+}
+
+
+.footer-logo
+{
+  height: 58px;
+  width: 250px;
+  margin:auto;
+  margin-top: 20px;
+  padding: 4px 4px;
+}
+
+.footer-logo img:hover
+{
+  border-bottom: 0px solid transparent;
+}
+
+.footer-logo img{
+  height: 55px;
+  border-bottom: 3px solid transparent;
+}
+/*End of footer*/
+
+@media screen and (max-width: 992px) {
+  .footer
+  {
+    padding-bottom: 80px !important;
+  }
+  .footer-item
+  {
+    font-size: 35px !important;
+  }
+
+  .footer-item a
+  {
+    width:280px !important;
+  }
+
+  .footer-item img
+  {
+    margin-bottom: 10px;
+  }
+
+  .footer-logo img
+  {
+    height: 100px !important;
+    margin-top: 20px;
+    margin-left: -45px;
+  }
+
+  .footer-icons
+  {
+    padding-top: 30px;
+  }
+
+  .footer-icons a
+  {
+    font-size: 55px !important;
+    border:none !important;
+  }
+}
