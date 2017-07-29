@@ -220,6 +220,15 @@ function loadTemplates()
   );
   templates.push(teaminfo9);
 
+  footer2  = jQuery.extend(true, {}, template);
+  footer2.set("footer2", "footer 2", "full");
+  templates.push(footer2);
+
+  footer3  = jQuery.extend(true, {}, template);
+  footer3.set("footer3", "footer refs", "full");
+  footer3.str_fields.push("text");
+  templates.push(footer3);
+
 
   var placeholder = jQuery.extend(true, {}, template);
   placeholder.set("placeholder", "Placeholder", "split");
