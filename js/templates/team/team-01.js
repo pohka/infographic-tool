@@ -1,4 +1,9 @@
 
+
+$(document).on("input", "#team-01-achieve-name-0-input", function(){
+  
+})
+
 $(document).on("input", ".team-01-input-field", function(){
   var id = $(this).attr("id");
   if(id.indexOf("place")>=0)

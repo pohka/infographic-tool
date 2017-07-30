@@ -41,6 +41,9 @@ function(){
       $(selector).attr("src", "img/players/placeholder.png");
     }
   );
+
+  var cls = $(this).attr("id").replace("-input","");
+  $("."+cls).text(input);
 });
 
 function getPlayerIndexById(id)

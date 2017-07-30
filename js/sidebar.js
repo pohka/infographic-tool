@@ -329,18 +329,14 @@ $(document).on("click", ".toggle-linebreak", function(){
 function setTeamLogo(input, selector)
 {
   input = input.toLowerCase();
-  var index = teams.indexOf(input);
   var htmlCls = $(selector).attr("id").replace("-input", "");
-  var src = "img/teams/";
-
-  if(index >= 0)
-    src+=input;
-  else
-    src += "placeholder";
-
-  src+=".png";
-
-  $("."+htmlCls).attr("src", src);
+  var src="img/teams/"+input+".png";
+  imgExists(src, function(){
+    $("."+htmlCls).attr("src", src);
+  },
+  function(){
+    $("."+htmlCls).attr("src", "img/teams/placeholder.png");
+  });
 }
 
 

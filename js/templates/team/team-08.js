@@ -51,9 +51,10 @@ $(document).on("click", "#team-08", function(){
   '</table>' +
   '<h3 class="team-08-title-2 team-08-center">Vision Heat Map</h3>' +
   '<h4 class="team-08-sub-title-2 team-08-center">' +
-    'Observer ward locations in the first 10mins' +
+    'Observer ward locations before 10mins' +
     '<br>from the last 10 matches' +
   '</h4>' +
+  '<img src="img/ti7minimap/legend.png"/>'+
   '<div class="team-08-minimap-con">' +
     '<img src="img/minimap.png" class="team-08-minimap"/>' +
   '</div>';

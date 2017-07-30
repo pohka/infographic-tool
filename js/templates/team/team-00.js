@@ -1,4 +1,3 @@
-
 $(document).on('click', '#team-00', function(){
   var html=
   '<div class="team-00-wrapper">' +
