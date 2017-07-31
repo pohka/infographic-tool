@@ -6,6 +6,7 @@ function downloadInnerHtml(filename, elId, mimeType) {
     //var elHtml = $("#section-container")[0].outerHTML;
     var elHtml = $('html')[0].outerHTML
     elHtml = removeSidebar(elHtml);
+    elHtml = removeJqueryUI(elHtml);
     var link = document.createElement('a');
     mimeType = mimeType || 'text/plain';
 
@@ -40,5 +41,15 @@ function removeSidebar(html)
   html = html.replace(html.substring(startjsIndex, endjsIndex), "");
   html = html.replace(sidebarjsEnd, "");
 
+  return html;
+}
+
+function removeJqueryUI(html)
+{
+  var start = "<!--ENDOFALL-->";
+  var end =  "</body>";
+  var startIndex = html.indexOf(start);
+  var endIndex = html.indexOf(end);
+  html = html.replace(html.substring(startIndex, endIndex), "");
   return html;
 }

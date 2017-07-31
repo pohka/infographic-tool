@@ -24,7 +24,7 @@ $(document).on("click", "#team-09", function(){
     '<div class="team-09-mid-text-con team-09-mid-text-lg">' +
       '<span class="team-09-mid-text team-09-winrate-1">80</span>%' +
     '</div>' +
-    '<div class="container width-half">' +
+    '<div class="container">' +
       '<div class="row">' +
         '<div class="col-xs-5 team-09-hero">' +
           '<img src="img/hero-portraits/arc_warden.png" class="team-09-hero-left-1"/>' +
@@ -39,7 +39,7 @@ $(document).on("click", "#team-09", function(){
     '<div class="team-09-mid-text-con team-09-mid-text-md">' +
       '<span class="team-09-mid-text team-09-winrate-2">80</span>%' +
     '</div>' +
-    '<div class="container width-half">' +
+    '<div class="container">' +
       '<div class="row">' +
         '<div class="col-xs-5 team-09-hero">' +
           '<img src="img/hero-portraits/arc_warden.png" class="team-09-hero-left-2"/>' +
@@ -53,7 +53,7 @@ $(document).on("click", "#team-09", function(){
     '<div class="team-09-mid-text-con">' +
       '<span class="team-09-mid-text team-09-winrate-3">80</span>%' +
     '</div>' +
-    '<div class="container width-half">' +
+    '<div class="container">' +
       '<div class="row">' +
         '<div class="col-xs-5 team-09-hero">' +
           '<img src="img/hero-portraits/arc_warden.png" class="team-09-hero-left-3"/>' +
@@ -68,7 +68,7 @@ $(document).on("click", "#team-09", function(){
     '<div class="team-09-mid-text-con">' +
       '<span class="team-09-mid-text team-09-winrate-4">80</span>%' +
     '</div>' +
-    '<div class="container width-half">' +
+    '<div class="container">' +
       '<div class="row">' +
         '<div class="col-xs-5 team-09-hero">' +
           '<img src="img/hero-portraits/arc_warden.png" class="team-09-hero-left-4"/>' +

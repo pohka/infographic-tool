@@ -1,12 +1,8 @@
-<html>
-	<head>
+<html style="--primary:#008fea; --secondary:#ea5200; --red:#ff0000; --green:#78d400; --white:#fff; --background:#101010;"><head>
 	  <!--ADDONS-->
 		<!-- ============================ -->
 		<!--jQuery-->
-	  <script
-	  src="https://code.jquery.com/jquery-3.2.1.min.js"
-	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	  crossorigin="anonymous"></script>
+	  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 		<!--jQuery-UI-->
 		<link rel="stylesheet" href="../addons/jquery-ui/jquery-ui.min.css">
@@ -27,7 +23,7 @@
 
 		<!-- ============================ -->
 
-		<link rel="shortcut icon" type="image/ico" href="../favicon.ico" />
+		<link rel="shortcut icon" type="image/ico" href="../favicon.ico">
 
 
 		<!--CSS-->
@@ -64,13 +60,7 @@
 		<script src="../js/helper.js"></script>
 		<script src="../js/infographic.js"></script>
 
-		<!--sidebar-js-->
-		<script src="../js/hero-names.js"></script>
-		<script src="../js/template-info.js"></script>
-		<script src="../js/template-browser.js"></script>
-		<script src="../js/sidebar.js"></script>
-		<script src="../js/export.js"></script>
-		<!--end of sidebar-js->
+		
 
 		<!-templates-->
 		<script src="../js/templates/tournament.js"></script>
@@ -99,10 +89,10 @@
 	</head>
 
 	<body>
-		<div class="cdf-navbar cdf-navbar-start-hidden">
+		<div class="cdf-navbar cdf-navbar-start-hidden" style="display: none;">
       <div class="logo-letter-span"><a href="home.html" id="navbar-logo-btn" data-device="pc">
         <span class="glyphicon glyphicon-menu-hamburger mobile-menu"></span>
-        <img src="../img/logo/logo_sm.png" class="logo-letter"></img>
+        <img src="../img/logo/logo_sm.png" class="logo-letter">
       </a></div>
 
       <div class="cdf-navitems">
@@ -150,133 +140,29 @@
 
 		<div class="body-container">
 			<div id="section-container">
-			</div>
+			<div class="section" id="section-0-html"><div class="container template-01 width-half"><h3 class="template-01-title">Most Picked and Banned</h3><h4 class="template-01-sub-title"><span class="green">Pick</span> rate and <span class="red">Ban</span> rate</h4><div class="row"><div class="col-xs-4"><div class="template-01-pick"><span class="template-01-pick-rate-1 template-01-input-field">0</span>%</div><canvas class="canvas canvas-circle" id="template-01-canvas-1"></canvas><img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-pick-1-hero-icon"></div><div class="col-xs-4"><div class="template-01-pick"><span class="template-01-pick-rate-2 template-01-input-field">0</span>%</div><canvas class="canvas canvas-circle" id="template-01-canvas-2"></canvas><img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-pick-2-hero-icon"></div><div class="col-xs-4"><div class="template-01-pick"><span class="template-01-pick-rate-3 template-01-input-field">0</span>%</div><canvas class="canvas canvas-circle" id="template-01-canvas-3"></canvas><img src="img/hero-icons/nyx_assassin.png" class="img-template-1 img-hero-portrait-circle template-01-pick-3-hero-icon"></div></div><div class="row"><div class="col-xs-4"><canvas class="canvas canvas-circle" id="template-01-canvas-4"></canvas><img src="img/hero-icons/medusa.png" class="img-template-1 img-hero-portrait-circle template-01-ban-1-hero-icon"><div class="template-01-ban"><span class="template-01-ban-rate-1 template-01-input-field">0</span>%</div></div><div class="col-xs-4"><canvas class="canvas canvas-circle" id="template-01-canvas-5"></canvas><img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-ban-2-hero-icon"><div class="template-01-ban"><span class="template-01-ban-rate-2 template-01-input-field">0</span>%</div></div><div class="col-xs-4"><canvas class="canvas canvas-circle" id="template-01-canvas-6"></canvas><img src="img/placeholder.png" class="img-template-1 img-hero-portrait-circle template-01-ban-3-hero-icon"><div class="template-01-ban"><span class="template-01-ban-rate-3 template-01-input-field">0</span>%</div></div></div></div></div><hr class="section-hr faded"></div>
 
-			<!--SIDEBAR-->
-			<div class="sidebar">
-				<div class="sidebar-menu">
-							<button class="sidebar-btn sidebar-menu-item sidebar-menu-item-selected " id="sidebar-1">
-								Sections
-							</button><!--
-							--><button class="sidebar-btn sidebar-menu-item" id="sidebar-2">
-								Palette
-							</button>
-				</div>
-
-			<!--SIDEBAR SECTIONS-->
-			<div class="sidebar-column" id="sidebar-1-column">
-				<!--HIDE SECTIONS-->
-				<button class="sidebar-btn sidebar-sub-menu" id="sidebar-hide-sections">
-					<span class="glyphicon glyphicon glyphicon glyphicon-eject sidebar-menu-glyph"></span>
-				</button>
-				<!--ADD SECTION-->
-				<button class="sidebar-btn sidebar-sub-menu" id="sidebar-add-section">
-					<span class="glyphicon glyphicon-plus sidebar-menu-glyph"></span>
-				</button>
-				<!--EXPORT-->
-				<button class="sidebar-btn sidebar-sub-menu" id="sidebar-export">
-					<span class="glyphicon glyphicon-download-alt sidebar-menu-glyph"></span>
-				</button>
-				<div class="section-list"></div>
-
-			</div>
-
-			<!--SIDEBAR PALETTE-->
-			<div class="sidebar-column" id="sidebar-2-column">
-					<input type="checkbox" class="regular-checkbox" id="color-blind">
-					<label for="color-blind"></label><span>Color Blind Mode</span><br>
-					<input type="checkbox" class="regular-checkbox" id="simple-background">
-					<label for="simple-background"></label><span>Simple Background</span>
-
-					<div class="container" id="palette-input-con">
-						<h3>Colors</h3>
-						<div class="row">
-							<div class="col-md-4 palette-input-title">Primary</div>
-							<div class="col-md-6">
-								<input type="text" class="palette-input" id="palette-primary" placeholder="#000000"></input>
-							</div>
-							<div class="col-md-2">
-								<button class="sidebar-btn submit-color glyphicon glyphicon-share" data-name="primary"></button>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-4 palette-input-title">Secondary</div>
-							<div class="col-md-6">
-								<input type="text" class="palette-input" id="palette-secondary" placeholder="#000000"></input>
-							</div>
-							<div class="col-md-2">
-								<button class="sidebar-btn submit-color glyphicon glyphicon-share" data-name="secondary"></button>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-4 palette-input-title">Text</div>
-							<div class="col-md-6">
-								<input type="text" class="palette-input" id="palette-text" placeholder="#000000"></input>
-							</div>
-							<div class="col-md-2">
-								<button class="sidebar-btn submit-color glyphicon glyphicon-share" data-name="text"></button>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-4 palette-input-title">Background</div>
-							<div class="col-md-6">
-								<input type="text" class="palette-input" id="palette-bg" placeholder="#000000"></input>
-							</div>
-							<div class="col-md-2">
-								<button class="sidebar-btn submit-color glyphicon glyphicon-share" data-name="bg"></button>
-							</div>
-						</div>
-					</div>
-			</div>
-
-			<!--TEMPLATE BROWSER-->
-			<div class="sidebar-browser" data-template-index="0">
-						<div class="sidebar-browser-title">Templates</div>
-						<button class="sidebar-btn glyphicon glyphicon-backward hide-sidebar-browser"></button>
-
-						<button class="sidebar-btn browser-menu-item sidebar-menu-item-selected" id="template-full">
-							Full
-						</button><!--
-						--><button class="sidebar-btn browser-menu-item" id="template-split">
-							Split
-						</button>
-			</div>
-			<!--Hides the sidebar-->
-			<button class="sidebar-btn glyphicon glyphicon-chevron-left hide-sidebar"></button>
-		</div>
-
-		<!--delete pop-up menu-->
-		<ul class='delete-menu' data-isSection="" data-section-index="" data-template-index="" data-template-id="">
-		  <li data-action = "delete">Delete</li>
-		  <li data-action = "cancel">Cancel</li>
-		</ul>
-
-		<!--show sidebar btn is behind on the z-index-->
-		<button class="sidebar-btn glyphicon glyphicon-chevron-right show-sidebar"></button>
-		<!--END OF SIDEBAR-->
+			
 	</div>
 	<div class="footer-divider">
 		<div class="footer">
 			<div class="footer-item">
 				<a href="home.html">
-					<img src="img/footer/jugg.png"/>
+					<img src="img/footer/jugg.png">
 					Home
 				</a>
 				<a href="infographics.html">
-					<img src="img/footer/rubick.png"/>
+					<img src="img/footer/rubick.png">
 					Infographics
 				</a>
 				<a href="guides.html">
-					<img src="img/footer/am.png"/>
+					<img src="img/footer/am.png">
 					Guides
 				</a>
 			</div>
 
 			<div class="footer-logo">
-				<a href="home.html"><img src="../img/logo/logo_with_text.png"/></a>
+				<a href="home.html"><img src="../img/logo/logo_with_text.png"></a>
 			</div>
 			<div class="footer-icons">
 				<a href="https://twitter.com/PohkaDota" target="_blank" class="fa fa-twitter"></a>
@@ -284,6 +170,4 @@
 			</div>
 		</div>
 	</div>
-	<!--ENDOFALL-->
-	</body>
-</html>
+	</body></html>
